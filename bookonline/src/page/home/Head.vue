@@ -1,129 +1,121 @@
 <template>
 	<div class="header">
-		<div class="logo">后台管理系统</div>
-		<div class="welcome">欢迎<span class="username">&nbsp;<slot name="username"></slot>&nbsp;</span>来到后台管理系统</div>
-		<div class="user-info">
-			<el-dropdown trigger="click" @command="handleCommand">
-				<div class="head-icon">
-					<img :src="thumbImg"/>
-					<span class="username"><slot name="_username"></slot></span>
+		<div class="logo">
+			<img src="../../assets/images/logo.png" />
+		</div>
+		<div class="title">BookOnline 在线书店</div>
+		<div class="menu">
+			<div class="login_or_register">登录/注册</div>
+			<div class="shopping_cart">购物车</div>
+			<div class="my_order">我的订单</div>
+		</div>
+		<div class="user_info">
+			<el-dropdown @command="handleCommand">
+				<div class="head_icon">
+					<img :src="userImg"/>
+					<span class="username"><slot name="username"></slot></span>
 				</div>
-				<el-dropdown-menu>
-					<el-dropdown-item command="know">了解该系统</el-dropdown-item>
-					<el-dropdown-item command="resetPwd">修改密码</el-dropdown-item>
-					<el-dropdown-item command="personalCenter">个人中心</el-dropdown-item>
+				<el-dropdown-menu slot="dropdown">
+					<el-dropdown-item command="know">个人信息</el-dropdown-item>
+					<el-dropdown-item command="resetPwd">我的订单</el-dropdown-item>
+					<el-dropdown-item command="personalCenter">卖家中心</el-dropdown-item>
 					<el-dropdown-item command="exit" divided>退出</el-dropdown-item>
 				</el-dropdown-menu>
 			</el-dropdown>
 		</div>
-		<div class="menu">
-			<el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect" @open="handleOpen" @close="handleClose"
-			  background-color="#242f42" text-color="#fff" active-text-color="#ffd04b" router>
-			  <el-menu-item index="/page/layout">
-			  	布局相关
-			  </el-menu-item>
-			  <el-submenu index="2" :show-timeout="300" :hide-timeout="150">
-			    <template slot="title">全局参考</template>
-			    <el-menu-item index="/page/overall/font" >字体</el-menu-item>
-			    <el-menu-item index="/page/overall/color" >颜色</el-menu-item>
-			    <el-menu-item index="/page/overall/icon">图标</el-menu-item>
-			    <el-menu-item index="/page/overall/button">按钮</el-menu-item>
-			  </el-submenu>
-			  <el-menu-item  v-popover:popoverT>
-			  	<el-popover ref="popoverT"  placement="bottom-end" title="提示"  width="100" trigger="hover"
-				  content="这里将展示最新的系统通知消息。">
-				</el-popover>
-			  	<el-badge :value="12">系统消息</el-badge>
-			  </el-menu-item>
-			</el-menu>
-		</div>
-		
 	</div>
 </template>
 
 <script type="text/javascript">
-	export default {
-		data () {
-			return {
-				activeIndex:"/page/layout",
-				thumbImg:require('src/assets/images/logo.png')
-			}
-		},
-		methods:{
-			handleCommand (command) {
-				if(command == "know"){
-					this.$router.push('/page/readme');
-				}else if(command == "resetPwd"){
-					this.$router.push('/page/resetPwd');
-				}else if(command == "exit"){
-					localStorage.removeItem("user-name");
-					this.$router.push('/');
-				}else if(command == "personalCenter"){
-					this.$router.push('/page/personalCenter');
-				}
-			},
-			handleSelect (key, keyPath) {
-
-			},
-			handleOpen (key, keyPath) {
-
-			},
-			handleClose (key, keyPath) {
-
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      activeIndex: "/page/layout",
+      userImg: require("src/assets/images/logo.png")
+    };
+  },
+  methods: {
+    handleCommand(command) {
+      if (command == "know") {
+        this.$router.push("/page/readme");
+      } else if (command == "resetPwd") {
+        this.$router.push("/page/resetPwd");
+      } else if (command == "exit") {
+        localStorage.removeItem("user-name");
+        this.$router.push("/");
+      } else if (command == "personalCenter") {
+        this.$router.push("/page/personalCenter");
+      }
+    }
+  }
+};
 </script>
 
-<style>
-	.header {
-        position: relative;
-        width: 100%;
-        height: 70px;
-        font-size: 22px;
-        line-height: 70px;
-        color:#fff;
-        background-color:#242f42;
+<style lang="scss" scoped>
+.header {
+  .logo {
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 0.8rem;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
     }
-    .header .logo{
-        float: left;
-        width:250px;
-        text-align: center;
+  }
+
+  .title {
+    margin-left: 0.2rem;
+    font-size: 0.4rem;
+    font-weight: bold;
+  }
+
+	.menu {
+		margin-left: 4.5rem;
+		display: flex;
+		align-items: center;
+
+		.login_or_register {
+			font-size: 0.22rem;
+			cursor: pointer;
+		}
+
+		.shopping_cart {
+			margin-left: 0.3rem;
+			font-size: 0.22rem;
+			cursor: pointer;
+		}
+
+		.my_order {
+			margin-left: 0.3rem;
+			font-size: 0.22rem;
+			cursor: pointer;
+		}
+  }
+
+  .user_info {
+    position: absolute;
+    right: 0.7rem;
+    font-size: 0.4rem;
+    cursor: pointer;
+
+    img {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      vertical-align: middle;
     }
-    .header .welcome {
-    	position:absolute;
-    	left:50%;
-    	top:50%;
-    	-webit-transform:translate3d(-50%,-50%,0);
-    	transform:translate3d(-50%,-50%,0);
+
+    .username {
+      font-size: 0.22rem;
+      color: #ff3333;
     }
-    .username{
-    	color:#ff3333;
+
+    .el-dropdown-menu__item {
+      text-align: center;
     }
-    .user-info {
-        float: right;
-        padding-right: 50px;
-        font-size: 16px;
-        color: #fff;
-        cursor:pointer;
-    }
-    .user-info img{
-        width:40px;
-        height:40px;
-        border-radius: 50%;
-        vertical-align:middle;
-        margin-right:15px;
-    }
-    .el-dropdown-menu__item{
-        text-align: center;
-    }
-    .menu {
-    	display: inline-block;
-    	float: right;
-    	padding-top: 5px;
-    	margin-right: 30px;
-    }
-    .el-badge__content.is-fixed{
-    	top:10px!important;
-    }
+  }
+}
 </style>
