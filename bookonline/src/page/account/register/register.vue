@@ -2,10 +2,9 @@
 	<div class="register_container">
     <div class="main_container">
       <div class="head">
-        <img class="logo" src="../../../assets/images/logo.jpg" />
+        <img class="logo" src="../../../assets/images/logo.png" />
         <div class="text">
-          <div class="title">优题网</div>
-          <div class="description">试卷智能生成与题库管理系统</div>
+          <div class="title">在线书店</div>
         </div>
       </div>
       <div class="body">
@@ -124,19 +123,17 @@ export default {
     justify-content: center;
 
     .head {
+      display: flex;
+      align-items: center;
+
       .logo {
-        width: 1rem;
+        width: 1.5rem;
       }
 
       .text {
-        display: inline-block;
+        margin-left: 0.2rem;
         .title {
           font-size: 0.6rem;
-          display: inline;
-        }
-
-        .description {
-          font-size: 0.22rem;
         }
       }
     }

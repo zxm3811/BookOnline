@@ -3,7 +3,7 @@ import VueRouter  from 'vue-router'
 
 import Login from 'src/page/account/login/login.vue'
 import Register from 'src/page/account/register/register.vue'
-import HelloWorld from 'src/page/home/home.vue'
+import HomePage from 'src/page/home/page.vue'
 import Upload from 'src/page/upload/upload.vue'
 
 Vue.use(VueRouter )
@@ -28,7 +28,7 @@ export const router = new VueRouter({
     {
       path: '/home',
       name: 'home',
-      component: HelloWorld
+      component: HomePage
     },
     {
       path: '/upload',
