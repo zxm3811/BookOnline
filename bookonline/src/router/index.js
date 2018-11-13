@@ -3,8 +3,8 @@ import VueRouter  from 'vue-router'
 
 import Login from 'src/page/account/login/login.vue'
 import Register from 'src/page/account/register/register.vue'
-import HomePage from 'src/page/home/page.vue'
-import Upload from 'src/page/upload/upload.vue'
+import Page from 'src/page/home/page.vue'
+import Home from 'src/page/home/home.vue'
 
 Vue.use(VueRouter )
 
@@ -13,7 +13,7 @@ export const router = new VueRouter({
   routes: [
     {
 			path: '/',
-			redirect:'/login' //重定向
+			redirect:'/page' //重定向
 		},
 		{
       path:'/login',//登陆
@@ -26,14 +26,17 @@ export const router = new VueRouter({
 			component: Register
 		},
     {
-      path: '/home',
-      name: 'home',
-      component: HomePage
-    },
-    {
-      path: '/upload',
-      name: 'upload',
-      component: Upload
+      path: '/page',
+      name: 'page',
+      component: Page,
+      redirect:'/page/home',
+			children:[
+        {
+          path:'home',//登陆
+          name: 'home',
+          component: Home
+        },
+      ]
     }
   ]
 })
