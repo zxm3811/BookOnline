@@ -37,7 +37,7 @@ export default {
   methods: {
     handleCommand(command) {
       if (command == "know") {
-        this.$router.push("/page/readme");
+        this.$router.push("/page/usercenter");
       } else if (command == "resetPwd") {
         this.$router.push("/page/resetPwd");
       } else if (command == "exit") {
