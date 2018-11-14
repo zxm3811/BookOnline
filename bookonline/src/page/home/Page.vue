@@ -1,10 +1,8 @@
 <template>
 	<div class="page">
-		<v-head class="page_head">
-			<span slot="username">{{ nickname }}</span>
-		</v-head>
+		<v-head class="page_head"></v-head>
 		<div class="page_body">
-			<transition name="fade" mode="out-in"><router-view></router-view></transition>
+			<transition name="fade" mode="out-in"><router-view :key="$route.path"></router-view></transition>
 		</div>
 	</div>
 </template>
@@ -15,14 +13,7 @@ import vHead from "./Head";
 export default {
   data() {
     return {
-      name: "admin"
     };
-  },
-  computed: {
-    nickname() {
-      const _username = localStorage.getItem("user-name");
-      return _username || this.name;
-    }
   },
   components: {
     vHead
@@ -37,7 +28,7 @@ export default {
 	padding-top: 0.8rem;
 
 	.page_head {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		width: 100%;
 		height: 0.8rem;

@@ -4,65 +4,43 @@ import {
 
 const state = {
   userInfo: {
-    ssnInfos: [],
-    userId: null,
     token: '',
-    address: '',
-    displayName: '',
-    email: '',
-    gender: '',
-    identityCard: '',
+    account: '',
     password: '',
-    phone: '',
-    phoneValid: false,
+    address: '',
+    gender: '',
+    age: null,
     avatar: '',
-    userName: '',
     userType: null,
-    userSchools: []
   }
 }
 const getters = {
   userInfo: state => {
     return state.userInfo
   },
-  ssnInfos: state => {
-    return state.userInfo.ssnInfos
-  },
-  userId: state => {
-    return state.userInfo.userId
-  },
-  displayName: state => {
-    return state.userInfo.displayName
-  },
-  avatar: state => {
-    return state.userInfo.avatar
-  },
-  userName: state => {
-    return state.userInfo.userName
-  },
-  userType: state => {
-    return state.userInfo.userType
-  },
-  gender: state => {
-    return state.userInfo.gender
-  },
-  email: state => {
-    return state.userInfo.email
-  },
-  phone: state => {
-    return state.userInfo.phone
-  },
   token: state => {
     return state.userInfo.token
+  },
+  account: state => {
+    return state.userInfo.account
   },
   password: state => {
     return state.userInfo.password
   },
-  phoneValid: state => {
-    return state.userInfo.phoneValid
+  address: state => {
+    return state.userInfo.address
   },
-  userSchools: state => {
-    return state.userInfo.userSchools
+  gender: state => {
+    return state.userInfo.gender
+  },
+  age: state => {
+    return state.userInfo.age
+  },
+  avatar: state => {
+    return state.userInfo.avatar
+  },
+  userType: state => {
+    return state.userInfo.userType
   }
 }
 
@@ -88,12 +66,6 @@ const actions = {
     commit("UPDATE_DISPLAY_NAME", params.displayName);
   },
 
-  updateUserPhone({
-    commit
-  }, params) {
-    commit("UPDATE_USER_PHONE", params);
-  },
-
   clearAllUserState({
     commit
   }) {
@@ -106,43 +78,23 @@ const mutations = {
     state.userInfo.token = token
   },
   [SAVE_USER_STATE](state, userInfo) {
-    state.userInfo.userId = userInfo.id
+    state.userInfo.account = userInfo.account
+    state.userInfo.password = userInfo.password
     state.userInfo.address = userInfo.address
-    state.userInfo.displayName = userInfo.displayName
-    state.userInfo.email = userInfo.email
     state.userInfo.gender = userInfo.gender
-    state.userInfo.identityCard = userInfo.identityCard
-    state.userInfo.phone = userInfo.phone
-    state.userInfo.phoneValid = userInfo.phoneValid
+    state.userInfo.age = userInfo.age
     state.userInfo.avatar = userInfo.photoUrl
-    state.userInfo.userName = userInfo.name
     state.userInfo.userType = userInfo.userType
-    state.userInfo.ssnInfos = userInfo.ssnInfos
-    state.userInfo.userSchools = userInfo.userSchools
-  },
-  UPDATE_DISPLAY_NAME: (state, newName) => {
-    state.userInfo.displayName = newName
-  },
-  UPDATE_USER_PHONE: (state, phoneInfo) => {
-    state.userInfo.phoneValid = phoneInfo.phoneValid;
-    state.userInfo.phone = phoneInfo.phone;
   },
   CLEAR_ALL_USER_STATE: (state) => {
     state.userInfo.token = ''
-    state.userInfo.userId = null
-    state.userInfo.address = ''
-    state.userInfo.displayName = ''
-    state.userInfo.email = ''
-    state.userInfo.gender = ''
-    state.userInfo.identityCard = ''
+    state.userInfo.account = ''
     state.userInfo.password = ''
-    state.userInfo.phone = ''
-    state.userInfo.phoneValid = false
+    state.userInfo.address = ''
+    state.userInfo.gender = ''
+    state.userInfo.age = null
     state.userInfo.avatar = ''
-    state.userInfo.userName = ''
     state.userInfo.userType = null
-    state.userInfo.userSchools = []
-    state.userInfo.ssnInfos = []
   }
 
 }

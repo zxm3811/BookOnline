@@ -22,7 +22,10 @@ const API = {
 export const AccountService = {
   hasLogin: () => {
     let currentUser = store.getters["auth/userInfo"];
-    return currentUser && currentUser.userId;
+    if(currentUser && currentUser.account) {
+      return true;
+    }
+    return false;
   },
   logout: () => {
     store.dispatch("clearAll");
@@ -38,13 +41,7 @@ export const AccountService = {
 
     store.dispatch('auth/saveToken', loginResponse.data);
 
-    let userInfoResponse = await getUserInfomation(params.account);
-    if (!userInfoResponse || userInfoResponse.hr != 0 || !userInfoResponse.data) {
-      return;
-    }
-
-    store.dispatch('auth/saveUserState', userInfoResponse.data);
-    return userInfoResponse;
+    return AccountService.saveUserInfo(params.account);
   },
 
   userRegister: async (params) => {
@@ -55,16 +52,17 @@ export const AccountService = {
     if (response.data == null) {
       return;
     }
+
+    store.dispatch("clearAll");
+
     store.dispatch('auth/saveToken', response.data);
-    return response;
+
+    return AccountService.saveUserInfo(params.account);
   },
 
-  saveUserInfo: async (params) => {
-    let response = await getUserInfomation(params.account)
-    if (!response || response.hr != 0) {
-      return response;
-    }
-    if (response.data == null) {
+  saveUserInfo: async (account) => {
+    let response = await getUserInfomation(account)
+    if (!response || response.hr != 0 || !response.data) {
       return response;
     }
     store.dispatch('auth/saveUserState', response.data);
@@ -133,6 +131,6 @@ const getUserInfomation = (account) => {
   } else {
     return request(API.getUserInfomation.url, {
       account
-    }, 'POST')
+    }, 'GET')
   }
 };
