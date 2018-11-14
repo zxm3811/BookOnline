@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
-    <side-bar></side-bar>
-  </div>
+        <side-bar></side-bar>
+    </div>
 </template>
 
 <script type="text/javascript">

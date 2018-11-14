@@ -37,7 +37,7 @@ export default {
 	padding-top: 0.8rem;
 
 	.page_head {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		width: 100%;
 		height: 0.8rem;
