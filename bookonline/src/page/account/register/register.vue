@@ -98,7 +98,7 @@ export default {
         password: this.password
       });
       if(userInfo) {
-        this.$router.push("/home");
+        this.$router.push("/page/home");
       } else {
         this.$toast.text("该帐号已注册");
       }

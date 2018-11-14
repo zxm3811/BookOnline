@@ -80,7 +80,7 @@ export default {
         password: this.password
       });
       if(userInfo) {
-        this.$router.push("/home");
+        this.$router.push("/page/home");
       } else {
         this.$toast.text("帐号或密码错误");
       }

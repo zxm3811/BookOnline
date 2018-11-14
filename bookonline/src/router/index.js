@@ -5,18 +5,18 @@ import Login from 'src/page/account/login/login.vue'
 import Register from 'src/page/account/register/register.vue'
 import Page from 'src/page/home/page.vue'
 import Home from 'src/page/home/home.vue'
-import UserCenter from 'src/page/home/usercenter.vue'
-import UserInfo from 'src/page/home/userinfo.vue'
-import OrderList from 'src/page/home/orderlist.vue'
+import SearchResult from 'src/page/home/searchResult.vue'
+import UserCenter from 'src/page/home/userCenter.vue'
+import UserInfo from 'src/page/home/userInfo.vue'
+import OrderList from 'src/page/home/orderList.vue'
 
 Vue.use(VueRouter)
 
 export const router = new VueRouter({
-  mode: 'history',
   routes: [
     {
 			path: '/',
-			redirect:'/page' //重定向
+			redirect:'/page/home' //重定向
 		},
 		{
       path:'/login',//登陆
@@ -24,7 +24,7 @@ export const router = new VueRouter({
 			component: Login
     },
     {
-      path:'/register',//登陆
+      path:'/register',//注册
       name: 'register',
 			component: Register
 		},
@@ -35,24 +35,29 @@ export const router = new VueRouter({
       redirect:'/page/home',
       children:[
         {
-          path:'home',//登陆
+          path:'home',//主页
           name: 'home',
           component: Home
         },
         {
-          path: 'usercenter',//个人中心
-          name: 'usercenter',
+          path:'search/:keyword',//搜索结果页
+          name: 'searchResult',
+          component: SearchResult
+        },
+        {
+          path: 'userCenter',//个人中心
+          name: 'userCenter',
           component: UserCenter,
-          redirect: '/page/usercenter/userinfo',
+          redirect: '/page/userCenter/userInfo',
           children:[
             {
-              path: 'userinfo',
-              name: 'userinfo',
+              path: 'userInfo',
+              name: 'userInfo',
               component: UserInfo
             },
             {
-              path: 'orderlist',
-              name: 'orderlist',
+              path: 'orderList',
+              name: 'orderList',
               component: OrderList
             }
           ]

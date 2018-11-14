@@ -7,7 +7,7 @@
                 </div>
                 <div class="right_body" style="display: flex; margin: 0.2rem">
                     <div class="photo">
-                        <img src="../../assets/logo.png" style="width: 100%; height: 100%; position: absolute">
+                        <img src="../../assets/images/logo.png" style="width: 100%; height: 100%; position: absolute">
                     </div>
                     <div class="person_detail">
                         <div class="detail">

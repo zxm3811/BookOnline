@@ -1,6 +1,6 @@
 <template>
 	<div class="side-bar">
-		<el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+		<el-menu :default-active="onRoutes" class="el-menu-vertical-demo" unique-opened router>
 			<div v-for="(item,key) in items" :key="key">
 				<div v-if="item.children">
 					<el-submenu :index="item.index">

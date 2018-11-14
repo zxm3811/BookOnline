@@ -3,7 +3,7 @@ export const FakeAccountService = {
     if(account === "admin" && password === "admin") {
       return Promise.resolve({
         hr: 0,
-        message: "",
+        message: "成功",
         data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
       });
     } else {
@@ -18,7 +18,7 @@ export const FakeAccountService = {
     if(account === "admin" && password === "admin") {
       return Promise.resolve({
         hr: 0,
-        message: "",
+        message: "成功",
         data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
       });
     } else {
@@ -35,11 +35,12 @@ export const FakeAccountService = {
         hr: 0,
         message: "成功",
         data: {
-          id: 1001,
           account: "admin",
-          displayName: "管理员帐号",
+          password: "admin",
+          address: "南京市",
           gender: "男",
           age: 20,
+          avatar: "",
           userType: "系统管理员"
         }
       });
