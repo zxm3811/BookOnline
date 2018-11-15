@@ -46,7 +46,7 @@ export default {
 	components: {
 		SearchBar
 	},
-	
+
 	async mounted() {
 		this.hasLogin = await AccountService.hasLogin();
 	},
@@ -65,18 +65,18 @@ export default {
 		},
 
 		gotoMyOrder() {
-			this.$router.push("/page/myOrder");
+			this.$router.push("/page/usercenter/orderlist");
 		},
 
 		gotoUserCenter() {
-			this.$router.push("/page/userCenter");
+			this.$router.push("/page/usercenter");
 		},
 
     async handleCommand(command) {
       if (command == "userInfo") {
-        this.$router.push("/page/userCenter/userInfo");
+        this.$router.push("/page/usercenter/userinfo");
       } else if (command == "myOrder") {
-        this.$router.push("/page/myOrder");
+        this.$router.push("/page/usercenter/orderlist");
       } else if (command == "sailerCenter") {
         this.$router.push("/page/sailerCenter");
       } else if (command == "exit") {

@@ -185,7 +185,7 @@ export default {
         font-size: 0.15rem;
         color: #e23c30;
       }
-      
+
       .login_text {
         margin-top: 0.2rem;
         font-size: 0.22rem;

@@ -11,17 +11,20 @@
                     </div>
                     <div class="person_detail">
                         <div class="detail">
-                            <span>戴坤恩</span>
+                            <span>{{items.name}}</span>
                         </div>
                         <div class="detail">
                             <p>邮箱：
-                                <strong>3874928374@qq.com</strong>
+                                <strong>{{items.email}}</strong>
                             </p>
                             <p>手机：
-                                <strong>12344556464</strong>
+                                <strong>{{items.phone}}</strong>
                             </p>
                             <p>收货地址：
-                                <strong>江苏省 南京市 南京航空航天大学 将军大道 29号</strong>
+                                <strong v-for="addr in items.address" v-if="addr.default == 1">
+                                    {{addr.country}} {{addr.province}}省 {{addr.city}}市
+                                    {{addr.district}}区/镇 {{addr.street}}街道 {{addr.mark}}
+                                </strong>
                             </p>
                         </div>
                     </div>
@@ -36,10 +39,10 @@
                 <div class="right_body">
                     <div>
                         <p>我的资金账号：
-                            <strong>89390293948</strong>
+                            <strong>{{items.accountno}}</strong>
                         </p>
                         <p>总金额：
-                            <strong style="color: red">0.00 元</strong>
+                            <strong style="color: red">{{items.balance}} 元</strong>
                         </p>
                     </div>
                 </div>
@@ -49,9 +52,23 @@
 </template>
 
 <script>
-    export default {
+import { UserInfoService } from "../../service/userInfo";
 
+export default {
+    data () {
+      return {
+        items: ''
+      };
+    },
+    mounted () {
+      this.initData();
+    },
+    methods: {
+      async initData() {
+        this.items = await UserInfoService.getInfo();
+      }
     }
+}
 </script>
 
 <style lang="scss" scoped>

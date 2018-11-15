@@ -18,8 +18,8 @@
                         </template>
                     </el-table-column>
                     <el-table-column prop="status" label="订单状态" :filters="filter"
-                            :filter-method="filterTag"
-                            filter-placement="bottom-end">
+                                     :filter-method="filterTag"
+                                     filter-placement="bottom-end">
                         <template slot-scope="scope">
                             <el-tag disable-transitions>{{filter[scope.row.status].text}}</el-tag>
                         </template>
@@ -36,50 +36,49 @@
                 </el-table>
             </div>
         </el-row>
-
     </div>
 </template>
 
 <script>
-import { OrderService } from "../../service/order";
+  import { OrderService } from "../../service/order";
 
-export default {
-  data () {
-    return {
-      search: '',
-      items: [],
-      filter:[
-        { text: '已完成订单', value: '0' },
-        { text: '交易中订单', value: '1' },
-        { text: '待确认订单', value: '2' },
-        { text: '待付款订单', value: '3' }
-      ]
-    };
-  },
-  mounted () {
-    this.initData();
-  },
-  methods: {
-    formatter (row, column) {
-      let addr = row.address;
-      return addr.country + addr.province + addr.city + addr.district + addr.mark;
+  export default {
+    data () {
+      return {
+        search: '',
+        items: [],
+        filter:[
+          { text: '已完成订单', value: '0' },
+          { text: '交易中订单', value: '1' },
+          { text: '待确认订单', value: '2' },
+          { text: '待付款订单', value: '3' }
+        ]
+      };
     },
-    filterTag (value, row) {
-      return row.status === value;
+    mounted () {
+      this.initData();
     },
-    filterHandler (value, row, column) {
-      const property = column['property'];
-      return row[property] === value;
-    },
-    handleClick (row) {
-      console.log(row.orderNo);
-    },
-    async initData() {
-      this.items = await OrderService.getOrderList();
-      console.log(this.items);
+    methods: {
+      formatter (row, column) {
+        let addr = row.address;
+        return addr.country + addr.province + addr.city + addr.district + addr.mark;
+      },
+      filterTag (value, row) {
+        return row.status === value;
+      },
+      filterHandler (value, row, column) {
+        const property = column['property'];
+        return row[property] === value;
+      },
+      handleClick (row) {
+        console.log(row.orderNo);
+      },
+      async initData() {
+        this.items = await OrderService.getOrderList();
+        console.log(this.items);
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -90,4 +89,3 @@ export default {
         }
     }
 </style>
-

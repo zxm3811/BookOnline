@@ -12,37 +12,35 @@
                     <el-menu active-text-color="#8c222c"
                              :default-active="$route.path"
                              router>
-                        <div class="menu_box" router>
+                        <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是买家</template>
                                 <el-menu-item index="/page">购物车</el-menu-item>
-                                <el-menu-item index="/page/userCenter/orderList">我的订单</el-menu-item>
+                                <el-menu-item index="/page/usercenter/orderlist">我的订单</el-menu-item>
                             </el-menu-item-group>
-
                         </div>
                         <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是卖家</template>
-                                <el-menu-item index="/page">我的订单</el-menu-item>
+                                <el-menu-item index="/page/usercenter/orderlist2">我的订单</el-menu-item>
                                 <el-menu-item index="/page">我的书籍</el-menu-item>
                             </el-menu-item-group>
                         </div>
                         <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">更多</template>
-                                <el-menu-item index="/page/userCenter/userInfo">个人信息</el-menu-item>
+                                <el-menu-item index="/page/usercenter/userinfo">个人信息</el-menu-item>
                                 <el-menu-item index="/page">修改密码</el-menu-item>
-                                <el-menu-item index="/page">修改信息</el-menu-item>
+                                <el-menu-item index="/page/usercenter/editinfo">修改信息</el-menu-item>
                             </el-menu-item-group>
                         </div>
                     </el-menu>
                 </el-col>
                 <el-col :span="20">
-                    <transition name="fade" mode="out-in"><router-view></router-view></transition>
+                    <router-view></router-view>
                 </el-col>
             </el-row>
         </div>
-
     </div>
 </template>
 
