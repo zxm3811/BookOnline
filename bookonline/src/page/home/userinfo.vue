@@ -21,7 +21,7 @@
                                 <strong>{{items.phone}}</strong>
                             </p>
                             <p>收货地址：
-                                <strong v-for="addr in items.address" v-if="addr.default == 1">
+                                <strong v-for="(addr, index) in items.address" :key="index" v-if="addr.default == 1">
                                     {{addr.country}} {{addr.province}}省 {{addr.city}}市
                                     {{addr.district}}区/镇 {{addr.street}}街道 {{addr.mark}}
                                 </strong>
