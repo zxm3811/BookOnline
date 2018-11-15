@@ -7,7 +7,7 @@
                 </div>
                 <div class="right_body" style="display: flex; margin: 0.2rem">
                     <div class="photo">
-                        <img src="../../assets/images/logo.png" style="width: 100%; height: 100%; position: absolute">
+                        <img src="../../assets/logo.png" style="width: 100%; height: 100%; position: absolute">
                     </div>
                     <div class="person_detail">
                         <div class="detail">
@@ -52,18 +52,17 @@
 </template>
 
 <script>
-import { UserInfoService } from "../../service/userInfo";
+import {userInfo} from "../../service/userInfo";
 
 export default {
-    data () {
-      return {
-        items: ''
-      };
-    },
-    mounted () {
-      this.items = UserInfoService.getInfo();
-      console.log(this.items);
-    }
+data () {
+  return {
+    items: {}
+  };
+},
+mounted() {
+  this.items = userInfo;
+},
 }
 </script>
 

@@ -75,7 +75,7 @@ export default {
         this.showPswNullError = true;
         return;
       }
-      let userInfo = await AccountService.userlogin({
+      let userInfoService = await AccountService.userlogin({
         account: this.userAccount,
         password: this.password
       });
@@ -185,7 +185,7 @@ export default {
         font-size: 0.15rem;
         color: #e23c30;
       }
-      
+
       .login_text {
         margin-top: 0.2rem;
         font-size: 0.22rem;

@@ -1,5 +1,5 @@
 <template>
-    <div class="userCenter">
+    <div class="usercenter">
         <div class="breadcrumb">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -10,18 +10,20 @@
             <el-row :gutter="20">
                 <el-col :span="4">
                     <el-menu active-text-color="#8c222c"
+                             :default-active="$route.path"
                              router>
-                        <div class="menu_box">
+                        <div class="menu_box" router>
                             <el-menu-item-group>
                                 <template slot="title">我是买家</template>
                                 <el-menu-item index="/page">购物车</el-menu-item>
-                                <el-menu-item index="orderlist">我的订单</el-menu-item>
+                                <el-menu-item index="/page/usercenter/orderlist">我的订单</el-menu-item>
                             </el-menu-item-group>
+
                         </div>
                         <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是卖家</template>
-                                <el-menu-item index="orderlist2">我的订单</el-menu-item>
+                                <el-menu-item index="/page/usercenter/orderlist2">我的订单</el-menu-item>
                                 <el-menu-item index="/page">我的书籍</el-menu-item>
                             </el-menu-item-group>
                         </div>
@@ -36,45 +38,45 @@
                     </el-menu>
                 </el-col>
                 <el-col :span="20">
-                    <router-view></router-view>
+                    <transition name="fade" mode="out-in"><router-view></router-view></transition>
                 </el-col>
             </el-row>
         </div>
+
     </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      breadcrumb: [
-        {
-          path: "/",
-          name: "首页"
+    export default {
+      data () {
+        return {
+          breadcrumb: [{
+            path: '/',
+            name: '首页'
+          }]
+        };
+      },
+      methods: {
+        handelIndex (item) {
+          let {index, indexPath} = item;
+          console.log(item.index);
         }
-      ]
-    };
-  },
-  methods: {
-    handelIndex(item) {
-      let { index, indexPath } = item;
+      }
     }
-  }
-};
 </script>
 
 <style lang="scss" scoped>
-.userCenter {
-  padding: 0.2rem 2.5rem;
-  .breadcrumb {
-    padding: 0.2rem;
-    border-bottom: 1px solid #dddddd;
-  }
-  .content {
-    margin-top: 0.3rem;
-    .menu_box {
-      margin-top: 0.2rem;
+    .usercenter {
+        padding: 0.2rem 2.5rem;
+        .breadcrumb {
+            padding: 0.2rem;
+            border-bottom: 1px solid #dddddd;
+        }
+        .content {
+            margin-top: 0.3rem;
+            .menu_box {
+                margin-top: 0.2rem;
+            }
+        }
     }
-  }
-}
 </style>

@@ -2,6 +2,25 @@
     <div>
         <el-row>
             <div class="typeTab">
+                <!--
+                <el-form :inline="true" :model="formSearch" size="mini">
+                    <el-col :span="12">
+                        <el-form-item label="查询">
+                            <el-input v-model="formSearch.orderNo" placeholder="订单号/商品名称"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="10">
+                        <el-form-item label="商品名称">
+                            <el-input v-model="formSearch.bookName" placeholder="请输入商品名称"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-form-item>
+                            <el-button type="primary">查询</el-button>
+                        </el-form-item>
+                    </el-col>
+                </el-form>
+                -->
                 <el-table :data="items.filter(data => !search || data.orderNo.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
                           fit style="width: 100%">
                     <el-table-column prop="orderNo" label="订单号"></el-table-column>
@@ -17,6 +36,9 @@
                             </el-popover>
                         </template>
                     </el-table-column>
+                    <!--
+                    <el-table-column prop="address" label="地址" width="260" :formatter="formatter" show-overflow-tooltip></el-table-column>
+                    -->
                     <el-table-column prop="status" label="订单状态" :filters="filter"
                             :filter-method="filterTag"
                             filter-placement="bottom-end">
