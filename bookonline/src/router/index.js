@@ -11,6 +11,7 @@ import userInfo from 'src/page/home/userInfo.vue'
 import orderList from 'src/page/home/orderList.vue'
 import orderList2 from 'src/page/home/orderList2.vue'
 import editInfo from 'src/page/home/editInfo.vue'
+import BookDetail from 'src/page/home/bookDetail.vue'
 
 
 Vue.use(VueRouter)
@@ -46,6 +47,11 @@ export const router = new VueRouter({
           path:'search/:keyword',//搜索结果页
           name: 'searchResult',
           component: SearchResult
+        },
+        {
+          path:'bookDetail/:bookId',//图书详情页
+          name: 'bookDetail',
+          component: BookDetail
         },
         {
           path: 'usercenter',//个人中心

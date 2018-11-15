@@ -9,7 +9,7 @@
             <div class="book_author" :title="item.author">{{ item.author }}</div>
           </div>
         </div>
-        <div class="book_money">￥{{ item.money.toFixed(2) }}</div>
+        <div class="book_money">￥{{ item.sellingPrice.toFixed(2) }}</div>
       </div>
     </div>
     
@@ -25,6 +25,7 @@
 
 <script type="text/javascript">
 import domUtil from "src/assets/js/domUtils.js";
+import { BookService } from "src/service/book.js";
 
 export default {
   data() {
@@ -64,6 +65,7 @@ export default {
     },
 
     gotoBookDetail(item) {
+      BookService.saveBook(item);
       this.$router.push({
         name: "bookDetail",
         params: {
@@ -101,6 +103,7 @@ export default {
 
         img {
           width: 100%;
+          height: 1.76rem;
           cursor: pointer;
         }
 
