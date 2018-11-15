@@ -75,7 +75,7 @@ export default {
         this.showPswNullError = true;
         return;
       }
-      let userInfoService = await AccountService.userlogin({
+      let userInfo = await AccountService.userlogin({
         account: this.userAccount,
         password: this.password
       });

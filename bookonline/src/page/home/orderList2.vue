@@ -40,7 +40,7 @@
 </template>
 
 <script>
-  import {orderList} from "../../service/orderList";
+  import { OrderService } from "../../service/order";
 
   export default {
     data () {
@@ -56,7 +56,7 @@
       };
     },
     mounted () {
-      this.items = orderList;
+      this.initData();
     },
     methods: {
       formatter (row, column) {
@@ -72,6 +72,10 @@
       },
       handleClick (row) {
         console.log(row.orderNo);
+      },
+      async initData() {
+        this.items = await OrderService.getOrderList();
+        console.log(this.items);
       }
     }
   }

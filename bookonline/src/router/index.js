@@ -6,11 +6,11 @@ import Register from 'src/page/account/register/register.vue'
 import Page from 'src/page/home/page.vue'
 import Home from 'src/page/home/home.vue'
 import SearchResult from 'src/page/home/searchResult.vue'
-import userCenter from 'src/page/home/usercenter.vue'
-import userInfo from 'src/page/home/userinfo.vue'
-import orderList from 'src/page/home/orderlist.vue'
+import userCenter from 'src/page/home/userCenter.vue'
+import userInfo from 'src/page/home/userInfo.vue'
+import orderList from 'src/page/home/orderList.vue'
 import orderList2 from 'src/page/home/orderList2.vue'
-import editInfo from 'src/page/home/editinfo.vue'
+import editInfo from 'src/page/home/editInfo.vue'
 
 
 Vue.use(VueRouter)

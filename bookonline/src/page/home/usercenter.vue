@@ -10,18 +10,19 @@
             <el-row :gutter="20">
                 <el-col :span="4">
                     <el-menu active-text-color="#8c222c"
+                             :default-active="$route.path"
                              router>
                         <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是买家</template>
                                 <el-menu-item index="/page">购物车</el-menu-item>
-                                <el-menu-item index="orderlist">我的订单</el-menu-item>
+                                <el-menu-item index="/page/usercenter/orderlist">我的订单</el-menu-item>
                             </el-menu-item-group>
                         </div>
                         <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是卖家</template>
-                                <el-menu-item index="orderlist2">我的订单</el-menu-item>
+                                <el-menu-item index="/page/usercenter/orderlist2">我的订单</el-menu-item>
                                 <el-menu-item index="/page">我的书籍</el-menu-item>
                             </el-menu-item-group>
                         </div>

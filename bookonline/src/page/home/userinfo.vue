@@ -61,8 +61,12 @@ export default {
       };
     },
     mounted () {
-      this.items = UserInfoService.getInfo();
-      console.log(this.items);
+      this.initData();
+    },
+    methods: {
+      async initData() {
+        this.items = await UserInfoService.getInfo();
+      }
     }
 }
 </script>
