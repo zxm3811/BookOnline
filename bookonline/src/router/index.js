@@ -6,6 +6,7 @@ import Register from 'src/page/account/register/register.vue'
 import Page from 'src/page/home/page.vue'
 import Home from 'src/page/home/home.vue'
 import SearchResult from 'src/page/home/searchResult.vue'
+import BookDetail from 'src/page/home/bookDetail.vue'
 import UserCenter from 'src/page/home/userCenter.vue'
 import UserInfo from 'src/page/home/userInfo.vue'
 import OrderList from 'src/page/home/orderList.vue'
@@ -43,6 +44,11 @@ export const router = new VueRouter({
           path:'search/:keyword',//搜索结果页
           name: 'searchResult',
           component: SearchResult
+        },
+        {
+          path:'bookDetail/:bookId',//图书详情页
+          name: 'bookDetail',
+          component: BookDetail
         },
         {
           path: 'userCenter',//个人中心

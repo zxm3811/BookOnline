@@ -28,8 +28,6 @@ export const BookService = {
       return bookTabs;
     }
     let allBooks = JSON.parse(JSON.stringify(books));
-    // let allBooks = Object.assign([], books);
-    // let allBooks = books;
     for (let i = 1; i < bookTabs.length; i++) {
       for(let j = 0; j < allBooks.length; j++) {
         if(bookTabs[i].type === allBooks[j].type) {
@@ -128,7 +126,15 @@ export const BookService = {
       total: 0
     },
     ];
-  }
+  },
+
+  saveBook: (book) => {
+    store.dispatch('bookInfo/saveBook', book);
+  },
+
+  getBookInfo: () => {
+    return store.getters['bookInfo/getBookInfo'];
+  },
 }
 
 /**

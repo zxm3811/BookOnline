@@ -1,7 +1,3 @@
-import {
-  SAVE_USER_STATE
-} from '../mutation-types'
-
 const state = {
   userInfo: {
     token: '',
@@ -53,7 +49,7 @@ const actions = {
   saveUserState({
     commit
   }, userInfo) {
-    commit('SAVE_USER_STATE', userInfo);
+    commit("SAVE_USER_STATE", userInfo);
   },
 
   updateUserInfo({
@@ -77,7 +73,7 @@ const mutations = {
   SAVE_TOKEN: (state, token) => {
     state.userInfo.token = token
   },
-  [SAVE_USER_STATE](state, userInfo) {
+  SAVE_USER_STATE: (state, userInfo) => {
     state.userInfo.account = userInfo.account
     state.userInfo.password = userInfo.password
     state.userInfo.address = userInfo.address
