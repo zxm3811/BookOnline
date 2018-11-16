@@ -1,6 +1,6 @@
 <template>
 	<div class="search_bar">
-    <input v-model="keyword" type="search" placeholder="搜索图书" @keyup.enter="gotoSearchResult" />
+    <input v-model="keyword" type="search" placeholder="搜索书名、作者、ISBN" @keyup.enter="gotoSearchResult" />
 	</div>
 </template>
 
@@ -49,6 +49,9 @@ export default {
     width: 100%;
     height: 100%;
     padding: 0 0.1rem;
+    outline: none;
+    -webkit-appearance: none;
+    border: 1px solid #dddddd;
   }
 }
 </style>

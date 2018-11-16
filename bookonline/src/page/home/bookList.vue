@@ -15,7 +15,7 @@
     
     <el-pagination
       @current-change="handleCurrentChange"
-      :current-page="currentPage"
+      :current-page.sync="currentPage"
       :page-size="pageSize"
       layout="total, prev, pager, next, jumper"
       :total="total">
@@ -49,7 +49,7 @@ export default {
       if(this.bookList) {
         this.total = this.bookList.length;
         this.currentPage = 1;
-        this.currentBookList = this.bookList.slice(0, 12);
+        this.currentBookList = this.bookList.slice(0, this.pageSize);
       }
     }
   },
@@ -59,8 +59,7 @@ export default {
 
   methods: {
     handleCurrentChange(val) {
-      this.currentPage = val;
-      this.currentBookList = this.bookList.slice((val-1)*12, val*12);
+      this.currentBookList = this.bookList.slice((val-1)*this.pageSize, val*this.pageSize);
       domUtil.setScrollTop(0);
     },
 
