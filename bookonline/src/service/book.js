@@ -9,10 +9,22 @@ const API = {
   getAllBooks: {
     url: "/book/getAllBooks",
     useFake: true
+  },
+  search: {
+    url: "/book/search",
+    useFake: true
   }
 }
 
 export const BookService = {
+  searchBooks: async (keyword) => {
+    let response = await search(keyword);
+    if (!response || response.hr != 0 || !response.data) {
+      return;
+    }
+    return response.data;
+  },
+
   getAllTypeBooks: async () => {
     let response = await getAllBooks();
     if (!response || response.hr != 0 || !response.data) {
@@ -147,3 +159,13 @@ const getAllBooks = () => {
     return request(API.getAllBooks.url, {}, 'GET')
   }
 };
+
+const search = (keyword) => {
+  if (API.search.useFake) {
+    return FakeBookService.search();
+  } else {
+    return request(API.search.url, {
+      keyword: keyword
+    }, 'GET')
+  }
+}
