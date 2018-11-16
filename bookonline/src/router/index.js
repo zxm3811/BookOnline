@@ -6,10 +6,13 @@ import Register from 'src/page/account/register/register.vue'
 import Page from 'src/page/home/page.vue'
 import Home from 'src/page/home/home.vue'
 import SearchResult from 'src/page/home/searchResult.vue'
+import userCenter from 'src/page/home/userCenter.vue'
+import userInfo from 'src/page/home/userInfo.vue'
+import sellerOrderList from 'src/page/home/sellerOrderList.vue'
+import buyerOrderList from 'src/page/home/buyerOrderList.vue'
+import editInfo from 'src/page/home/editInfo.vue'
 import BookDetail from 'src/page/home/bookDetail.vue'
-import UserCenter from 'src/page/home/userCenter.vue'
-import UserInfo from 'src/page/home/userInfo.vue'
-import OrderList from 'src/page/home/orderList.vue'
+
 
 Vue.use(VueRouter)
 
@@ -53,18 +56,28 @@ export const router = new VueRouter({
         {
           path: 'userCenter',//个人中心
           name: 'userCenter',
-          component: UserCenter,
+          component: userCenter,
           redirect: '/page/userCenter/userInfo',
           children:[
             {
-              path: 'userInfo',
+              path: 'userInfo',//用户信息
               name: 'userInfo',
-              component: UserInfo
+              component: userInfo
             },
             {
-              path: 'orderList',
-              name: 'orderList',
-              component: OrderList
+              path: 'buyerOrderList',//买家订单
+              name: 'buyerOrderList',
+              component: buyerOrderList
+            },
+            {
+              path: 'sellerOrderList',//卖家订单
+              name: 'sellerOrderList',
+              component: sellerOrderList
+            },
+            {
+              path: 'editInfo',//修改信息
+              name: 'editInfo',
+              component: editInfo
             }
           ]
         },

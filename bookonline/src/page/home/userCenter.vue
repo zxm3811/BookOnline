@@ -1,5 +1,5 @@
 <template>
-    <div class="userCenter">
+    <div class="usercenter">
         <div class="breadcrumb">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -16,14 +16,14 @@
                             <el-menu-item-group>
                                 <template slot="title">我是买家</template>
                                 <el-menu-item index="/page">购物车</el-menu-item>
-                                <el-menu-item index="/page/userCenter/orderList">我的订单</el-menu-item>
+                                <el-menu-item index="/page/userCenter/buyerOrderList">我的订单</el-menu-item>
                             </el-menu-item-group>
 
                         </div>
                         <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是卖家</template>
-                                <el-menu-item index="/page">我的订单</el-menu-item>
+                                <el-menu-item index="/page/userCenter/sellerOrderList">我的订单</el-menu-item>
                                 <el-menu-item index="/page">我的书籍</el-menu-item>
                             </el-menu-item-group>
                         </div>
@@ -32,7 +32,7 @@
                                 <template slot="title">更多</template>
                                 <el-menu-item index="/page/userCenter/userInfo">个人信息</el-menu-item>
                                 <el-menu-item index="/page">修改密码</el-menu-item>
-                                <el-menu-item index="/page">修改信息</el-menu-item>
+                                <el-menu-item index="/page/userCenter/editInfo">修改信息</el-menu-item>
                             </el-menu-item-group>
                         </div>
                     </el-menu>
@@ -58,16 +58,12 @@ export default {
       ]
     };
   },
-  methods: {
-    handelIndex(item) {
-      let { index, indexPath } = item;
-    }
-  }
+  methods: {}
 };
 </script>
 
 <style lang="scss" scoped>
-.userCenter {
+.usercenter {
   padding: 0.2rem 2.5rem;
   .breadcrumb {
     padding: 0.2rem;

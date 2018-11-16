@@ -93,7 +93,7 @@ export default {
         this.showConfirmPwsError = true;
         return;
       }
-      let userInfo = await AccountService.userRegister({
+      let userInfoService = await AccountService.userRegister({
         account: this.userAccount,
         password: this.password
       });
@@ -204,7 +204,7 @@ export default {
         font-size: 0.15rem;
         color: #e23c30;
       }
-      
+
       .login_text {
         margin-top: 0.2rem;
         font-size: 0.22rem;
