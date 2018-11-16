@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import {orderList} from "../../service/orderList";
+  import { OrderService } from "../../service/order";
 
 export default {
   data () {
@@ -79,7 +79,7 @@ export default {
     };
   },
   mounted () {
-    this.items = orderList;
+    this.initData();
   },
   methods: {
     formatter (row, column) {
@@ -95,6 +95,10 @@ export default {
     },
     handleClick (row) {
       console.log(row.orderNo);
+    },
+    async initData() {
+      this.items = await OrderService.getOrderList();
+      console.log(this.items);
     }
   }
 }

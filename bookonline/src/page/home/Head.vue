@@ -65,18 +65,18 @@ export default {
 		},
 
 		gotoMyOrder() {
-			this.$router.push("/page/usercenter/orderlist");
+			this.$router.push("/page/userCenter/buyerOrderList");
 		},
 
 		gotoUserCenter() {
-			this.$router.push("/page/usercenter");
+			this.$router.push("/page/userCenter");
 		},
 
     async handleCommand(command) {
       if (command == "userInfo") {
-        this.$router.push("/page/usercenter/userinfo");
+        this.$router.push("/page/userCenter/userInfo");
       } else if (command == "myOrder") {
-        this.$router.push("/page/usercenter/orderlist");
+        this.$router.push("/page/userCenter/buyerOrderList");
       } else if (command == "sailerCenter") {
         this.$router.push("/page/sailerCenter");
       } else if (command == "exit") {

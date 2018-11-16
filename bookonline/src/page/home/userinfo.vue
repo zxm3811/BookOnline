@@ -52,21 +52,21 @@
 </template>
 
 <script>
-import { UserInfoService } from "../../service/userInfo";
+import {UserInfoService} from "../../service/userInfo";
 
 export default {
     data () {
       return {
-        items: ''
+        items: {}
       };
     },
     mounted () {
-      this.initData();
+    this.initData();
     },
     methods: {
-      async initData() {
-        this.items = await UserInfoService.getInfo();
-      }
+    async initData() {
+      this.items = await UserInfoService.getInfo();
+    }
     }
 }
 </script>

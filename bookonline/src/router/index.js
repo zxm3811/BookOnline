@@ -8,8 +8,8 @@ import Home from 'src/page/home/home.vue'
 import SearchResult from 'src/page/home/searchResult.vue'
 import userCenter from 'src/page/home/userCenter.vue'
 import userInfo from 'src/page/home/userInfo.vue'
-import orderList from 'src/page/home/orderList.vue'
-import orderList2 from 'src/page/home/orderList2.vue'
+import sellerOrderList from 'src/page/home/sellerOrderList.vue'
+import buyerOrderList from 'src/page/home/buyerOrderList.vue'
 import editInfo from 'src/page/home/editInfo.vue'
 import BookDetail from 'src/page/home/bookDetail.vue'
 
@@ -54,29 +54,29 @@ export const router = new VueRouter({
           component: BookDetail
         },
         {
-          path: 'usercenter',//个人中心
-          name: 'usercenter',
+          path: 'userCenter',//个人中心
+          name: 'userCenter',
           component: userCenter,
-          redirect: '/page/usercenter/userinfo',
+          redirect: '/page/userCenter/userInfo',
           children:[
             {
-              path: 'userinfo',//用户信息
-              name: 'userinfo',
+              path: 'userInfo',//用户信息
+              name: 'userInfo',
               component: userInfo
             },
             {
-              path: 'orderlist',//买家订单
-              name: 'orderlist',
-              component: orderList
+              path: 'buyerOrderList',//买家订单
+              name: 'buyerOrderList',
+              component: buyerOrderList
             },
             {
-              path: 'orderlist2',//卖家订单
-              name: 'orderlist2',
-              component: orderList2
+              path: 'sellerOrderList',//卖家订单
+              name: 'sellerOrderList',
+              component: sellerOrderList
             },
             {
-              path: 'editinfo',//修改信息
-              name: 'editinfo',
+              path: 'editInfo',//修改信息
+              name: 'editInfo',
               component: editInfo
             }
           ]
