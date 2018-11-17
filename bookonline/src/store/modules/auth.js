@@ -3,7 +3,18 @@ const state = {
     token: '',
     account: '',
     password: '',
-    address: '',
+    name: '',   //new start
+    email: '',
+    phone: '',
+    address: {
+      province: '',
+      city: '',
+      district: '',
+      street: '',
+      mark: '',
+    },
+    bankNo: '',
+    balance: '',//new end
     gender: '',
     age: null,
     avatar: '',
@@ -23,8 +34,35 @@ const getters = {
   password: state => {
     return state.userInfo.password
   },
-  address: state => {
-    return state.userInfo.address
+  name: state => {
+    return state.userInfo.name
+  },
+  email: state => {
+    return state.userInfo.email
+  },
+  phone: state => {
+    return state.userInfo.state
+  },
+  addrProv: state => {
+    return state.userInfo.address.province
+  },
+  addrCity: state => {
+    return state.userInfo.address.city
+  },
+  addrDist: state => {
+    return state.userInfo.address.district
+  },
+  addrStreet: state => {
+    return state.userInfo.address.street
+  },
+  addrMark: state => {
+    return state.userInfo.address.mark
+  },
+  bankNo: state => {
+    return state.userInfo.bankNo
+  },
+  balance: state => {
+    return state.userInfo.balance
   },
   gender: state => {
     return state.userInfo.gender
@@ -76,7 +114,18 @@ const mutations = {
   SAVE_USER_STATE: (state, userInfo) => {
     state.userInfo.account = userInfo.account
     state.userInfo.password = userInfo.password
-    state.userInfo.address = userInfo.address
+    state.userInfo.name = userInfo.name
+    state.userInfo.email = userInfo.email
+    state.userInfo.phone = userInfo.phone
+    /*
+    state.userInfo.address.province = userInfo.address.province
+    state.userInfo.address.city = userInfo.address.city
+    state.userInfo.address.district = userInfo.address.district
+    state.userInfo.address.street = userInfo.address.street
+    state.userInfo.address.mark = userInfo.address.mark
+    */
+    state.userInfo.bankNo = userInfo.bankNo
+    state.userInfo.balance = userInfo.balance
     state.userInfo.gender = userInfo.gender
     state.userInfo.age = userInfo.age
     state.userInfo.avatar = userInfo.photoUrl
@@ -86,7 +135,18 @@ const mutations = {
     state.userInfo.token = ''
     state.userInfo.account = ''
     state.userInfo.password = ''
-    state.userInfo.address = ''
+    state.userInfo.name = ''
+    state.userInfo.email = ''
+    state.userInfo.phone = ''
+    /*
+    state.userInfo.address.province = ''
+    state.userInfo.address.city = ''
+    state.userInfo.address.district = ''
+    state.userInfo.address.street = ''
+    state.userInfo.address.mark = ''
+    */
+    state.userInfo.bankNo = ''
+    state.userInfo.balance = ''
     state.userInfo.gender = ''
     state.userInfo.age = null
     state.userInfo.avatar = ''
