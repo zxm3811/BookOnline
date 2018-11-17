@@ -11,19 +11,19 @@
                     </div>
                     <div class="person_detail">
                         <div class="detail">
-                            <span>{{items.name}}</span>
+                            <span>{{this.name}}</span>
                         </div>
                         <div class="detail">
                             <p>邮箱：
-                                <strong>{{items.email}}</strong>
+                                <strong>{{this.email}}</strong>
                             </p>
                             <p>手机：
-                                <strong>{{items.phone}}</strong>
+                                <strong>{{this.phone}}</strong>
                             </p>
                             <p>收货地址：
-                                <strong v-for="(addr, index) in items.address" :key="index" v-if="addr.default == 1">
-                                    {{addr.country}} {{addr.province}}省 {{addr.city}}市
-                                    {{addr.district}}区/镇 {{addr.street}}街道 {{addr.mark}}
+                                <strong>
+                                    {{this.addr.province}}省 {{this.addr.city}}市
+                                    {{this.addr.district}}区/镇 {{this.addr.street}}街道 {{this.addr.mark}}
                                 </strong>
                             </p>
                         </div>
@@ -39,10 +39,10 @@
                 <div class="right_body">
                     <div>
                         <p>我的资金账号：
-                            <strong>{{items.accountno}}</strong>
+                            <strong>{{this.bankNo}}</strong>
                         </p>
                         <p>总金额：
-                            <strong style="color: red">{{items.balance}} 元</strong>
+                            <strong style="color: red">{{this.balance}} 元</strong>
                         </p>
                     </div>
                 </div>
@@ -52,20 +52,43 @@
 </template>
 
 <script>
-import { UserInfoService } from "../../service/userInfo";
+import {AccountService} from "../../service/account";
 
 export default {
   data() {
     return {
-      items: {}
+      name: '',
+      email: '',
+      phone: '',
+      addr: {
+        province: "",
+        city: "",
+        district: "",
+        street: "",
+        mark: "",
+      },
+      bankNo: '',
+      balance: ''
     };
   },
-  mounted() {
+  created() {
     this.initData();
+    console.log(AccountService.getUserInfo());
   },
   methods: {
     async initData() {
-      this.items = await UserInfoService.getInfo();
+      let items = await AccountService.getUserInfo();
+      this.name = items.name;
+      this.email = items.email;
+      this.phone = items.phone;
+      this.addr.province = items.address.province;
+      this.addr.district = items.address.district;
+      this.addr.city = items.address.city;
+      this.addr.street = items.address.street;
+      this.addr.mark = items.address.mark;
+      this.bankNo = items.bankNo;
+      this.balance = items.balance;
+      console.log(this.addr)
     }
   }
 };

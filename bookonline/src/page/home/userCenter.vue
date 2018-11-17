@@ -12,7 +12,7 @@
                     <el-menu active-text-color="#8c222c"
                              :default-active="$route.path"
                              router>
-                        <div class="menu_box" router>
+                        <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是买家</template>
                                 <el-menu-item index="/page">购物车</el-menu-item>
@@ -50,15 +50,8 @@
 export default {
   data() {
     return {
-      breadcrumb: [
-        {
-          path: "/",
-          name: "首页"
-        }
-      ]
     };
   },
-  methods: {}
 };
 </script>
 

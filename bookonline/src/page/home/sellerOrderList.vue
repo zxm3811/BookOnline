@@ -4,19 +4,43 @@
             <div class="typeTab">
                 <el-table :data="items.filter(data => !search || data.orderNo.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
                           fit style="width: 100%">
-                    <el-table-column prop="orderNo" label="订单号"></el-table-column>
-                    <el-table-column prop="book" label="商品名称" show-overflow-tooltip></el-table-column>
-                    <el-table-column prop="reciver" label="收件人">
-                        <template slot-scope="scope">
-                            <el-popover trigger="hover" placement="top">
-                                <p>姓名: {{ scope.row.reciver }}</p>
-                                <p>收货地址: {{ scope.row.addrString }}</p>
-                                <div slot="reference" class="name-wrapper">
-                                    {{ scope.row.reciver }}
+                    <el-table-column type="expand">
+                        <template slot-scope="props">
+                            <el-form label-position="left" inline class="demo-table-expand">
+                                <div class="expandMsg">
+                                    <div v-for="(items, index) in props.row.book" :key="index">
+                                        <el-col>
+                                            <el-form-item style="cursor: pointer;" label="商品名称">
+                                                <span @click="gotoBookDetail(items)">{{ items.name }}</span>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col>
+                                            <el-form-item label="商品单价">
+                                                <span>{{ items.sellingPrice }} 元</span>
+                                            </el-form-item>
+                                        </el-col>
+                                    </div>
+                                    <el-col>
+                                        <el-form-item label="收货地址">
+                                            <span>{{ props.row.addrString }}</span>
+                                        </el-form-item>
+                                    </el-col>
+                                    <el-col>
+                                        <el-form-item label="商品件数">
+                                            <span>{{ props.row.bookNum }} 件</span>
+                                        </el-form-item>
+                                    </el-col>
+                                    <el-col>
+                                        <el-form-item label="商品总价">
+                                            <span>{{ props.row.totalPrice }} 元</span>
+                                        </el-form-item>
+                                    </el-col>
                                 </div>
-                            </el-popover>
+                            </el-form>
                         </template>
                     </el-table-column>
+                    <el-table-column prop="orderNo" label="订单号"></el-table-column>
+                    <el-table-column prop="reciver" label="收件人"></el-table-column>
                     <el-table-column prop="status" label="订单状态" :filters="filter"
                                      :filter-method="filterTag"
                                      filter-placement="bottom-end">
@@ -29,19 +53,21 @@
                             <el-input v-model="search" size="mini" placeholder="订单号/商品名"/>
                         </template>
                         <template slot-scope="scope">
-                            <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                            <el-button type="text" size="small">删除</el-button>
+                            <el-button @click="deliver(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '2'">通知发货</el-button>
+                            <el-button @click="handleClick(scope.row)" type="danger" size="small" plain>删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
             </div>
         </el-row>
+
     </div>
 </template>
 
 <script>
   import { OrderService } from "../../service/order";
-
+  import domUtil from "src/assets/js/domUtils.js";
+  import { BookService } from "src/service/book.js";
   export default {
     data () {
       return {
@@ -70,12 +96,25 @@
         const property = column['property'];
         return row[property] === value;
       },
+      deliver (row) {
+        console.log(row.orderNo);
+      },
       handleClick (row) {
         console.log(row.orderNo);
       },
       async initData() {
         this.items = await OrderService.getOrderList();
-        console.log(this.items);
+      },
+      gotoBookDetail(item) {
+        event.stopPropagation();
+        console.log(item.id);
+        BookService.saveBook(item);
+        this.$router.push({
+          name: "bookDetail",
+          params: {
+            bookId: item.id
+          }
+        });
       }
     }
   }
@@ -84,8 +123,22 @@
 <style lang="scss" scoped>
     .typeTab {
         font-size: 0.12rem;
-        .searchBox {
-            padding: 1rem;
+        .expandMsg {
+            margin-left: 0.14rem;
         }
+    }
+</style>
+
+<style>
+    .demo-table-expand {
+        font-size: 0;
+    }
+    .demo-table-expand label {
+        width: 90px;
+        color: #99a9bf;
+    }
+    .demo-table-expand .el-form-item {
+        margin-right: 0;
+        margin-bottom: 0;
     }
 </style>

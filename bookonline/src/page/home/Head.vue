@@ -78,7 +78,7 @@ export default {
       } else if (command == "myOrder") {
         this.$router.push("/page/userCenter/buyerOrderList");
       } else if (command == "sailerCenter") {
-        this.$router.push("/page/sailerCenter");
+        this.$router.push("/page/userCenter/sellerOrderList");
       } else if (command == "exit") {
         await AccountService.logout();
         window.location.reload();
