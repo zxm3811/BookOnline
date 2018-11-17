@@ -63,17 +63,21 @@ export default {
     };
   },
   
-  async mounted() {
-    this.userInfo = await AccountService.getUserInfo();
-    this.bookList = await AccountService.getSellerBooks(this.userInfo.account);
-    if(this.bookList && this.bookList.length != 0) {
-      this.total = this.bookList.length;
-      this.currentPage = 1;
-      this.currentBookList = this.bookList.slice(0, this.pageSize);
-    }
+  mounted() {
+    this.initData();
   },
 
   methods: {
+    async initData() {
+      this.userInfo = await AccountService.getUserInfo();
+      this.bookList = await AccountService.getSellerBooks(this.userInfo.account);
+      if(this.bookList && this.bookList.length != 0) {
+        this.total = this.bookList.length;
+        this.currentPage = 1;
+        this.currentBookList = this.bookList.slice(0, this.pageSize);
+      }
+    },
+
     handleCurrentChange(val) {
       this.currentBookList = this.bookList.slice((val-1)*this.pageSize, val*this.pageSize);
       domUtil.setScrollTop(0);
@@ -93,8 +97,14 @@ export default {
       this.$router.push("/page/userCenter/putOnBook");
     },
 
-    pullOffMyBook(item) {
-
+    async pullOffMyBook(item) {
+      let response = await AccountService.pullOffMyBook(item.id);
+      if(response) {
+        this.$toast.text("下架成功");
+        this.initData();
+      } else {
+        this.$toast.text(response.message);
+      }
     }
   }
 };
