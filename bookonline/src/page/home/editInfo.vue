@@ -3,12 +3,12 @@
         <el-form :model="formData" :rules="rules" ref="formData" label-width="100px" label-position="right" size="medium ">
 
             <el-form-item label="帐号">
-                {{this.formData.accountNo}}
+                {{this.formData.account}}
             </el-form-item>
             <el-form-item label="用户名" prop="name">
                 <el-row>
                     <el-col :span="8">
-                        <el-input v-model="formData.username"></el-input>
+                        <el-input v-model="formData.name"></el-input>
                     </el-col>
                 </el-row>
             </el-form-item>
@@ -27,27 +27,25 @@
                 </el-row>
             </el-form-item>
             <el-form-item label="收货地址" prop="addr" required>
-                <select-addr @cityData="cityData" :inputAddr="this.formData.reciveAddress.addr"></select-addr>
+                <select-addr @cityData="cityData" :inputAddr="this.formData.addr"></select-addr>
             </el-form-item>
-            <el-form-item label="收件人姓名">
+            <el-form-item label="收件人姓名" prop="receiverName">
                 <el-row>
                     <el-col :span="8">
-                        <el-input v-model="formData.reciveAddress.reciverName"></el-input>
+                        <el-input v-model="formData.receiverName"></el-input>
                     </el-col>
                 </el-row>
             </el-form-item>
-            <el-form-item label="收件人电话">
+            <el-form-item label="收件人电话" prop="receiverPhone">
                 <el-row>
                     <el-col :span="8">
-                        <el-input v-model="formData.reciveAddress.reciverPhone"></el-input>
+                        <el-input v-model="formData.receiverPhone"></el-input>
                     </el-col>
                 </el-row>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="submitForm('formData')">保存</el-button>
             </el-form-item>
-
-
         </el-form>
 
     </div>
@@ -56,22 +54,36 @@
 
 <script>
   import SelectAddr from './selectaddr'
+  import {AccountService} from "../../service/account";
+
   export default {
     data () {
       var checkUserName = (rule, value, callback) => {
-        console.log(value);
         if (!this.formData.username && !value) {
           callback(new Error('请输入用户名'));
         }
       };
-      var checkAddr = (rule, value, callback) => {
-        if (value.sheng === '' || value.shi === '' || value.qu === '' ||
-            value.jiedao === '' || value.mark === '') {
-          callback(new Error('请完善地址'));
+      var checkReceiverName = (rule, value, callback) => {
+        if (!this.formData.receiverName && !value) {
+          callback(new Error('请输入收件人'));
         }
       };
+      var checkReceiverPhone = (rule, value, callback) => {
+        if (!value) {
+          callback(new Error('电话号码不可为空'));
+        } else if (value.length !== 11) {
+          callback(new Error('电话号码不是11位'));
+        }
+      };
+      var checkAddr = (rule, value, callback) => {
+        if (value.province === '' || value.city === '' ||
+            value.district === '' || value.street === '' ||
+            value.mark === '') {
+          callback(new Error('请完善地址信息'));
+        }
+
+      };
       var checkPhone = (rule, value, callback) => {
-        console.log(value);
         if (!value) {
           callback(new Error('电话号码不可为空'));
         } else if (value.length !== 11) {
@@ -85,21 +97,19 @@
       };
       return {
         formData: {
-          accountNo: 'admin',
-          username: 'dd-ke',
-          email: '3838@qq.com',
-          phone: '11111111111',
-          reciveAddress: {
-            addr: {
-              sheng: '广东省',
-              shi: '珠海市',
-              qu: '香洲区',
-              jiedao: '梅华街道',
-              mark: '。。。'
-            },
-            reciverName: '戴坤恩',
-            reciverPhone: '11111111111'
-          }
+          account: '',
+          name: '',
+          email: '',
+          phone: '',
+          addr: {
+            province: '',
+            city: '',
+            district: '',
+            street: '',
+            mark: ''
+          },
+          receiverName: '',
+          receiverPhone: ''
         },
         rules: {
           name: [
@@ -113,7 +123,13 @@
           ],
           addr: [
             {validator: checkAddr, trigger: 'blur'}
-          ]
+          ],
+          receiverName: [
+            {required: true, validator: checkReceiverName, trigger: 'blur'}
+          ],
+          receiverPhone: [
+            {required: true, validator: checkReceiverPhone, trigger: 'blur'}
+          ],
         }
 
       };
@@ -121,14 +137,16 @@
     components: {
       SelectAddr
     },
+    created () {
+      this.initData();
+    },
     methods: {
       cityData (data) {
-        this.formData.reciveAddress.addr.sheng = data.sheng;
-        this.formData.reciveAddress.addr.shi = data.shi;
-        this.formData.reciveAddress.addr.qu = data.qu;
-        this.formData.reciveAddress.addr.jiedao = data.jiedao;
-        this.formData.reciveAddress.addr.mark = data.mark;
-        //console.log(this.formData.addr);
+        this.formData.addr.province = data.sheng;
+        this.formData.addr.city = data.shi;
+        this.formData.addr.district = data.qu;
+        this.formData.addr.street = data.jiedao;
+        this.formData.addr.mark = data.mark;
       },
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
@@ -140,6 +158,21 @@
           }
         });
         console.log(this.formData);
+      },
+      initData() {
+        let items = AccountService.getUserInfo();
+        this.formData.account = items.account;
+        this.formData.name = items.name;
+        this.formData.email = items.email;
+        this.formData.phone = items.phone;
+        let address = items.receiveAddress.address.split(' ');
+        this.formData.addr.province = address[0];
+        this.formData.addr.city = address[1];
+        this.formData.addr.district = address[2];
+        this.formData.addr.street = address[3];
+        this.formData.addr.mark = address[4];
+        this.formData.receiverName = items.receiveAddress.receiverName;
+        this.formData.receiverPhone = items.receiveAddress.receiverPhone;
       }
     }
   }

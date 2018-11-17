@@ -22,8 +22,17 @@
                             </p>
                             <p>收货地址：
                                 <strong>
-                                    {{this.addr.province}}省 {{this.addr.city}}市
-                                    {{this.addr.district}}区/镇 {{this.addr.street}}街道 {{this.addr.mark}}
+                                    {{this.receiveAddress.address}}
+                                </strong>
+                            </p>
+                            <p>收件人：
+                                <strong>
+                                    {{this.receiveAddress.receiverName}}
+                                </strong>
+                            </p>
+                            <p>收件人电话：
+                                <strong>
+                                    {{this.receiveAddress.receiverPhone}}
                                 </strong>
                             </p>
                         </div>
@@ -60,12 +69,10 @@ export default {
       name: '',
       email: '',
       phone: '',
-      addr: {
-        province: "",
-        city: "",
-        district: "",
-        street: "",
-        mark: "",
+      receiveAddress: {
+        receiverName: '',
+        receiverPhone: '',
+        address: ''
       },
       bankNo: '',
       balance: ''
@@ -73,7 +80,6 @@ export default {
   },
   created() {
     this.initData();
-    console.log(AccountService.getUserInfo());
   },
   methods: {
     async initData() {
@@ -81,14 +87,12 @@ export default {
       this.name = items.name;
       this.email = items.email;
       this.phone = items.phone;
-      this.addr.province = items.address.province;
-      this.addr.district = items.address.district;
-      this.addr.city = items.address.city;
-      this.addr.street = items.address.street;
-      this.addr.mark = items.address.mark;
+      this.receiveAddress.address = items.receiveAddress.address;
+      this.receiveAddress.receiverName = items.receiveAddress.receiverName;
+      this.receiveAddress.receiverPhone = items.receiveAddress.receiverPhone;
       this.bankNo = items.bankNo;
       this.balance = items.balance;
-      console.log(this.addr)
+      console.log(this.receiveAddress);
     }
   }
 };
