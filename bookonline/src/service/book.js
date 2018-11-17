@@ -145,7 +145,7 @@ export const BookService = {
   },
 
   getBookInfo: () => {
-    return store.getters['bookInfo/getBookInfo'];
+    return JSON.parse(JSON.stringify(store.getters['bookInfo/getBookInfo']));
   },
 }
 

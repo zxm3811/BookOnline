@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+  color: rgb(51, 51, 51);
 }
 
 .fade-enter,

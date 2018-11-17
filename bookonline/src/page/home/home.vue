@@ -6,15 +6,11 @@
       </el-breadcrumb>
     </div>
     <div class="content">
-      <el-row :gutter="20">
-        <el-col :span="24">
-          <el-tabs tab-position="left">
-            <el-tab-pane v-for="(tab, index) in bookTabs" :key="index" :label="tab.title">
-              <book-list :bookList="tab.items"></book-list>
-            </el-tab-pane>
-          </el-tabs>
-        </el-col>
-      </el-row>
+      <el-tabs tab-position="left">
+        <el-tab-pane v-for="(tab, index) in bookTabs" :key="index" :label="tab.title">
+          <book-list :bookList="tab.items"></book-list>
+        </el-tab-pane>
+      </el-tabs>
     </div>
 
     </div>
