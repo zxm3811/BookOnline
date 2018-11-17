@@ -11,7 +11,7 @@
       <div class="address_list_container">
         <div class="head">
           <div class="title">收货地址</div>
-          <div class="operation">管理收货地址</div>
+          <div class="operation" @click="gotoModifyAddress">管理收货地址</div>
         </div>
         <div v-if="userInfo.receiveAddress" class="address_container">
           <div class="receiver_name">{{ userInfo.receiveAddress.receiverName }}</div>
@@ -47,7 +47,7 @@
         <div class="rmb">&nbsp;¥</div>
         <div class="total_price">{{ totalPrice }}</div>
       </div>
-      <div class="confirm">
+      <div class="confirm" @click="confirmPurchase">
         <div>确认并提交订单</div>
       </div>
     </div>
@@ -56,14 +56,14 @@
 </template>
 
 <script>
+import { AccountService } from "src/service/account.js";
 import { BookService } from "src/service/book.js";
-import { AccountService } from "src/service/account";
+import { GoodsService } from "src/service/goods.js";
 
 export default {
   data() {
     return {
       userInfo: {},
-      choosedAddress: 0,
       totalAmount: 0,
       totalPrice: 0,
       purchaseGoods: JSON.parse(this.$route.query.purchaseGoods),
@@ -84,6 +84,34 @@ export default {
         this.totalAmount += goods.amount;
         this.totalPrice += goods.sellingPrice * goods.amount;
       });
+    },
+
+    async confirmPurchase() {
+      let response = await GoodsService.confirmPurchase(this.purchaseGoods);
+      if(response) {
+        let that = this;
+        var time = 3;
+        var interval = setInterval(function() {
+          that.$toast.text("购买成功，" + time + "秒后将跳转到“我的订单”页面");
+          time -= 1;
+          if(time === 0){
+            clearInterval(interval);
+            setTimeout(() => {
+              that.$router.push("/page/userCenter/buyerOrderList");
+            }, 1000);
+          }
+        }, 1010);
+
+        this.purchaseGoods.forEach(goods => {
+          GoodsService.deleteGoodsById(goods.id);
+        });
+      } else {
+        this.$toast.text(response.message);
+      }
+    },
+
+    gotoModifyAddress() {
+      this.$router.push("/page/userCenter/editInfo")
     },
 
     gotoBookDetail(item) {
