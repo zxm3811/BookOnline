@@ -20,6 +20,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -58,6 +59,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -77,6 +79,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -96,6 +99,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -115,6 +119,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -134,6 +139,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -153,6 +159,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -172,6 +179,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -191,6 +199,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -210,6 +219,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -229,6 +239,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -248,6 +259,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -267,6 +279,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -286,6 +299,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -305,6 +319,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -324,6 +339,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -343,6 +359,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -362,6 +379,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -381,6 +399,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -400,6 +419,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -419,6 +439,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -438,6 +459,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -457,6 +479,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -476,6 +499,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -495,6 +519,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -514,6 +539,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -533,6 +559,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -552,6 +579,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -571,6 +599,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -590,6 +619,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -609,6 +639,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -628,6 +659,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -647,6 +679,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -666,6 +699,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -685,6 +719,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -704,6 +739,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -723,6 +759,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -742,6 +779,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -761,6 +799,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -780,6 +819,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -799,6 +839,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -818,6 +859,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -837,6 +879,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -856,6 +899,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -875,6 +919,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -894,6 +939,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -913,6 +959,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -932,6 +979,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -951,6 +999,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -970,6 +1019,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -989,6 +1039,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1008,6 +1059,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1027,6 +1079,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1046,6 +1099,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1065,6 +1119,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1084,6 +1139,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1103,6 +1159,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1122,6 +1179,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1141,6 +1199,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1160,6 +1219,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1179,6 +1239,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1198,6 +1259,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1217,6 +1279,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1236,6 +1299,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1255,6 +1319,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1274,6 +1339,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1293,6 +1359,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1312,6 +1379,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1331,6 +1399,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1350,6 +1419,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1369,6 +1439,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1388,6 +1459,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1407,6 +1479,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1426,6 +1499,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1445,6 +1519,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1464,6 +1539,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1483,6 +1559,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1502,6 +1579,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1521,6 +1599,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1540,6 +1619,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1559,6 +1639,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1578,6 +1659,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1597,6 +1679,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1616,6 +1699,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1635,6 +1719,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1654,6 +1739,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1673,6 +1759,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1692,6 +1779,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1711,6 +1799,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1730,6 +1819,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1749,6 +1839,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1768,6 +1859,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1787,6 +1879,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1806,6 +1899,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1825,6 +1919,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1844,6 +1939,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1863,6 +1959,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1896,6 +1993,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1953,6 +2051,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1972,6 +2071,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1991,6 +2091,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2010,6 +2111,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2029,6 +2131,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2048,6 +2151,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2067,6 +2171,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2086,6 +2191,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2105,6 +2211,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2124,6 +2231,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2143,6 +2251,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2162,6 +2271,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2181,6 +2291,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2200,6 +2311,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2219,6 +2331,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2238,6 +2351,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2257,6 +2371,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2276,6 +2391,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2295,6 +2411,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2314,6 +2431,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2333,6 +2451,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2352,6 +2471,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2371,6 +2491,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2390,6 +2511,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2409,6 +2531,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2428,6 +2551,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2447,6 +2571,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2466,6 +2591,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2485,6 +2611,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2504,6 +2631,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2523,6 +2651,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2542,6 +2671,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2561,6 +2691,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2580,6 +2711,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2599,6 +2731,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2618,6 +2751,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2637,6 +2771,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2656,6 +2791,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2675,6 +2811,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2694,6 +2831,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2713,6 +2851,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2732,6 +2871,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2751,6 +2891,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2770,6 +2911,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2789,6 +2931,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2808,6 +2951,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2827,6 +2971,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2846,6 +2991,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2865,6 +3011,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2884,6 +3031,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2903,6 +3051,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2922,6 +3071,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2941,6 +3091,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2960,6 +3111,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2979,6 +3131,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2998,6 +3151,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3017,6 +3171,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3036,6 +3191,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3055,6 +3211,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3074,6 +3231,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3093,6 +3251,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3112,6 +3271,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3131,6 +3291,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3150,6 +3311,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3169,6 +3331,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3188,6 +3351,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3207,6 +3371,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3226,6 +3391,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3245,6 +3411,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
+          owner: "",
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
