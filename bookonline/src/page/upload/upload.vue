@@ -1,102 +1,84 @@
 <template>
-  <div class="hello">
-    <form>
-      <input type="file" @change="getFile($event)">
-      <button class="button button-primary button-pill button-small" @click="submit($event)" @click.stop.prevent.self>提交</button>
-    </form>
-  </div>
+	<div class="put_on_book">
+    <div class="body">
+      <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="书籍封面">
+          <el-upload
+            action="http://114.115.139.78:8080/test/uploadFile/"
+            :on-success="handleSuccess"
+            :before-remove="beforeRemove"
+            :limit="1"
+            name="file">
+            <el-button size="small" type="primary">点击上传</el-button>
+            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit">立即上架</el-button>
+          <el-button>取消</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
+	</div>
 </template>
 
-<script>
-import { UploadService } from "src/service/upload";
+<script type="text/javascript">
+import { AccountService } from "src/service/account";
 
 export default {
   data() {
     return {
-      file: ""
+      form: {},
+      typeOptions: [
+        { value: "线装古籍 / 民国旧书" }, { value: "期刊 / 报纸 / 外文原版" }, { value: "国学古籍 / 收藏鉴赏" },
+        { value: "小说 / 文学 / 语言文字" }, { value: "历史 / 地理 / 艺术" }, { value: "政治 / 法律 / 军事" },
+        { value: "哲学 / 心理 / 宗教" }, { value: "经济 / 社科 / 综合" }, { value: "童书 / 生活 / 体育" },
+        { value: "工程技术 / 互联网" }, { value: "自然科学 / 医药卫生" }, { value: "教材 / 教辅 / 考试" },
+        { value: "红色文献 / 签名本" }],
+      bindingOptions: [
+        { value: "精装" }, { value: "软精装" }, { value: "平装" }],
+      formatOptions: [
+        { value: "大32" }, { value: "32" }, { value: "大16" }, { value: "16" }, { value: "其他" }],
+      appearanceOptions: [
+        { value: "全新" }, { value: "九五品" }, { value: "九品" }, { value: "八五品" }, { value: "八品" },
+        { value: "七五品" }, { value: "七品" }, { value: "六五品" }, { value: "六品" }, { value: "其他" }],
     };
   },
-
-  mounted() {
-    this.$toast.text("欢迎登陆优题网！");
+  
+  async mounted() {
   },
 
   methods: {
-    getFile: function(event) {
-      this.file = event.target.files[0];
-      console.log(this.file);
+    onSubmit() {
+      console.log(this.form);
     },
 
-    async submit() {
-      let formData = new FormData();
-      formData.append("file", this.file);
-      let response = await UploadService.uploadSingleFile(formData);
+    handleSuccess(response, file) {
+      console.log(response)
+      console.log(file)
       if(response) {
-        this.$toast.text("上传成功！");
-      } else {
-        this.$toast.text("上传失败！");
+        this.form.file = file;
       }
+    },
+
+    beforeRemove(file) {
+      return this.$confirm(`确定移除 ${ file.name }？`);
     }
   }
 };
 </script>
 
-<style>
-.hello {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-h1,
-h2 {
-  font-weight: normal;
-}
-
-.button-pill {
-  border-radius: 200px;
-}
-
-.button-primary,
-.button-primary-flat {
-  background-color: #1b9af7;
-  border-color: #1b9af7;
-  color: #fff;
-}
-
-.button {
-  color: #fff;
-  background-color: #1b9af7;
-  border-color: #eee;
-  font-size: 16px;
-  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial,
-    "Lucida Grande", sans-serif;
-  text-decoration: none;
-  text-align: center;
-  line-height: 40px;
-  height: 40px;
-  padding: 0 40px;
-  margin: 0;
-  display: inline-block;
-  -webkit-appearance: none;
-  cursor: pointer;
-  border: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.button-small {
-  font-size: 12px;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 30px;
+<style lang="scss" scoped>
+.put_on_book {
+  .head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .my_book {
+      font-size: 0.2rem;
+      font-weight: bold;
+    }
+  }
 }
 </style>

@@ -25,13 +25,13 @@
             <div class="selling_price_container">
               <div class="selling_price_text">售价</div>
               <div class="selling_price_detail">
-                <div class="selling_price">￥{{ book.sellingPrice }}</div>
-                <div class="sale">{{ book.sale }}折</div>
+                <div class="selling_price">￥{{ book.sellingPrice.toFixed(2) }}</div>
+                <div class="sale">{{ book.sale.toFixed(1) }}折</div>
               </div>
             </div>
             <div class="fixed_price_container">
               <div class="fixed_price_text">定价</div>
-              <div class="fixed_price">￥{{ book.fixedPrice }}</div>
+              <div class="fixed_price">￥{{ book.fixedPrice.toFixed(2) }}</div>
             </div>
             <div class="appearance_container">
               <div class="appearance_text">品相</div>
