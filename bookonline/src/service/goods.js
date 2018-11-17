@@ -5,19 +5,19 @@ import store from "src/store"
 import { FakeGoodsService } from "./fake/goodsService.js";
 
 const API = {
-  purchaseBooks: {
-    url: "/book/purchase",
+  purchase: {
+    url: "/goods/purchase",
     useFake: true
   }
 }
 
 export const GoodsService = {
-  purchaseBooks: async (params) => {
-    let response = await purchase(params);
-    if (!response || response.hr != 0 || !response.data) {
+  confirmPurchase: async (purchaseGoods) => {
+    let response = await purchase(purchaseGoods);
+    if (!response || response.hr != 0) {
       return;
     }
-    return response.data;
+    return response;
   },
 
   saveGoods: (goods) => {
@@ -37,12 +37,12 @@ export const GoodsService = {
   },
 }
 
-const purchase = (params) => {
+const purchase = (purchaseGoods) => {
   if (API.purchase.useFake) {
     return FakeGoodsService.purchase();
   } else {
     return request(API.purchase.url, {
-      params: params
+      purchaseGoods: purchaseGoods
     }, 'POST')
   }
 }
