@@ -15,7 +15,7 @@
 				<el-dropdown v-if="hasLogin" @command="handleCommand">
 					<div class="user_info">
 						<img :src="userImg"/>
-						<span class="username">{{ userName }}</span>
+						<span class="username">{{ userInfo.name || userInfo.account }}</span>
 					</div>
 					<el-dropdown-menu slot="dropdown">
 						<el-dropdown-item command="userInfo">个人信息</el-dropdown-item>
@@ -39,6 +39,7 @@ export default {
     return {
 			userImg: require("src/assets/images/logo.png"),
 			userName: "admin",
+			userInfo: {},
 			hasLogin: false
     };
 	},
@@ -49,6 +50,9 @@ export default {
 
 	async mounted() {
 		this.hasLogin = await AccountService.hasLogin();
+		if(this.hasLogin) {
+			this.userInfo = await AccountService.getUserInfo();
+		}
 	},
 
   methods: {

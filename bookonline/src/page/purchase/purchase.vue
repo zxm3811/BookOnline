@@ -13,10 +13,10 @@
           <div class="title">收货地址</div>
           <div class="operation">管理收货地址</div>
         </div>
-        <div v-if="showAddress" class="address_container">
-          <div class="receiver_name">张兴明</div>
-          <div class="receiver_phone">15850633732</div>
-          <div class="receiver_address">江苏省南京市江宁区</div>
+        <div v-if="userInfo.receiveAddress" class="address_container">
+          <div class="receiver_name">{{ userInfo.receiveAddress.receiverName }}</div>
+          <div class="receiver_phone">{{ userInfo.receiveAddress.receiverPhone }}</div>
+          <div class="receiver_address">{{ userInfo.receiveAddress.address }}</div>
         </div>
         <div v-else class="prompt">您还没有收货地址，请先去添加</div>
       </div>
@@ -57,14 +57,15 @@
 
 <script>
 import { BookService } from "src/service/book.js";
+import { AccountService } from "src/service/account";
 
 export default {
   data() {
     return {
+      userInfo: {},
       choosedAddress: 0,
       totalAmount: 0,
       totalPrice: 0,
-      showAddress: true,
       purchaseGoods: JSON.parse(this.$route.query.purchaseGoods),
     };
   },
@@ -78,6 +79,7 @@ export default {
 
   methods: {
     async initData() {
+      this.userInfo = await AccountService.getUserInfo();
       this.purchaseGoods.forEach(goods => {
         this.totalAmount += goods.amount;
         this.totalPrice += goods.sellingPrice * goods.amount;
