@@ -37,7 +37,7 @@ export const FakeAccountService = {
         data: {
           account: "admin",
           password: "admin",
-          name: "戴坤恩",   //new start
+          name: "戴坤恩",
           email: "328472983@qq.com",
           phone: "13823540252",
           address: {
@@ -48,7 +48,7 @@ export const FakeAccountService = {
             mark: "胜太西路169号南京航空航天大学",
           },
           bankNo: "8374983274",
-          balance: "0.00",  //new end
+          balance: "0.00",
           gender: "男",
           age: 20,
           avatar: "",

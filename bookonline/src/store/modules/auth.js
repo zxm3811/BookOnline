@@ -3,7 +3,7 @@ const state = {
     token: '',
     account: '',
     password: '',
-    name: '',   //new start
+    name: '',
     email: '',
     phone: '',
     address: {
@@ -14,7 +14,7 @@ const state = {
       mark: '',
     },
     bankNo: '',
-    balance: '',//new end
+    balance: '',
     gender: '',
     age: null,
     avatar: '',
@@ -117,13 +117,11 @@ const mutations = {
     state.userInfo.name = userInfo.name
     state.userInfo.email = userInfo.email
     state.userInfo.phone = userInfo.phone
-    /*
     state.userInfo.address.province = userInfo.address.province
     state.userInfo.address.city = userInfo.address.city
     state.userInfo.address.district = userInfo.address.district
     state.userInfo.address.street = userInfo.address.street
     state.userInfo.address.mark = userInfo.address.mark
-    */
     state.userInfo.bankNo = userInfo.bankNo
     state.userInfo.balance = userInfo.balance
     state.userInfo.gender = userInfo.gender
@@ -138,13 +136,11 @@ const mutations = {
     state.userInfo.name = ''
     state.userInfo.email = ''
     state.userInfo.phone = ''
-    /*
     state.userInfo.address.province = ''
     state.userInfo.address.city = ''
     state.userInfo.address.district = ''
     state.userInfo.address.street = ''
     state.userInfo.address.mark = ''
-    */
     state.userInfo.bankNo = ''
     state.userInfo.balance = ''
     state.userInfo.gender = ''
