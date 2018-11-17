@@ -70,7 +70,7 @@ export const AccountService = {
   },
 
   getUserInfo: () => {
-    return store.getters["auth/userInfo"];
+    return JSON.parse(JSON.stringify(store.getters["auth/userInfo"]));
   },
 
   updateUser: async (displayName, gender, age) => {
