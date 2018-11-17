@@ -6,8 +6,8 @@
         <div class="book_info">
           <div class="head">
             <div class="book_name" @click="gotoBookDetail(index)" v-html="item.name" ></div>
-            <div class="appearence_and_price">
-              <div class="appearence">{{ item.apprearance }}</div>
+            <div class="appearance_and_price">
+              <div class="appearance">{{ item.appearance }}</div>
               <div class="price">￥{{ item.sellingPrice }}</div>
             </div>
           </div>
@@ -24,7 +24,7 @@
             <div class="buy_now" @click="buyNow(item)">
               <div>立即购买</div>
             </div>
-            <div class="add_into_shooping_cart" @click="addIntoShoopingCart(item)">
+            <div class="add_into_shopping_cart" @click="addIntoShoppingCart(item)">
               <div>加入购物车</div>
             </div>
           </div>
@@ -46,6 +46,7 @@
 import domUtil from "src/assets/js/domUtils.js";
 import { AccountService } from "src/service/account";
 import { BookService } from "src/service/book.js";
+import { GoodsService } from "src/service/goods.js";
 
 export default {
   data() {
@@ -115,27 +116,27 @@ export default {
         this.$toast.text("您还未登录，请先登录");
         return;
       }
+      let purchaseGoods = [];
+      let goods = JSON.parse(JSON.stringify(item));
+      goods.amount = 1;
+      purchaseGoods.push(goods);
       this.$router.push({
         name: "purchase",
-        params: {
-          bookId: item.id,
-          amount: 1
+        query: {
+          purchaseGoods: JSON.stringify(purchaseGoods)
         }
-      });
+      })
     },
 
-    addIntoShoopingCart(item) {
+    addIntoShoppingCart(item) {
       if(!this.hasLogin) {
         this.$toast.text("您还未登录，请先登录");
         return;
       }
-      this.$router.push({
-        name: "shoopingCart",
-        params: {
-          bookId: item.id,
-          amount: 1
-        }
-      });
+      let goods = JSON.parse(JSON.stringify(item));
+      goods.amount = 1;
+      GoodsService.saveGoods(goods);
+      this.$toast.text("已加入购物车");
     }
   }
 };
@@ -186,12 +187,12 @@ export default {
             cursor: pointer;
           }
 
-          .appearence_and_price {
+          .appearance_and_price {
             width: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .appearence {
+            .appearance {
               font-size: 0.15rem;
             }
             .price {
@@ -243,7 +244,7 @@ export default {
             justify-content: center;
             align-items: center;
           }
-          .add_into_shooping_cart {
+          .add_into_shopping_cart {
             margin-left: 0.2rem;
             width: 1.2rem;
             height: 0.3rem;

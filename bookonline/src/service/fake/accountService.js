@@ -40,12 +40,10 @@ export const FakeAccountService = {
           name: "戴坤恩",
           email: "328472983@qq.com",
           phone: "13823540252",
-          address: {
-            province: "江苏",
-            city: "南京",
-            district: "江宁",
-            street: "秣陵街道",
-            mark: "胜太西路169号南京航空航天大学",
+          receiveAddress: {
+            receiverName: "戴坤恩",
+            receiverPhone: "13823540252",
+            address: "中国 江苏省 南京市 江宁区/镇 秣陵街道街道 胜太西路169号南京航空航天大学"
           },
           bankNo: "8374983274",
           balance: "0.00",

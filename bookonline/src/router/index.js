@@ -12,7 +12,8 @@ import sellerOrderList from 'src/page/home/sellerOrderList.vue'
 import buyerOrderList from 'src/page/home/buyerOrderList.vue'
 import editInfo from 'src/page/home/editInfo.vue'
 import BookDetail from 'src/page/home/bookDetail.vue'
-
+import ShoppingCart from 'src/page/purchase/shoppingCart.vue'
+import Purchase from 'src/page/purchase/purchase.vue'
 
 Vue.use(VueRouter)
 
@@ -52,6 +53,16 @@ export const router = new VueRouter({
           path:'bookDetail/:bookId',//图书详情页
           name: 'bookDetail',
           component: BookDetail
+        },
+        {
+          path:'shoppingCart',//购物车页
+          name: 'shoppingCart',
+          component: ShoppingCart
+        },
+        {
+          path:'purchase',//购买页
+          name: 'purchase',
+          component: Purchase
         },
         {
           path: 'userCenter',//个人中心

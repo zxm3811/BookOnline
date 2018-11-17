@@ -7,35 +7,31 @@
       </el-breadcrumb>
     </div>
     <div class="content">
-      <el-row :gutter="20">
-        <el-col :span="24">
-          <div class="search_result_amount">共 {{ filterBookList.length }} 条结果</div>
-          <div class="search_result_container">
-            <div class="filter">
-              <div class="book_name">
-                <div class="text">书名</div>
-                <input class="input_box" v-model="bookName" @keyup.enter="clickFilter" />
-              </div>
-              <div class="author">
-                <div class="text">作者</div>
-                <input class="input_box" v-model="author" @keyup.enter="clickFilter" />
-              </div>
-              <div class="publish_house">
-                <div class="text">出版社</div>
-                <input class="input_box" v-model="publishHouse" @keyup.enter="clickFilter" />
-              </div>
-              <div class="isbn">
-                <div class="text">ISBN</div>
-                <input class="input_box" v-model="isbn" @keyup.enter="clickFilter" />
-              </div>
-              <div class="button" @click="clickFilter">
-                <div class="text">筛选</div>
-              </div>
-            </div>
-            <search-result-list :bookList="filterBookList" />
+      <div class="search_result_amount">共 {{ filterBookList.length }} 条结果</div>
+      <div class="search_result_container">
+        <div class="filter">
+          <div class="book_name">
+            <div class="text">书名</div>
+            <input class="input_box" v-model="bookName" @keyup.enter="clickFilter" />
           </div>
-        </el-col>
-      </el-row>
+          <div class="author">
+            <div class="text">作者</div>
+            <input class="input_box" v-model="author" @keyup.enter="clickFilter" />
+          </div>
+          <div class="publish_house">
+            <div class="text">出版社</div>
+            <input class="input_box" v-model="publishHouse" @keyup.enter="clickFilter" />
+          </div>
+          <div class="isbn">
+            <div class="text">ISBN</div>
+            <input class="input_box" v-model="isbn" @keyup.enter="clickFilter" />
+          </div>
+          <div class="button" @click="clickFilter">
+            <div class="text">筛选</div>
+          </div>
+        </div>
+        <search-result-list :bookList="filterBookList" />
+      </div>
     </div>
 
     </div>

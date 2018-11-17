@@ -6,75 +6,22 @@ const state = {
     name: '',
     email: '',
     phone: '',
-    address: {
-      province: '',
-      city: '',
-      district: '',
-      street: '',
-      mark: '',
+    receiveAddress: {
+      receiverName: '',
+      receiverPhone: '',
+      address: ''
     },
     bankNo: '',
     balance: '',
     gender: '',
     age: null,
     avatar: '',
-    userType: null,
+    userType: null
   }
 }
 const getters = {
   userInfo: state => {
     return state.userInfo
-  },
-  token: state => {
-    return state.userInfo.token
-  },
-  account: state => {
-    return state.userInfo.account
-  },
-  password: state => {
-    return state.userInfo.password
-  },
-  name: state => {
-    return state.userInfo.name
-  },
-  email: state => {
-    return state.userInfo.email
-  },
-  phone: state => {
-    return state.userInfo.state
-  },
-  addrProv: state => {
-    return state.userInfo.address.province
-  },
-  addrCity: state => {
-    return state.userInfo.address.city
-  },
-  addrDist: state => {
-    return state.userInfo.address.district
-  },
-  addrStreet: state => {
-    return state.userInfo.address.street
-  },
-  addrMark: state => {
-    return state.userInfo.address.mark
-  },
-  bankNo: state => {
-    return state.userInfo.bankNo
-  },
-  balance: state => {
-    return state.userInfo.balance
-  },
-  gender: state => {
-    return state.userInfo.gender
-  },
-  age: state => {
-    return state.userInfo.age
-  },
-  avatar: state => {
-    return state.userInfo.avatar
-  },
-  userType: state => {
-    return state.userInfo.userType
   }
 }
 
@@ -92,12 +39,11 @@ const actions = {
 
   updateUserInfo({
     commit
-  }, params) {
-    if (!params) {
+  }, userInfo) {
+    if (!userInfo) {
       return;
     }
-    params.displayName = params.displayName.trim()
-    commit("UPDATE_DISPLAY_NAME", params.displayName);
+    commit("UPDATE_USER_INFO", userInfo);
   },
 
   clearAllUserState({
@@ -111,17 +57,18 @@ const mutations = {
   SAVE_TOKEN: (state, token) => {
     state.userInfo.token = token
   },
+  UPDATE_USER_INFO: (state, userInfo) => {
+    state.userInfo = userInfo
+  },
   SAVE_USER_STATE: (state, userInfo) => {
     state.userInfo.account = userInfo.account
     state.userInfo.password = userInfo.password
     state.userInfo.name = userInfo.name
     state.userInfo.email = userInfo.email
     state.userInfo.phone = userInfo.phone
-    state.userInfo.address.province = userInfo.address.province
-    state.userInfo.address.city = userInfo.address.city
-    state.userInfo.address.district = userInfo.address.district
-    state.userInfo.address.street = userInfo.address.street
-    state.userInfo.address.mark = userInfo.address.mark
+    state.userInfo.receiveAddress.receiverName = userInfo.receiveAddress.receiverName
+    state.userInfo.receiveAddress.receiverPhone = userInfo.receiveAddress.receiverPhone
+    state.userInfo.receiveAddress.address = userInfo.receiveAddress.address
     state.userInfo.bankNo = userInfo.bankNo
     state.userInfo.balance = userInfo.balance
     state.userInfo.gender = userInfo.gender
@@ -136,11 +83,9 @@ const mutations = {
     state.userInfo.name = ''
     state.userInfo.email = ''
     state.userInfo.phone = ''
-    state.userInfo.address.province = ''
-    state.userInfo.address.city = ''
-    state.userInfo.address.district = ''
-    state.userInfo.address.street = ''
-    state.userInfo.address.mark = ''
+    state.userInfo.receiveAddress.receiverName = ''
+    state.userInfo.receiveAddress.receiverPhone = ''
+    state.userInfo.receiveAddress.address = ''
     state.userInfo.bankNo = ''
     state.userInfo.balance = ''
     state.userInfo.gender = ''

@@ -7,65 +7,61 @@
       </el-breadcrumb>
     </div>
     <div class="content">
-      <el-row :gutter="20">
-        <el-col :span="24">
-          <div class="book_container">
-            <div class="cover">
-              <img :src="book.cover" />
+      <div class="book_container">
+        <div class="cover">
+          <img :src="book.cover" />
+        </div>
+        <div class="book_info">
+          <div class="book_name">{{ book.name }}</div>
+          <div class="detail_info">
+            <div class="author">作者: {{ book.author }}</div>
+            <div class="publish_date">出版时间: {{ book.publishDate }}</div>
+            <div class="binding">装帧: {{ book.binding }}</div>
+            <div class="publish_house">出版社: {{ book.publishHouse }}</div>
+            <div class="format">开本: {{ book.format }}</div>
+            <div class="isbn">ISBN: {{ book.isbn }}</div>
+          </div>
+          <div class="sell_info">
+            <div class="selling_price_container">
+              <div class="selling_price_text">售价</div>
+              <div class="selling_price_detail">
+                <div class="selling_price">￥{{ book.sellingPrice }}</div>
+                <div class="sale">{{ book.sale }}折</div>
+              </div>
             </div>
-            <div class="book_info">
-              <div class="book_name">{{ book.name }}</div>
-              <div class="detail_info">
-                <div class="author">作者: {{ book.author }}</div>
-                <div class="publish_date">出版时间: {{ book.publishDate }}</div>
-                <div class="binding">装帧: {{ book.binding }}</div>
-                <div class="publish_house">出版社: {{ book.publishHouse }}</div>
-                <div class="format">开本: {{ book.format }}</div>
-                <div class="isbn">ISBN: {{ book.isbn }}</div>
-              </div>
-              <div class="sell_info">
-                <div class="selling_price_container">
-                  <div class="selling_price_text">售价</div>
-                  <div class="selling_price_detail">
-                    <div class="selling_price">￥{{ book.sellingPrice }}</div>
-                    <div class="sale">{{ book.sale }}折</div>
-                  </div>
-                </div>
-                <div class="fixed_price_container">
-                  <div class="fixed_price_text">定价</div>
-                  <div class="fixed_price">￥{{ book.fixedPrice }}</div>
-                </div>
-                <div class="apprearance_container">
-                  <div class="apprearance_text">品相</div>
-                  <div class="apprearance">{{ book.apprearance }}</div>
-                </div>
-              </div>
-              <div class="address_container">
-                <div class="address_text">发货地址</div>
-                <div class="address">{{ book.address }}</div>
-              </div>
-              <div class="put_on_date_container">
-                <div class="put_on_date_text">上书时间</div>
-                <div class="put_on_date">{{ book.putOnDate }}</div>
-              </div>
-              <div class="amount_container">
-                <div class="amount_text">数量</div>
-                <el-input-number v-model="amount" size="mini" :min="1" :max="book.stock" label="数量">
-                </el-input-number>
-                <div class="stock">库存{{ book.stock }}件</div>
-              </div>
-              <div class="button_container">
-                <div class="buy_now" @click="buyNow">
-                  <div>立即购买</div>
-                </div>
-                <div class="add_into_shooping_cart" @click="addIntoShoopingCart">
-                  <div>加入购物车</div>
-                </div>
-              </div>
+            <div class="fixed_price_container">
+              <div class="fixed_price_text">定价</div>
+              <div class="fixed_price">￥{{ book.fixedPrice }}</div>
+            </div>
+            <div class="appearance_container">
+              <div class="appearance_text">品相</div>
+              <div class="appearance">{{ book.appearance }}</div>
             </div>
           </div>
-        </el-col>
-      </el-row>
+          <div class="address_container">
+            <div class="address_text">发货地址</div>
+            <div class="address">{{ book.address }}</div>
+          </div>
+          <div class="put_on_date_container">
+            <div class="put_on_date_text">上书时间</div>
+            <div class="put_on_date">{{ book.putOnDate }}</div>
+          </div>
+          <div class="amount_container">
+            <div class="amount_text">数量</div>
+            <el-input-number v-model="amount" size="mini" :min="1" :max="book.stock" label="数量">
+            </el-input-number>
+            <div class="stock">库存{{ book.stock }}件</div>
+          </div>
+          <div class="button_container">
+            <div class="buy_now" @click="buyNow">
+              <div>立即购买</div>
+            </div>
+            <div class="add_into_shopping_cart" @click="addIntoShoppingCart">
+              <div>加入购物车</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     </div>
@@ -74,6 +70,7 @@
 <script>
 import { AccountService } from "src/service/account";
 import { BookService } from "src/service/book.js";
+import { GoodsService } from "src/service/goods.js";
 
 export default {
   data() {
@@ -102,27 +99,27 @@ export default {
         this.$toast.text("您还未登录，请先登录");
         return;
       }
+      let purchaseGoods = [];
+      let goods = JSON.parse(JSON.stringify(this.book));
+      goods.amount = this.amount;
+      purchaseGoods.push(goods);
       this.$router.push({
         name: "purchase",
-        params: {
-          bookId: this.book.id,
-          amount: this.amount
+        query: {
+          purchaseGoods: JSON.stringify(purchaseGoods)
         }
-      });
+      })
     },
 
-    addIntoShoopingCart() {
+    addIntoShoppingCart() {
       if(!this.hasLogin) {
         this.$toast.text("您还未登录，请先登录");
         return;
       }
-      this.$router.push({
-        name: "shoopingCart",
-        params: {
-          bookId: this.book.id,
-          amount: this.amount
-        }
-      });
+      let goods = JSON.parse(JSON.stringify(this.book));
+      goods.amount = this.amount;
+      GoodsService.saveGoods(goods);
+      this.$toast.text("已加入购物车");
     }
   }
 };
@@ -244,16 +241,16 @@ export default {
             }
           }
 
-          .apprearance_container {
+          .appearance_container {
             margin: 0.05rem 0;
             font-size: 0.15rem;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            .apprearance_text {
+            .appearance_text {
               color: #999;
             }
-            .apprearance {
+            .appearance {
               margin-left: 0.5rem;
               color: #bf7f5f;
               font-weight: bolder;
@@ -325,7 +322,7 @@ export default {
             justify-content: center;
             align-items: center;
           }
-          .add_into_shooping_cart {
+          .add_into_shopping_cart {
             margin-left: 0.5rem;
             width: 2rem;
             height: 0.5rem;

@@ -13,7 +13,7 @@ const state = {
     sellingPrice: null,
     sale: null,
     fixedPrice: null,
-    apprearance: '',
+    appearance: '',
     address: '',
     putOnDate: '',
     stock: null
@@ -32,10 +32,10 @@ const actions = {
     commit("SAVE_BOOK", bookInfo);
   },
 
-  clearAllBook({
+  clearAllBooks({
     commit
   }) {
-    commit("CLEAR_ALL_BOOK")
+    commit("CLEAR_ALL_BOOKS")
   }
 }
 
@@ -54,12 +54,12 @@ const mutations = {
     state.bookInfo.sellingPrice = bookInfo.sellingPrice
     state.bookInfo.sale = bookInfo.sale
     state.bookInfo.fixedPrice = bookInfo.fixedPrice
-    state.bookInfo.apprearance = bookInfo.apprearance
+    state.bookInfo.appearance = bookInfo.appearance
     state.bookInfo.address = bookInfo.address
     state.bookInfo.putOnDate = bookInfo.putOnDate
     state.bookInfo.stock = bookInfo.stock
   },
-  CLEAR_ALL_BOOK: (state) => {
+  CLEAR_ALL_BOOKS: (state) => {
     state.bookInfo.id = null
     state.bookInfo.type = null
     state.bookInfo.name = ''
@@ -73,7 +73,7 @@ const mutations = {
     state.bookInfo.sellingPrice = null
     state.bookInfo.sale = null
     state.bookInfo.fixedPrice = null
-    state.bookInfo.apprearance = ''
+    state.bookInfo.appearance = ''
     state.bookInfo.address = ''
     state.bookInfo.putOnDate = ''
     state.bookInfo.stock = null
