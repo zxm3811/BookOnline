@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="form">
-            <el-form :model="formData" status-icon :rules="rules" ref="form" label-width="100px" label-position="right" size="medium">
+            <el-form :model="formData" status-icon :rules="rules" ref="form" label-width="100px" label-position="right" size="small">
                 <el-form-item label="帐号">
                     {{this.formData.account}}
                 </el-form-item>
