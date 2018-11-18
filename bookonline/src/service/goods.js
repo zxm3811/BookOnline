@@ -14,7 +14,7 @@ const API = {
 export const GoodsService = {
   confirmPurchase: async (purchaseGoods) => {
     let response = await purchase(purchaseGoods);
-    if (!response || response.hr != 0) {
+    if (!response || response.code != 0) {
       return;
     }
     return response;

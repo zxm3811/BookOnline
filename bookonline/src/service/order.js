@@ -14,7 +14,7 @@ const API = {
 export const OrderService = {
   getOrderList: async () => {
     let response = await getOrder();
-    if (!response || response.hr !== 0 || !response.data) {
+    if (!response || response.code !== 0 || !response.data) {
       return;
     }
 

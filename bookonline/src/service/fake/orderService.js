@@ -1,7 +1,7 @@
 export const FakeOrderService = {
   order: () => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: [
         {

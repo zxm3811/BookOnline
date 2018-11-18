@@ -1,7 +1,7 @@
 export const FakeBookService = {
   getAllBooks: () => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: 
       [
@@ -20,7 +20,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -59,7 +59,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -79,7 +79,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -99,7 +99,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -119,7 +119,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -139,7 +139,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -159,7 +159,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -179,7 +179,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -199,7 +199,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -219,7 +219,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -239,7 +239,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -259,7 +259,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -279,7 +279,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -299,7 +299,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -319,7 +319,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -339,7 +339,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -359,7 +359,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -379,7 +379,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -399,7 +399,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -419,7 +419,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -439,7 +439,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -459,7 +459,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -479,7 +479,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -499,7 +499,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -519,7 +519,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -539,7 +539,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -559,7 +559,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -579,7 +579,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -599,7 +599,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -619,7 +619,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -639,7 +639,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -659,7 +659,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -679,7 +679,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -699,7 +699,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -719,7 +719,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -739,7 +739,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -759,7 +759,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -779,7 +779,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -799,7 +799,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -819,7 +819,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -839,7 +839,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -859,7 +859,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -879,7 +879,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -899,7 +899,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -919,7 +919,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -939,7 +939,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -959,7 +959,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -979,7 +979,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -999,7 +999,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1019,7 +1019,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1039,7 +1039,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1059,7 +1059,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1079,7 +1079,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1099,7 +1099,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1119,7 +1119,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1139,7 +1139,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1159,7 +1159,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1179,7 +1179,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1199,7 +1199,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1219,7 +1219,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1239,7 +1239,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1259,7 +1259,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1279,7 +1279,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1299,7 +1299,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1319,7 +1319,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1339,7 +1339,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1359,7 +1359,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1379,7 +1379,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1399,7 +1399,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1419,7 +1419,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1439,7 +1439,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1459,7 +1459,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1479,7 +1479,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1499,7 +1499,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1519,7 +1519,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1539,7 +1539,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1559,7 +1559,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1579,7 +1579,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1599,7 +1599,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1619,7 +1619,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1639,7 +1639,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1659,7 +1659,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1679,7 +1679,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1699,7 +1699,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1719,7 +1719,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1739,7 +1739,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1759,7 +1759,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1779,7 +1779,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1799,7 +1799,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1819,7 +1819,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1839,7 +1839,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1859,7 +1859,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1879,7 +1879,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1899,7 +1899,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1919,7 +1919,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1939,7 +1939,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1959,7 +1959,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -1974,7 +1974,7 @@ export const FakeBookService = {
 
   search: (keyword) => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: 
       [
@@ -1993,7 +1993,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2051,7 +2051,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2071,7 +2071,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2091,7 +2091,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2111,7 +2111,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2131,7 +2131,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2151,7 +2151,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2171,7 +2171,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2191,7 +2191,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2211,7 +2211,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2231,7 +2231,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2251,7 +2251,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2271,7 +2271,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2291,7 +2291,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2311,7 +2311,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2331,7 +2331,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2351,7 +2351,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2371,7 +2371,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2391,7 +2391,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2411,7 +2411,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2431,7 +2431,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2451,7 +2451,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2471,7 +2471,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2491,7 +2491,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2511,7 +2511,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2531,7 +2531,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2551,7 +2551,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2571,7 +2571,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2591,7 +2591,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2611,7 +2611,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2631,7 +2631,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2651,7 +2651,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2671,7 +2671,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2691,7 +2691,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2711,7 +2711,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2731,7 +2731,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2751,7 +2751,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2771,7 +2771,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2791,7 +2791,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2811,7 +2811,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2831,7 +2831,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2851,7 +2851,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2871,7 +2871,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2891,7 +2891,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2911,7 +2911,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2931,7 +2931,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2951,7 +2951,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2971,7 +2971,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -2991,7 +2991,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3011,7 +3011,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3031,7 +3031,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3051,7 +3051,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3071,7 +3071,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3091,7 +3091,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3111,7 +3111,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3131,7 +3131,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3151,7 +3151,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3171,7 +3171,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3191,7 +3191,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3211,7 +3211,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3231,7 +3231,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3251,7 +3251,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3271,7 +3271,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3291,7 +3291,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3311,7 +3311,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3331,7 +3331,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3351,7 +3351,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3371,7 +3371,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3391,7 +3391,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -3411,7 +3411,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20

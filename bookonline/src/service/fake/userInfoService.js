@@ -1,7 +1,7 @@
 export const FakeUserInfoService = {
   userInfo: () => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: {
         name: "戴坤恩",
