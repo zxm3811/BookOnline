@@ -1,5 +1,5 @@
 export const FakeGoodsService = {
-  purchase: (params) => {
+  purchase: (purchaseGoods) => {
     return Promise.resolve({
       code: 0,
       message: "成功",
