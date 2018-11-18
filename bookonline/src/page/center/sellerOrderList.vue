@@ -77,7 +77,7 @@
           { text: '已完成订单', value: '0' },
           { text: '交易中订单', value: '1' },
           { text: '待确认订单', value: '2' },
-          { text: '待付款订单', value: '3' }
+          { text: '待发货订单', value: '3' }
         ]
       };
     },
