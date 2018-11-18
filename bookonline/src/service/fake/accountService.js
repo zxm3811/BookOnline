@@ -45,7 +45,7 @@ export const FakeAccountService = {
           receiveAddress: {
             receiverName: "戴坤恩",
             receiverPhone: "13823540252",
-            address: "中国 江苏省 南京市 江宁区/镇 秣陵街道街道 胜太西路169号南京航空航天大学"
+            address: "江苏省 南京市 江宁区 秣陵街道 胜太西路169号南京航空航天大学"
           },
           bankNo: "8374983274",
           balance: "0.00",
@@ -62,6 +62,13 @@ export const FakeAccountService = {
         data: null
       });
     }
+  },
+  updateUserInfo: () => {
+    return Promise.resolve({
+      hr: 0,
+      message: "成功",
+      data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
+    })
   },
 
   putOnBook: (form) => {
@@ -468,4 +475,4 @@ export const FakeAccountService = {
       ]
     });
   }
-}
+};

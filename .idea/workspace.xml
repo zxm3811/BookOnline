@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df1f2d78-021f-446f-aea7-37bc1994b0ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bookonline/src/page/home/bookDetail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookonline/src/store/modules/bookInfo.js" afterDir="false" />
+    <list default="true" id="df1f2d78-021f-446f-aea7-37bc1994b0ba" name="Default Changelist" comment="增加cityData.js editPwd.vue selectAddr.vue&#10;增加写入缓存操作">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/page/home/bookList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/page/home/bookList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/page/home/orderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/page/home/orderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/page/home/userCenter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/page/home/userCenter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/page/home/userInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/page/home/userInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/service/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/service/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/service/fake/bookService.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/service/fake/bookService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/store/modules/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookonline/src/store/modules/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookonline/src/store/mutation-types.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,23 +28,27 @@
     <session id="-2000738801">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="2" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="69" />
+          <entry key="js" value="138" />
           <entry key="json" value="2" />
           <entry key="png" value="1" />
           <entry key="svg" value="2" />
-          <entry key="vue" value="79" />
+          <entry key="vue" value="145" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
@@ -65,24 +57,24 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="69" />
+          <entry key="JavaScript" value="138" />
           <entry key="SVG" value="2" />
-          <entry key="Vue.js" value="79" />
+          <entry key="Vue.js" value="145" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1906" />
-          <entry key="txt" value="11" />
-          <entry key="vue" value="5485" />
+          <entry key="js" value="3245" />
+          <entry key="txt" value="206" />
+          <entry key="vue" value="12763" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1906" />
-          <entry key="PLAIN_TEXT" value="11" />
-          <entry key="Vue.js" value="5485" />
+          <entry key="JavaScript" value="3245" />
+          <entry key="PLAIN_TEXT" value="206" />
+          <entry key="Vue.js" value="12763" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -94,60 +86,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bookonline/src/router/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="66" column="10" lean-forward="true" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+            <state relative-caret-position="270">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/editInfo.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1458">
+              <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bookonline/src/service/account.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1620">
+              <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#329#382#0" expanded="true" />
-                <element signature="e#598#651#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/orderList.vue">
+        <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/orderService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
-              <folding>
-                <element signature="n#style#0;n#el-table#0;n#div#0;n#el-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="4932">
+              <caret line="274" column="18" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/userInfo.vue">
+        <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/selectAddr.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#el-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#el-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#0;n#p#1;n#div#0;n#div#1;n#div#0;n#el-row#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="2034">
+              <caret line="113" column="34" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/Head.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/userCenter.vue">
+        <entry file="file://$PROJECT_DIR$/bookonline/src/store/modules/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bookonline/src/page/account/login/login.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+            <state relative-caret-position="1278">
+              <caret line="71" column="60" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -162,6 +162,23 @@
       <find>getAllBooks</find>
       <find>userinfo</find>
       <find>showAccountNullError</find>
+      <find>1002</find>
+      <find>gotoBookDetail</find>
+      <find>deliver</find>
+      <find>formatter</find>
+      <find>gotoUserCenter</find>
+      <find>breadcrumb</find>
+      <find>store</find>
+      <find>addr</find>
+      <find>con</find>
+      <find>sheng</find>
+      <find>sheng2</find>
+      <find>console</find>
+      <find>submitForm</find>
+      <find>pwdForm</find>
+      <find>pass</find>
+      <find>updateUser</find>
+      <find>province</find>
     </findStrings>
     <replaceStrings>
       <replace>addrString</replace>
@@ -186,20 +203,37 @@
         <option value="$PROJECT_DIR$/bookonline/src/page/home/SideBar.vue" />
         <option value="$PROJECT_DIR$/bookonline/src/service/center.js" />
         <option value="$PROJECT_DIR$/bookonline/src/service/userInfoService.js" />
-        <option value="$PROJECT_DIR$/bookonline/src/page/home/Head.vue" />
-        <option value="$PROJECT_DIR$/bookonline/src/service/fake/userInfoService.js" />
         <option value="$PROJECT_DIR$/bookonline/src/page/home/userinfo.vue" />
         <option value="$PROJECT_DIR$/bookonline/src/page/home/usercenter.vue" />
-        <option value="$PROJECT_DIR$/bookonline/src/router/index.js" />
-        <option value="$PROJECT_DIR$/bookonline/src/service/fake/orderService.js" />
         <option value="$PROJECT_DIR$/bookonline/src/service/userInfo.js" />
-        <option value="$PROJECT_DIR$/bookonline/src/page/home/userInfo.vue" />
         <option value="$PROJECT_DIR$/bookonline/src/service/order.js" />
         <option value="$PROJECT_DIR$/bookonline/src/page/home/orderList.vue" />
         <option value="$PROJECT_DIR$/bookonline/src/page/home/orderList2.vue" />
-        <option value="$PROJECT_DIR$/bookonline/src/page/home/userCenter.vue" />
         <option value="$PROJECT_DIR$/bookonline/src/page/home/Page.vue" />
         <option value="$PROJECT_DIR$/bookonline/src/page/account/login/login.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/assets/cityData.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/service/fake/bookService.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/buyerOrderList.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/sellerOrderList.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/service/fake/userInfoService.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/userInfo.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/userCenter.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/editInfo.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/editPwd.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/selectAddr.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/router/index.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/home/Head.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/center/userCenter.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/center/userInfo.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/center/editPwd.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/service/fake/orderService.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/center/buyerOrderList.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/center/sellerOrderList.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/service/fake/accountService.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/store/modules/auth.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/service/account.js" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/center/editInfo.vue" />
+        <option value="$PROJECT_DIR$/bookonline/src/page/center/selectAddr.vue" />
       </list>
     </option>
   </component>
@@ -217,11 +251,11 @@
       <path value="$PROJECT_DIR$/bookonline/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="33" />
-    <option name="y" value="7" />
-    <option name="width" value="1151" />
-    <option name="height" value="718" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="234" />
+    <option name="y" value="411" />
+    <option name="width" value="1275" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -270,8 +304,7 @@
               <item name="bookonline" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="center" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BookOnline" type="b2602c69:ProjectViewProjectNode" />
@@ -286,7 +319,45 @@
               <item name="BookOnline" type="462c0819:PsiDirectoryNode" />
               <item name="bookonline" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="purchase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookOnline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookOnline" type="462c0819:PsiDirectoryNode" />
+              <item name="bookonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookOnline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookOnline" type="462c0819:PsiDirectoryNode" />
+              <item name="bookonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookOnline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookOnline" type="462c0819:PsiDirectoryNode" />
+              <item name="bookonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="fake" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookOnline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookOnline" type="462c0819:PsiDirectoryNode" />
+              <item name="bookonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookOnline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookOnline" type="462c0819:PsiDirectoryNode" />
+              <item name="bookonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,6 +377,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\vue\BookOnline\bookonline\src\page\center" />
       <recent name="E:\vue\BookOnline\bookonline\src\service\fake" />
     </key>
   </component>
@@ -356,11 +428,54 @@
       <workItem from="1542109063441" duration="4392000" />
       <workItem from="1542117035286" duration="2574000" />
       <workItem from="1542157070619" duration="33927000" />
+      <workItem from="1542356387896" duration="857000" />
+      <workItem from="1542357949058" duration="18487000" />
+      <workItem from="1542421877612" duration="27003000" />
+      <workItem from="1542458774292" duration="11000" />
+      <workItem from="1542458812569" duration="401000" />
+      <workItem from="1542509463502" duration="10453000" />
+      <workItem from="1542523588490" duration="281000" />
     </task>
+    <task id="LOCAL-00001" summary="将userInfo中内容并入accountService，并修改auth.js">
+      <created>1542438794913</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542438794913</updated>
+    </task>
+    <task id="LOCAL-00002" summary="将userInfo中内容并入accountService，并修改auth.js（删除注释）">
+      <created>1542440370774</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542440370774</updated>
+    </task>
+    <task id="LOCAL-00003" summary="保存更改">
+      <created>1542443558002</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542443558002</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改editInfo.vue userInfo.vue accountServie.js">
+      <created>1542452845075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542452845075</updated>
+    </task>
+    <task id="LOCAL-00005" summary="增加cityData.js editPwd.vue selectAddr.vue&#10;增加写入缓存操作">
+      <created>1542522972690</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542522972690</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63044000" />
+    <option name="totallyTimeSpent" value="120537000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,9 +488,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21709532" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21709532" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -384,12 +498,13 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.39032257" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.38709676" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.44032258" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.21774194" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.4064516" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49848714" visible="true" weight="0.32419354" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.32419354" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.26935485" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -438,47 +553,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="将userInfo中内容并入accountService，并修改auth.js" />
+    <MESSAGE value="将userInfo中内容并入accountService，并修改auth.js（删除注释）" />
+    <MESSAGE value="保存更改" />
+    <MESSAGE value="修改editInfo.vue userInfo.vue accountServie.js" />
+    <MESSAGE value="增加cityData.js editPwd.vue selectAddr.vue&#10;增加写入缓存操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加cityData.js editPwd.vue selectAddr.vue&#10;增加写入缓存操作" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bookonline/src/assets/icons/icon-login-account.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/assets/icons/icon-login-lock.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/assets/images/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/assets/images/background.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/account/register/register.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/upload/upload.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/sideBar.js" />
-    <entry file="file://$PROJECT_DIR$/bookonline/src/store/mutation-types.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/store/modules/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="17" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/uploadService.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -486,14 +569,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="77" column="34" lean-forward="true" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/editInfo.vue">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/bookonline/build/build.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -532,9 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -545,63 +619,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/searchBar.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookonline/src/constant/book.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/bookonline/src/assets/js/domUtils.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/centerService.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/center.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/account.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/SideBar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/centerService.js" />
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/center.js" />
     <entry file="file://$PROJECT_DIR$/bookonline/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/accountService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/userInfoService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -612,56 +641,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/bookService.js">
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/orderList2.vue" />
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/orderList.vue" />
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/searchResultList.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/SideBar.vue" />
+    <entry file="file://E:/newvue/src/assets/cityData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <caret line="6" column="16" selection-end-line="3447" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/book.js">
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/account/login/login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="864">
+          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/service/userInfo.js">
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/Page.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/bookList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/userInfo.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#el-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#el-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#p#1;n#div#0;n#div#1;n#div#0;n#el-row#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="72">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bookonline/src/service/order.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="252">
           <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/searchResult.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/bookDetail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/upload.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/book.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="146" column="22" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/store/modules/bookInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-652" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/bookService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-334">
+          <caret line="1909" column="24" lean-forward="true" selection-start-line="1909" selection-start-column="24" selection-end-line="1909" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/userInfoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/bookList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/userInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/assets/cityData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/searchBar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/userCenter.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/sellerOrderList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/buyerOrderList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/userInfo.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-347">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/editPwd.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/accountService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="63" column="19" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/editInfo.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookonline/src/service/account.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -670,85 +820,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bookonline/src/service/fake/orderService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="4932">
+          <caret line="274" column="18" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/orderList2.vue">
+    <entry file="file://$PROJECT_DIR$/bookonline/src/page/center/selectAddr.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#el-table#0;n#div#0;n#el-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="2034">
+          <caret line="113" column="34" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/orderList.vue">
+    <entry file="file://$PROJECT_DIR$/bookonline/src/store/modules/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#el-table#0;n#div#0;n#el-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1278">
+          <caret line="71" column="60" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/Head.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="906">
-          <caret line="52" column="15" lean-forward="true" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
-          <folding>
-            <element signature="e#569#607#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/Page.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/userCenter.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/home/searchResult.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/page/account/login/login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookonline/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="66" column="10" lean-forward="true" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#329#382#0" expanded="true" />
-            <element signature="e#598#651#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
         </state>
       </provider>
     </entry>

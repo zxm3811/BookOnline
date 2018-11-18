@@ -12,10 +12,10 @@
                     <el-menu active-text-color="#8c222c"
                              :default-active="$route.path"
                              router>
-                        <div class="menu_box" router>
+                        <div class="menu_box">
                             <el-menu-item-group>
                                 <template slot="title">我是买家</template>
-                                <el-menu-item index="/page">购物车</el-menu-item>
+                                <el-menu-item index="/page/shoppingCart">购物车</el-menu-item>
                                 <el-menu-item index="/page/userCenter/buyerOrderList">我的订单</el-menu-item>
                             </el-menu-item-group>
 
@@ -31,7 +31,7 @@
                             <el-menu-item-group>
                                 <template slot="title">更多</template>
                                 <el-menu-item index="/page/userCenter/userInfo">个人信息</el-menu-item>
-                                <el-menu-item index="/page">修改密码</el-menu-item>
+                                <el-menu-item index="/page/userCenter/editPwd">修改密码</el-menu-item>
                                 <el-menu-item index="/page/userCenter/editInfo">修改信息</el-menu-item>
                             </el-menu-item-group>
                         </div>
@@ -50,15 +50,8 @@
 export default {
   data() {
     return {
-      breadcrumb: [
-        {
-          path: "/",
-          name: "首页"
-        }
-      ]
     };
   },
-  methods: {}
 };
 </script>
 

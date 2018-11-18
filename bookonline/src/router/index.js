@@ -7,18 +7,19 @@ import Upload from 'src/page/upload/upload.vue'
 import Page from 'src/page/home/page.vue'
 import Home from 'src/page/home/home.vue'
 import SearchResult from 'src/page/home/searchResult.vue'
-import userCenter from 'src/page/home/userCenter.vue'
-import userInfo from 'src/page/home/userInfo.vue'
-import sellerOrderList from 'src/page/home/sellerOrderList.vue'
-import buyerOrderList from 'src/page/home/buyerOrderList.vue'
-import editInfo from 'src/page/home/editInfo.vue'
-import MyBooks from 'src/page/home/myBooks.vue'
-import PutOnBook from 'src/page/home/putOnBook.vue'
 import BookDetail from 'src/page/home/bookDetail.vue'
 import ShoppingCart from 'src/page/purchase/shoppingCart.vue'
 import Purchase from 'src/page/purchase/purchase.vue'
+import userCenter from 'src/page/center/userCenter.vue'
+import userInfo from 'src/page/center/userInfo.vue'
+import sellerOrderList from 'src/page/center/sellerOrderList.vue'
+import buyerOrderList from 'src/page/center/buyerOrderList.vue'
+import editInfo from 'src/page/center/editInfo.vue'
+import editPwd from 'src/page/center/editPwd.vue'
+import MyBooks from 'src/page/center/myBooks.vue'
+import PutOnBook from 'src/page/center/putOnBook.vue'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 export const router = new VueRouter({
   routes: [
@@ -97,6 +98,11 @@ export const router = new VueRouter({
               path: 'editInfo',//修改信息
               name: 'editInfo',
               component: editInfo
+            },
+            {
+              path: 'editPwd',
+              name: 'editPwd',
+              component: editPwd
             },
             {
               path: 'myBooks',//我的书籍

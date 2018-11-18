@@ -11,19 +11,28 @@
                     </div>
                     <div class="person_detail">
                         <div class="detail">
-                            <span>{{items.name}}</span>
+                            <span>{{this.name}}</span>
                         </div>
                         <div class="detail">
                             <p>邮箱：
-                                <strong>{{items.email}}</strong>
+                                <strong>{{this.email}}</strong>
                             </p>
                             <p>手机：
-                                <strong>{{items.phone}}</strong>
+                                <strong>{{this.phone}}</strong>
                             </p>
                             <p>收货地址：
-                                <strong v-for="(addr, index) in items.address" :key="index" v-if="addr.default == 1">
-                                    {{addr.country}} {{addr.province}}省 {{addr.city}}市
-                                    {{addr.district}}区/镇 {{addr.street}}街道 {{addr.mark}}
+                                <strong>
+                                    {{this.receiveAddress.address}}
+                                </strong>
+                            </p>
+                            <p>收件人：
+                                <strong>
+                                    {{this.receiveAddress.receiverName}}
+                                </strong>
+                            </p>
+                            <p>收件人电话：
+                                <strong>
+                                    {{this.receiveAddress.receiverPhone}}
                                 </strong>
                             </p>
                         </div>
@@ -39,10 +48,10 @@
                 <div class="right_body">
                     <div>
                         <p>我的资金账号：
-                            <strong>{{items.accountno}}</strong>
+                            <strong>{{this.bankNo}}</strong>
                         </p>
                         <p>总金额：
-                            <strong style="color: red">{{items.balance}} 元</strong>
+                            <strong style="color: red">{{this.balance}} 元</strong>
                         </p>
                     </div>
                 </div>
@@ -52,20 +61,37 @@
 </template>
 
 <script>
-import { UserInfoService } from "../../service/userInfo";
+import {AccountService} from "../../service/account";
 
 export default {
   data() {
     return {
-      items: {}
+      name: '',
+      email: '',
+      phone: '',
+      receiveAddress: {
+        receiverName: '',
+        receiverPhone: '',
+        address: ''
+      },
+      bankNo: '',
+      balance: ''
     };
   },
-  mounted() {
+  created() {
     this.initData();
   },
   methods: {
-    async initData() {
-      this.items = await UserInfoService.getInfo();
+    initData() {
+      let items = AccountService.getUserInfo();
+      this.name = items.name;
+      this.email = items.email;
+      this.phone = items.phone;
+      this.receiveAddress.address = items.receiveAddress.address;
+      this.receiveAddress.receiverName = items.receiveAddress.receiverName;
+      this.receiveAddress.receiverPhone = items.receiveAddress.receiverPhone;
+      this.bankNo = items.bankNo;
+      this.balance = items.balance;
     }
   }
 };

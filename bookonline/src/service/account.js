@@ -17,6 +17,10 @@ const API = {
     url: "/account/getUserInfomation",
     useFake: true
   },
+  updateUserInformation: {
+    url: "/account/update",
+    useFake: true
+  },
   getUserBooks: {
     url: "/account/getUserBooks",
     useFake: true
@@ -93,20 +97,27 @@ export const AccountService = {
     return JSON.parse(JSON.stringify(store.getters["auth/userInfo"]));
   },
 
-  updateUser: async (displayName, gender, age) => {
-    let params = {
-      displayName,
-      gender,
-      age
-    };
-    let response = await request("/account/update", params, 'POST');
-    if (!response || response.hr != 0) {
+  updateUser: async (name, email, phone, receiverName, receiverPhone, address) => {
+    let response = await updateUserInformation();
+    if (!response || response.hr !== 0) {
       return;
     }
-    store.dispatch('auth/updateUserInfo', params);
+    let params = {
+      name,
+      email,
+      phone,
+      receiverName,
+      receiverPhone,
+      address
+    };
+    store.commit('auth/UPDATE_USER_INFORMATION', params);
     return response;
   },
 
+  setUserPassword: (newPassword) => {
+    store.commit('auth/SAVE_PASSWORD', newPassword);
+  },
+  
   putOnMyBook: async (form) => {
     let response = await putOnBook(form);
     if (!response || response.hr != 0) {
@@ -128,7 +139,7 @@ export const AccountService = {
     password,
     oldPassword
   }, 'POST'),
-}
+};
 
 /**
  * 登录
@@ -142,7 +153,7 @@ const login = (account, password) => {
       password
     }, 'POST');
   }
-}
+};
 
 /**
  * 注册用户
@@ -156,7 +167,7 @@ const createUser = (account, password) => {
       password
     }, 'POST');
   }
-}
+};
 
 /**
  * 获取用户信息
@@ -171,6 +182,15 @@ const getUserInfomation = (account) => {
   }
 };
 
+const updateUserInformation = (userInfo) => {
+  if (API.updateUserInformation.useFake) {
+    return FakeAccountService.updateUserInfo();
+  }else {
+    return request(API.updateUserInformation.url, {
+      account
+    }, 'Post')
+  }
+};
 const getUserBooks = (account) => {
   if (API.getUserBooks.useFake) {
     return FakeAccountService.getUserBooks(account);
