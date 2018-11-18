@@ -60,6 +60,17 @@ const mutations = {
   UPDATE_USER_INFO: (state, userInfo) => {
     state.userInfo = userInfo
   },
+  SAVE_PASSWORD: (state, password) => {
+    state.userInfo.password = password
+  },
+  UPDATE_USER_INFORMATION: (state, userInfo) => {
+    state.userInfo.name = userInfo.name
+    state.userInfo.email = userInfo.email
+    state.userInfo.phone = userInfo.phone
+    state.userInfo.receiveAddress.receiverName = userInfo.receiverName
+    state.userInfo.receiveAddress.receiverPhone = userInfo.receiverPhone
+    state.userInfo.receiveAddress.address = userInfo.address
+  },
   SAVE_USER_STATE: (state, userInfo) => {
     state.userInfo.account = userInfo.account
     state.userInfo.password = userInfo.password

@@ -60,5 +60,12 @@ export const FakeAccountService = {
         data: null
       });
     }
+  },
+  updateUserInfo: () => {
+    return Promise.resolve({
+      hr: 0,
+      message: "成功",
+      data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
+    });
   }
-}
+};

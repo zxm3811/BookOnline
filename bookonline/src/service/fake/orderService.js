@@ -48,7 +48,7 @@ export const FakeOrderService = {
           ],
           bookNum: 2,
           totalPrice: 142.5,
-          reciver: "戴坤恩",
+          receiver: "戴坤恩",
           address: {
             country: "中国",
             province: "江苏",
@@ -104,7 +104,7 @@ export const FakeOrderService = {
           ],
           bookNum: 2,
           totalPrice: 142.5,
-          reciver: "吴腾",
+          receiver: "吴腾",
           address: {
             country: "中国",
             province: "江苏",
@@ -160,7 +160,7 @@ export const FakeOrderService = {
           ],
           bookNum: 2,
           totalPrice: 142.5,
-          reciver: "张兴明",
+          receiver: "张兴明",
           address: {
             country: "中国",
             province: "江苏",
@@ -216,7 +216,7 @@ export const FakeOrderService = {
           ],
           bookNum: 2,
           totalPrice: 142.5,
-          reciver: "尼博林",
+          receiver: "尼博林",
           address: {
             country: "中国",
             province: "江苏",
@@ -272,7 +272,7 @@ export const FakeOrderService = {
           ],
           bookNum: 2,
           totalPrice: 142.5,
-          reciver: "孙向阳",
+          receiver: "孙向阳",
           address: {
             country: "中国",
             province: "江苏",

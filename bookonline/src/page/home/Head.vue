@@ -41,7 +41,7 @@ export default {
 			userName: "admin",
 			userInfo: {},
 			hasLogin: false
-    };
+    	};
 	},
 
 	components: {
@@ -66,25 +66,25 @@ export default {
 
 		gotoShoppingCart() {
 			if(!this.hasLogin) {
-        this.$toast.text("您还未登录，请先登录");
-        return;
-      }
+			  	this.$toast.text("您还未登录，请先登录");
+			  	return;
+			}
 			this.$router.push("/page/shoppingCart");
 		},
 
 		gotoMyOrder() {
 			if(!this.hasLogin) {
-        this.$toast.text("您还未登录，请先登录");
-        return;
-      }
+        		this.$toast.text("您还未登录，请先登录");
+        		return;
+      		}
 			this.$router.push("/page/userCenter/buyerOrderList");
 		},
 
 		gotoUserCenter() {
 			if(!this.hasLogin) {
-        this.$toast.text("您还未登录，请先登录");
-        return;
-      }
+        		this.$toast.text("您还未登录，请先登录");
+        		return;
+			}
 			this.$router.push("/page/userCenter");
 		},
 

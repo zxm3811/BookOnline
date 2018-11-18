@@ -40,7 +40,7 @@
                         </template>
                     </el-table-column>
                     <el-table-column prop="orderNo" label="订单号"></el-table-column>
-                    <el-table-column prop="reciver" label="收件人"></el-table-column>
+                    <el-table-column prop="receiver" label="收件人"></el-table-column>
                     <el-table-column prop="status" label="订单状态" :filters="filter"
                                      :filter-method="filterTag"
                                      filter-placement="bottom-end">

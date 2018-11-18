@@ -82,8 +82,8 @@ export default {
     this.initData();
   },
   methods: {
-    async initData() {
-      let items = await AccountService.getUserInfo();
+    initData() {
+      let items = AccountService.getUserInfo();
       this.name = items.name;
       this.email = items.email;
       this.phone = items.phone;

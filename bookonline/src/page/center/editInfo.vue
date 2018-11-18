@@ -1,59 +1,58 @@
 <template>
     <div>
-        <el-form :model="formData" :rules="rules" ref="formData" label-width="100px" label-position="right" size="medium ">
-
-            <el-form-item label="帐号">
-                {{this.formData.account}}
-            </el-form-item>
-            <el-form-item label="用户名" prop="name">
-                <el-row>
-                    <el-col :span="8">
-                        <el-input v-model="formData.name"></el-input>
-                    </el-col>
-                </el-row>
-            </el-form-item>
-            <el-form-item label="邮箱" prop="email">
-                <el-row>
-                    <el-col :span="8">
-                        <el-input v-model="formData.email"></el-input>
-                    </el-col>
-                </el-row>
-            </el-form-item>
-            <el-form-item label="电话" prop="phone">
-                <el-row>
-                    <el-col :span="8">
-                        <el-input v-model="formData.phone"></el-input>
-                    </el-col>
-                </el-row>
-            </el-form-item>
-            <el-form-item label="收货地址" prop="addr" required>
-                <select-addr @cityData="cityData" :inputAddr="this.formData.addr"></select-addr>
-            </el-form-item>
-            <el-form-item label="收件人姓名" prop="receiverName">
-                <el-row>
-                    <el-col :span="8">
-                        <el-input v-model="formData.receiverName"></el-input>
-                    </el-col>
-                </el-row>
-            </el-form-item>
-            <el-form-item label="收件人电话" prop="receiverPhone">
-                <el-row>
-                    <el-col :span="8">
-                        <el-input v-model="formData.receiverPhone"></el-input>
-                    </el-col>
-                </el-row>
-            </el-form-item>
-            <el-form-item>
-                <el-button type="primary" @click="submitForm('formData')">保存</el-button>
-            </el-form-item>
-        </el-form>
-
+        <div class="form">
+            <el-form :model="formData" status-icon :rules="rules" ref="form" label-width="100px" label-position="right" size="medium">
+                <el-form-item label="帐号">
+                    {{this.formData.account}}
+                </el-form-item>
+                <el-form-item label="用户名" prop="name">
+                    <el-row>
+                        <el-col :span="8">
+                            <el-input v-model="formData.name"></el-input>
+                        </el-col>
+                    </el-row>
+                </el-form-item>
+                <el-form-item label="邮箱" prop="email">
+                    <el-row>
+                        <el-col :span="8">
+                            <el-input v-model="formData.email"></el-input>
+                        </el-col>
+                    </el-row>
+                </el-form-item>
+                <el-form-item label="电话" prop="phone">
+                    <el-row>
+                        <el-col :span="8">
+                            <el-input v-model="formData.phone"></el-input>
+                        </el-col>
+                    </el-row>
+                </el-form-item>
+                <el-form-item label="收货地址" prop="addr" required>
+                    <select-addr @cityData="cityData" :inputAddr="this.formData.addr"></select-addr>
+                </el-form-item>
+                <el-form-item label="收件人姓名" prop="receiverName">
+                    <el-row>
+                        <el-col :span="8">
+                            <el-input v-model="formData.receiverName"></el-input>
+                        </el-col>
+                    </el-row>
+                </el-form-item>
+                <el-form-item label="收件人电话" prop="receiverPhone">
+                    <el-row>
+                        <el-col :span="8">
+                            <el-input v-model="formData.receiverPhone"></el-input>
+                        </el-col>
+                    </el-row>
+                </el-form-item>
+                <el-form-item>
+                    <el-button type="primary" @click="submitForm('form', formData)" plain>保存</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
     </div>
-
 </template>
 
 <script>
-  import SelectAddr from './selectaddr'
+  import SelectAddr from './selectAddr'
   import {AccountService} from "../../service/account";
 
   export default {
@@ -62,11 +61,13 @@
         if (!this.formData.username && !value) {
           callback(new Error('请输入用户名'));
         }
+        else callback();
       };
       var checkReceiverName = (rule, value, callback) => {
         if (!this.formData.receiverName && !value) {
           callback(new Error('请输入收件人'));
         }
+        else callback();
       };
       var checkReceiverPhone = (rule, value, callback) => {
         if (!value) {
@@ -74,6 +75,7 @@
         } else if (value.length !== 11) {
           callback(new Error('电话号码不是11位'));
         }
+        else callback();
       };
       var checkAddr = (rule, value, callback) => {
         if (value.province === '' || value.city === '' ||
@@ -81,7 +83,7 @@
             value.mark === '') {
           callback(new Error('请完善地址信息'));
         }
-
+        else callback();
       };
       var checkPhone = (rule, value, callback) => {
         if (!value) {
@@ -89,11 +91,16 @@
         } else if (value.length !== 11) {
           callback(new Error('电话号码不是11位'));
         }
+        else callback();
       };
       var checkEmail = (rule, value, callback) => {
-        if (!(value.includes('.com') && value.includes('@'))) {
+        if (!value) {
+          callback(new Error('请输入邮箱'));
+        }
+        else if (!(value.includes('.com') && value.includes('@'))) {
           callback(new Error('邮箱格式错误'));
         }
+        else callback();
       };
       return {
         formData: {
@@ -116,7 +123,7 @@
             {required: true, validator: checkUserName, trigger: 'blur'}
           ],
           email: [
-            {type: 'email', message: '请输入正确的邮箱', trigger: ['blur', 'change']}
+            {type: 'email', validator: checkEmail, trigger: ['blur', 'change']}
           ],
           phone: [
             {required: true, validator: checkPhone, trigger: 'blur'}
@@ -148,16 +155,18 @@
         this.formData.addr.street = data.jiedao;
         this.formData.addr.mark = data.mark;
       },
-      submitForm(formName) {
+      submitForm(formName, data) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            let address = data.addr.province + ' ' + data.addr.city + ' '
+              + data.addr.district +' ' + data.addr.street + ' ' + data.addr.mark;
+            AccountService.updateUser(data.name, data.email, data.phone,
+              data.receiverName, data.receiverPhone, address);
           } else {
             console.log('error submit!!');
             return false;
           }
         });
-        console.log(this.formData);
       },
       initData() {
         let items = AccountService.getUserInfo();
@@ -179,4 +188,6 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

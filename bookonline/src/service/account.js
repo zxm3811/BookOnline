@@ -17,6 +17,10 @@ const API = {
     url: "/account/getUserInfomation",
     useFake: true
   },
+  updateUserInformation: {
+    url: "/account/update",
+    useFake: true
+  }
 }
 
 export const AccountService = {
@@ -73,18 +77,26 @@ export const AccountService = {
     return JSON.parse(JSON.stringify(store.getters["auth/userInfo"]));
   },
 
-  updateUser: async (displayName, gender, age) => {
-    let params = {
-      displayName,
-      gender,
-      age
-    };
-    let response = await request("/account/update", params, 'POST');
-    if (!response || response.hr != 0) {
+  updateUser: async (name, email, phone, receiverName, receiverPhone, address) => {
+    let response = await updateUserInformation();
+    if (!response || response.hr !== 0) {
       return;
     }
-    store.dispatch('auth/updateUserInfo', params);
+    let params = {
+      name,
+      email,
+      phone,
+      receiverName,
+      receiverPhone,
+      address
+    };
+    store.commit('auth/UPDATE_USER_INFORMATION', params);
+    console.log(AccountService.getUserInfo());
     return response;
+  },
+
+  setUserPassword: (newPassword) => {
+    store.commit('auth/SAVE_PASSWORD', newPassword);
   },
 
   resetPassword: (account, password, oldPassword) => request('/account/resetPassword', {
@@ -92,7 +104,7 @@ export const AccountService = {
     password,
     oldPassword
   }, 'POST'),
-}
+};
 
 /**
  * 登录
@@ -106,7 +118,7 @@ const login = (account, password) => {
       password
     }, 'POST');
   }
-}
+};
 
 /**
  * 注册用户
@@ -120,7 +132,7 @@ const createUser = (account, password) => {
       password
     }, 'POST');
   }
-}
+};
 
 /**
  * 获取用户信息
@@ -132,5 +144,15 @@ const getUserInfomation = (account) => {
     return request(API.getUserInfomation.url, {
       account
     }, 'GET')
+  }
+};
+
+const updateUserInformation = (userInfo) => {
+  if (API.updateUserInformation.useFake) {
+    return FakeAccountService.updateUserInfo();
+  }else {
+    return request(API.updateUserInformation.url, {
+      account
+    }, 'Post')
   }
 };
