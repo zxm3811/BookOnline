@@ -52,7 +52,7 @@
 </template>
 
 <script>
-  import { city } from '../../assets/cityData'
+  import { city } from 'src/assets/cityData'
   export default {
     data () {
       return {
