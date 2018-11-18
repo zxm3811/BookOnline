@@ -9,7 +9,7 @@
             <div class="book_author" :title="item.author">{{ item.author }}</div>
           </div>
         </div>
-        <div class="book_money">￥{{ item.sellingPrice.toFixed(2) }}</div>
+        <div class="book_price">￥{{ item.sellingPrice && item.sellingPrice.toFixed(2) }}</div>
       </div>
     </div>
     
@@ -136,7 +136,7 @@ export default {
         }
       }
 
-      .book_money {
+      .book_price {
         margin: 0 0.23rem;
         font-size: 0.2rem;
         color: #bf7f5f;

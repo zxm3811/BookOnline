@@ -30,12 +30,12 @@
               <img :src="item.cover" @click="gotoBookDetail(item)" />
               <div class="book_name" @click="gotoBookDetail(item)" >{{ item.name }}</div>
               <div class="appearance">{{ item.appearance }}</div>
-              <div class="selling_price">{{ item.sellingPrice }}</div>
+              <div class="selling_price">{{ item.sellingPrice && item.sellingPrice.toFixed(2) }}</div>
               <div class="amount">x{{ item.amount }}件</div>
-              <div class="total_price">{{ item.sellingPrice * item.amount }}</div>
+              <div class="total_price">{{ (item.sellingPrice * item.amount) && (item.sellingPrice * item.amount).toFixed(2) }}</div>
             </div>
             <div class="foot">合计&nbsp;
-              <div class="totol_price"> ¥ {{ item.sellingPrice * item.amount }}</div>
+              <div class="totol_price"> ¥ {{ (item.sellingPrice * item.amount) && (item.sellingPrice * item.amount).toFixed(2) }}</div>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="total_amount">&nbsp;{{ totalAmount }}&nbsp;</div>
         件商品，应付总金额 
         <div class="rmb">&nbsp;¥</div>
-        <div class="total_price">{{ totalPrice }}</div>
+        <div class="total_price">{{ totalPrice && totalPrice.toFixed(2) }}</div>
       </div>
       <div class="confirm" @click="confirmPurchase">
         <div>确认并提交订单</div>

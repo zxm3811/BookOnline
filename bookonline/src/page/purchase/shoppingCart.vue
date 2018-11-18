@@ -24,12 +24,12 @@
               <img :src="item.cover" @click="gotoBookDetail(item)" />
               <div class="book_name" @click="gotoBookDetail(item)" >{{ item.name }}</div>
               <div class="appearance">{{ item.appearance }}</div>
-              <div class="selling_price">{{ item.sellingPrice }}</div>
+              <div class="selling_price">{{ item.sellingPrice && item.sellingPrice.toFixed(2) }}</div>
               <div class="amount">
                 <el-input-number v-model="item.amount" @change="handleAmountChange(item)" size="mini" :min="1" :max="item.stock" label="数量">
                 </el-input-number>
               </div>
-              <div class="total_price">{{ item.sellingPrice * item.amount }}</div>
+              <div class="total_price">{{ (item.sellingPrice * item.amount) && (item.sellingPrice * item.amount).toFixed(2) }}</div>
               <div class="operation" @click="deleteGoods(item)" >删除</div>
             </div>
           </el-checkbox-group>

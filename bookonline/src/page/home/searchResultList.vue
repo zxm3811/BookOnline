@@ -8,7 +8,7 @@
             <div class="book_name" @click="gotoBookDetail(index)" v-html="item.name" ></div>
             <div class="appearance_and_price">
               <div class="appearance">{{ item.appearance }}</div>
-              <div class="price">￥{{ item.sellingPrice }}</div>
+              <div class="price">￥{{ item.sellingPrice && item.sellingPrice.toFixed(2) }}</div>
             </div>
           </div>
           <div class="detail">

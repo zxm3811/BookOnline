@@ -92,7 +92,6 @@ export default {
       this.receiveAddress.receiverPhone = items.receiveAddress.receiverPhone;
       this.bankNo = items.bankNo;
       this.balance = items.balance;
-      console.log(this.receiveAddress);
     }
   }
 };

@@ -3,6 +3,7 @@ import VueRouter  from 'vue-router'
 
 import Login from 'src/page/account/login/login.vue'
 import Register from 'src/page/account/register/register.vue'
+import Upload from 'src/page/upload/upload.vue'
 import Page from 'src/page/home/page.vue'
 import Home from 'src/page/home/home.vue'
 import SearchResult from 'src/page/home/searchResult.vue'
@@ -15,6 +16,8 @@ import sellerOrderList from 'src/page/center/sellerOrderList.vue'
 import buyerOrderList from 'src/page/center/buyerOrderList.vue'
 import editInfo from 'src/page/center/editInfo.vue'
 import editPwd from 'src/page/center/editPwd.vue'
+import MyBooks from 'src/page/center/myBooks.vue'
+import PutOnBook from 'src/page/center/putOnBook.vue'
 
 Vue.use(VueRouter);
 
@@ -33,6 +36,11 @@ export const router = new VueRouter({
       path:'/register',//注册
       name: 'register',
 			component: Register
+    },
+    {
+      path:'/upload',//上传
+      name: 'upload',
+			component: Upload
 		},
     {
       path: '/page',
@@ -95,6 +103,16 @@ export const router = new VueRouter({
               path: 'editPwd',
               name: 'editPwd',
               component: editPwd
+            },
+            {
+              path: 'myBooks',//我的书籍
+              name: 'myBooks',
+              component: MyBooks
+            },
+            {
+              path: 'putOnBook',//上架新书
+              name: 'putOnBook',
+              component: PutOnBook
             }
           ]
         },

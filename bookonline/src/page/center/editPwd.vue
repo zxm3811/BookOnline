@@ -94,7 +94,6 @@
             }
           });
           AccountService.setUserPassword(this.pwdForm.pass);
-          console.log(AccountService.getUserInfo());
         },
         resetForm(formName) {
           this.$refs[formName].resetFields();

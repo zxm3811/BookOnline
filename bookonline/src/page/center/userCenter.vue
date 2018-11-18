@@ -24,7 +24,7 @@
                             <el-menu-item-group>
                                 <template slot="title">我是卖家</template>
                                 <el-menu-item index="/page/userCenter/sellerOrderList">我的订单</el-menu-item>
-                                <el-menu-item index="/page">我的书籍</el-menu-item>
+                                <el-menu-item index="/page/userCenter/myBooks">我的书籍</el-menu-item>
                             </el-menu-item-group>
                         </div>
                         <div class="menu_box">

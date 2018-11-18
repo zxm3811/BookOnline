@@ -20,6 +20,18 @@ const API = {
   updateUserInformation: {
     url: "/account/update",
     useFake: true
+  },
+  getUserBooks: {
+    url: "/account/getUserBooks",
+    useFake: true
+  },
+  putOnBook: {
+    url: "/account/putOnBook",
+    useFake: true
+  },
+  pullOffBook: {
+    url: "/account/pullOffBook",
+    useFake: true
   }
 }
 
@@ -64,10 +76,18 @@ export const AccountService = {
     return AccountService.saveUserInfo(params.account);
   },
 
+  getSellerBooks: async (account) => {
+    let response = await getUserBooks(account);
+    if (!response || response.hr != 0 || !response.data) {
+      return;
+    }
+    return response.data;
+  },
+
   saveUserInfo: async (account) => {
     let response = await getUserInfomation(account)
     if (!response || response.hr != 0 || !response.data) {
-      return response;
+      return;
     }
     store.dispatch('auth/saveUserState', response.data);
     return response;
@@ -91,12 +111,27 @@ export const AccountService = {
       address
     };
     store.commit('auth/UPDATE_USER_INFORMATION', params);
-    console.log(AccountService.getUserInfo());
     return response;
   },
 
   setUserPassword: (newPassword) => {
     store.commit('auth/SAVE_PASSWORD', newPassword);
+  },
+  
+  putOnMyBook: async (form) => {
+    let response = await putOnBook(form);
+    if (!response || response.hr != 0) {
+      return;
+    }
+    return response;
+  },
+
+  pullOffMyBook: async (bookId) => {
+    let response = await pullOffBook(bookId);
+    if (!response || response.hr != 0) {
+      return;
+    }
+    return response;
   },
 
   resetPassword: (account, password, oldPassword) => request('/account/resetPassword', {
@@ -154,5 +189,32 @@ const updateUserInformation = (userInfo) => {
     return request(API.updateUserInformation.url, {
       account
     }, 'Post')
+  }
+};
+const getUserBooks = (account) => {
+  if (API.getUserBooks.useFake) {
+    return FakeAccountService.getUserBooks(account);
+  } else {
+    return request(API.getUserBooks.url, {
+      account
+    }, 'GET')
+  }
+};
+
+const putOnBook = (form) => {
+  if (API.putOnBook.useFake) {
+    return FakeAccountService.putOnBook(form);
+  } else {
+    return request(API.putOnBook.url, form, 'POST')
+  }
+};
+
+const pullOffBook = (id) => {
+  if (API.pullOffBook.useFake) {
+    return FakeAccountService.pullOffBook(id);
+  } else {
+    return request(API.pullOffBook.url, {
+      id: id
+    }, 'POST')
   }
 };

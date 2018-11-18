@@ -17,7 +17,6 @@ export const UserInfoService = {
     if (!response || response.hr !== 0 || !response.data) {
       return;
     }
-    //let info = JSON.parse(JSON.stringify(response.data));
 
     return response.data;
   }
