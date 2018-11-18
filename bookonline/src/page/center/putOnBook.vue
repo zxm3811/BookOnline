@@ -250,6 +250,7 @@ export default {
           this.form.uid = userInfo.id;
           this.form.address = userInfo.receiveAddress.address;
           this.form.putOnDate = new Date().format("yyyy-MM-dd");
+          console.log(this.form)
           let response = await AccountService.putOnMyBook(this.form);
           if(response) {
             let that = this;

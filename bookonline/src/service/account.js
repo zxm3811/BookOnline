@@ -184,11 +184,11 @@ const getUserInfomation = (account) => {
 
 const updateUserInformation = (userInfo) => {
   if (API.updateUserInformation.useFake) {
-    return FakeAccountService.updateUserInfo();
+    return FakeAccountService.updateUserInformation(userInfo);
   }else {
     return request(API.updateUserInformation.url, {
-      account
-    }, 'Post')
+      userInfo
+    }, 'POST')
   }
 };
 const getUserBooks = (account) => {

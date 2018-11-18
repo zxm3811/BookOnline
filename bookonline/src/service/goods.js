@@ -13,6 +13,7 @@ const API = {
 
 export const GoodsService = {
   confirmPurchase: async (purchaseGoods) => {
+    console.log(purchaseGoods)
     let response = await purchase(purchaseGoods);
     if (!response || response.code != 0) {
       return;

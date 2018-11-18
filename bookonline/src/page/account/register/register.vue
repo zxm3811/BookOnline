@@ -93,7 +93,7 @@ export default {
         this.showConfirmPwsError = true;
         return;
       }
-      let userInfoService = await AccountService.userRegister({
+      let userInfo = await AccountService.userRegister({
         account: this.userAccount,
         password: this.password
       });
