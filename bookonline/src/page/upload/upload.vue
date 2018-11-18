@@ -30,22 +30,49 @@ export default {
     return {
       form: {},
       typeOptions: [
-        { value: "线装古籍 / 民国旧书" }, { value: "期刊 / 报纸 / 外文原版" }, { value: "国学古籍 / 收藏鉴赏" },
-        { value: "小说 / 文学 / 语言文字" }, { value: "历史 / 地理 / 艺术" }, { value: "政治 / 法律 / 军事" },
-        { value: "哲学 / 心理 / 宗教" }, { value: "经济 / 社科 / 综合" }, { value: "童书 / 生活 / 体育" },
-        { value: "工程技术 / 互联网" }, { value: "自然科学 / 医药卫生" }, { value: "教材 / 教辅 / 考试" },
-        { value: "红色文献 / 签名本" }],
+        { value: "线装古籍 / 民国旧书" },
+        { value: "期刊 / 报纸 / 外文原版" },
+        { value: "国学古籍 / 收藏鉴赏" },
+        { value: "小说 / 文学 / 语言文字" },
+        { value: "历史 / 地理 / 艺术" },
+        { value: "政治 / 法律 / 军事" },
+        { value: "哲学 / 心理 / 宗教" },
+        { value: "经济 / 社科 / 综合" },
+        { value: "童书 / 生活 / 体育" },
+        { value: "工程技术 / 互联网" },
+        { value: "自然科学 / 医药卫生" },
+        { value: "教材 / 教辅 / 考试" },
+        { value: "红色文献 / 签名本" }
+      ],
       bindingOptions: [
-        { value: "精装" }, { value: "软精装" }, { value: "平装" }],
+        { value: "精装" },
+        { value: "软精装" },
+        { value: "平装" }
+      ],
       formatOptions: [
-        { value: "大32" }, { value: "32" }, { value: "大16" }, { value: "16" }, { value: "其他" }],
+        { value: "大32" },
+        { value: "32" },
+        { value: "大16" },
+        { value: "16" },
+        { value: "其他" }
+      ],
       appearanceOptions: [
-        { value: "全新" }, { value: "九五品" }, { value: "九品" }, { value: "八五品" }, { value: "八品" },
-        { value: "七五品" }, { value: "七品" }, { value: "六五品" }, { value: "六品" }, { value: "其他" }],
+        { value: "全新" },
+        { value: "九五品" },
+        { value: "九品" },
+        { value: "八五品" },
+        { value: "八品" },
+        { value: "七五品" },
+        { value: "七品" },
+        { value: "六五品" },
+        { value: "六品" },
+        { value: "其他" }
+      ]
     };
   },
-  
-  async mounted() {
+
+  mounted() {
+    console.log(new Date().format("yyyy-MM-dd"));
   },
 
   methods: {
@@ -54,17 +81,41 @@ export default {
     },
 
     handleSuccess(response, file) {
-      console.log(response)
-      console.log(file)
-      if(response) {
+      console.log(response);
+      console.log(file);
+      if (response) {
         this.form.file = file;
       }
     },
 
     beforeRemove(file) {
-      return this.$confirm(`确定移除 ${ file.name }？`);
+      return this.$confirm(`确定移除 ${file.name}？`);
     }
   }
+};
+
+Date.prototype.format = function(format) {
+  var o = {
+    "M+": this.getMonth() + 1, //month
+    "d+": this.getDate(), //day
+    "h+": this.getHours(), //hour
+    "m+": this.getMinutes(), //minute
+    "s+": this.getSeconds(), //second
+    "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
+    S: this.getMilliseconds() //millisecond
+  };
+  if (/(y+)/.test(format))
+    format = format.replace(
+      RegExp.$1,
+      (this.getFullYear() + "").substr(4 - RegExp.$1.length)
+    );
+  for (var k in o)
+    if (new RegExp("(" + k + ")").test(format))
+      format = format.replace(
+        RegExp.$1,
+        RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
+      );
+  return format;
 };
 </script>
 

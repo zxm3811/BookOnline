@@ -14,7 +14,7 @@ const API = {
 export const UserInfoService = {
   getInfo: async () => {
     let response = await getUserInfo();
-    if (!response || response.hr !== 0 || !response.data) {
+    if (!response || response.code !== 0 || !response.data) {
       return;
     }
 

@@ -19,7 +19,7 @@ const API = {
 export const BookService = {
   searchBooks: async (keyword) => {
     let response = await search(keyword);
-    if (!response || response.hr != 0 || !response.data) {
+    if (!response || response.code != 0 || !response.data) {
       return;
     }
     return response.data;
@@ -27,7 +27,7 @@ export const BookService = {
 
   getAllTypeBooks: async () => {
     let response = await getAllBooks();
-    if (!response || response.hr != 0 || !response.data) {
+    if (!response || response.code != 0 || !response.data) {
       return;
     }
 

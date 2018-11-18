@@ -2,13 +2,13 @@ export const FakeAccountService = {
   login: (account, password) => {
     if(account === "admin" && password === "admin") {
       return Promise.resolve({
-        hr: 0,
+        code: 0,
         message: "成功",
         data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
       });
     } else {
       return Promise.resolve({
-        hr: -1,
+        code: -1,
         message: "帐号或密码错误",
         data: null
       });
@@ -18,13 +18,13 @@ export const FakeAccountService = {
   createUser: (account, password) => {
     if(account === "admin" && password === "admin") {
       return Promise.resolve({
-        hr: 0,
+        code: 0,
         message: "成功",
         data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
       });
     } else {
       return Promise.resolve({
-        hr: -1,
+        code: -1,
         message: "帐号已注册",
         data: null
       });
@@ -34,9 +34,10 @@ export const FakeAccountService = {
   getUserInfomation: (account) => {
     if(account === "admin") {
       return Promise.resolve({
-        hr: 0,
+        code: 0,
         message: "成功",
         data: {
+          id: 100,
           account: "admin",
           password: "admin",
           name: "戴坤恩",
@@ -57,7 +58,7 @@ export const FakeAccountService = {
       });
     } else {
       return Promise.resolve({
-        hr: -1,
+        code: -1,
         message: "帐号不存在",
         data: null
       });
@@ -65,7 +66,7 @@ export const FakeAccountService = {
   },
   updateUserInfo: () => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
     })
@@ -73,7 +74,7 @@ export const FakeAccountService = {
 
   putOnBook: (form) => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: null
     });
@@ -81,7 +82,7 @@ export const FakeAccountService = {
 
   pullOffBook: (id) => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: null
     });
@@ -89,7 +90,7 @@ export const FakeAccountService = {
 
   getUserBooks: (account) => {
     return Promise.resolve({
-      hr: 0,
+      code: 0,
       message: "成功",
       data: 
       [
@@ -108,7 +109,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -147,7 +148,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -167,7 +168,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -187,7 +188,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -207,7 +208,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -227,7 +228,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -247,7 +248,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -267,7 +268,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -287,7 +288,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -307,7 +308,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -327,7 +328,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -347,7 +348,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -367,7 +368,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -387,7 +388,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -407,7 +408,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -427,7 +428,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -447,7 +448,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -467,7 +468,7 @@ export const FakeAccountService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          owner: "",
+          uid: null,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20

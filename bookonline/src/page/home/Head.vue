@@ -96,8 +96,9 @@ export default {
       } else if (command == "sailerCenter") {
         this.$router.push("/page/userCenter/myBooks");
       } else if (command == "exit") {
-        await AccountService.logout();
-        window.location.reload();
+				await AccountService.logout();
+				this.$router.push("/page/home");
+				window.location.reload();
       }
     }
   }

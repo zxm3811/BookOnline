@@ -1,6 +1,7 @@
 const state = {
   userInfo: {
     token: '',
+    id: null,
     account: '',
     password: '',
     name: '',
@@ -37,15 +38,6 @@ const actions = {
     commit("SAVE_USER_STATE", userInfo);
   },
 
-  updateUserInfo({
-    commit
-  }, userInfo) {
-    if (!userInfo) {
-      return;
-    }
-    commit("UPDATE_USER_INFO", userInfo);
-  },
-
   clearAllUserState({
     commit
   }) {
@@ -56,9 +48,6 @@ const actions = {
 const mutations = {
   SAVE_TOKEN: (state, token) => {
     state.userInfo.token = token
-  },
-  UPDATE_USER_INFO: (state, userInfo) => {
-    state.userInfo = userInfo
   },
   SAVE_PASSWORD: (state, password) => {
     state.userInfo.password = password
@@ -72,6 +61,7 @@ const mutations = {
     state.userInfo.receiveAddress.address = userInfo.address
   },
   SAVE_USER_STATE: (state, userInfo) => {
+    state.userInfo.id = userInfo.id
     state.userInfo.account = userInfo.account
     state.userInfo.password = userInfo.password
     state.userInfo.name = userInfo.name
@@ -89,6 +79,7 @@ const mutations = {
   },
   CLEAR_ALL_USER_STATE: (state) => {
     state.userInfo.token = ''
+    state.userInfo.id = null
     state.userInfo.account = ''
     state.userInfo.password = ''
     state.userInfo.name = ''

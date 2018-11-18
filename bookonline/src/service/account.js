@@ -49,7 +49,7 @@ export const AccountService = {
 
   userlogin: async (params) => {
     let loginResponse = await login(params.account, params.password);
-    if (!loginResponse || loginResponse.hr != 0 || !loginResponse.data) {
+    if (!loginResponse || loginResponse.code != 0 || !loginResponse.data) {
       return;
     }
 
@@ -62,7 +62,7 @@ export const AccountService = {
 
   userRegister: async (params) => {
     let response = await createUser(params.account, params.password);
-    if (!response || response.hr != 0) {
+    if (!response || response.code != 0) {
       return;
     }
     if (response.data == null) {
@@ -78,7 +78,7 @@ export const AccountService = {
 
   getSellerBooks: async (account) => {
     let response = await getUserBooks(account);
-    if (!response || response.hr != 0 || !response.data) {
+    if (!response || response.code != 0 || !response.data) {
       return;
     }
     return response.data;
@@ -86,7 +86,7 @@ export const AccountService = {
 
   saveUserInfo: async (account) => {
     let response = await getUserInfomation(account)
-    if (!response || response.hr != 0 || !response.data) {
+    if (!response || response.code != 0 || !response.data) {
       return;
     }
     store.dispatch('auth/saveUserState', response.data);
@@ -99,7 +99,7 @@ export const AccountService = {
 
   updateUser: async (name, email, phone, receiverName, receiverPhone, address) => {
     let response = await updateUserInformation();
-    if (!response || response.hr !== 0) {
+    if (!response || response.code !== 0) {
       return;
     }
     let params = {
@@ -120,7 +120,7 @@ export const AccountService = {
   
   putOnMyBook: async (form) => {
     let response = await putOnBook(form);
-    if (!response || response.hr != 0) {
+    if (!response || response.code != 0) {
       return;
     }
     return response;
@@ -128,7 +128,7 @@ export const AccountService = {
 
   pullOffMyBook: async (bookId) => {
     let response = await pullOffBook(bookId);
-    if (!response || response.hr != 0) {
+    if (!response || response.code != 0) {
       return;
     }
     return response;
