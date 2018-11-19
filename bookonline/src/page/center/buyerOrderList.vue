@@ -54,7 +54,6 @@
                         </template>
                         <template slot-scope="scope">
                             <el-button @click="confirm(scope.row)" type="primary" size="small" plain v-if="scope.row.status !== '0'">确认送达</el-button>
-                            <el-button @click="handleClick(scope.row)" type="danger" size="small" plain>删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -65,6 +64,7 @@
 </template>
 
 <script>
+  import { AccountService } from "../../service/account";
   import { OrderService } from "../../service/order";
   import domUtil from "src/assets/js/domUtils.js";
   import { BookService } from "src/service/book.js";
@@ -92,18 +92,11 @@ export default {
       const property = column['property'];
       return row[property] === value;
     },
-    pay (row) {
-      console.log(row.accountNo);
-      console.log(row.totalPrice);
-    },
-    confirm (row) {
-      console.log(row.orderNo);
-    },
-    handleClick (row) {
-      console.log(row.orderNo);
+    async confirm (row) {
+      await OrderService.confirmSeletedOrder(row.orderNo);
     },
     async initData() {
-      this.items = await OrderService.getOrderList();
+      this.items = await OrderService.getSellerOrder(AccountService.getUserInfo().account);
     },
     gotoBookDetail(item) {
       event.stopPropagation();

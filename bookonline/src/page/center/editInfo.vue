@@ -27,7 +27,7 @@
                     </el-row>
                 </el-form-item>
                 <el-form-item label="收货地址" prop="addr" required>
-                    <select-addr @cityData="cityData" :inputAddr="this.formData.addr"></select-addr>
+                    <select-addr @cityData="cityData" :inputAddr="this.formData.addr" v-if="show"></select-addr>
                 </el-form-item>
                 <el-form-item label="收件人姓名" prop="receiverName">
                     <el-row>
@@ -116,7 +116,7 @@
             mark: ''
           },
           receiverName: '',
-          receiverPhone: ''
+          receiverPhone: '',
         },
         rules: {
           name: [
@@ -137,7 +137,8 @@
           receiverPhone: [
             {required: true, validator: checkReceiverPhone, trigger: 'blur'}
           ],
-        }
+        },
+        show: false
 
       };
     },
@@ -145,6 +146,9 @@
       SelectAddr
     },
     created () {
+      setTimeout(() => {
+        this.show = true;
+      }, 0);
       this.initData();
     },
     methods: {
@@ -160,8 +164,16 @@
           if (valid) {
             let address = data.addr.province + ' ' + data.addr.city + ' '
               + data.addr.district +' ' + data.addr.street + ' ' + data.addr.mark;
-            AccountService.updateUser(data.name, data.email, data.phone,
-              data.receiverName, data.receiverPhone, address);
+            let userInfo = AccountService.getUserInfo();
+            userInfo.name = data.name;
+            userInfo.email = data.email;
+            userInfo.phone = data.phone;
+            userInfo.receiveAddress.address = address;
+            userInfo.receiveAddress.receiverName = data.receiverName;
+            userInfo.receiveAddress.receiverPhone = data.receiverPhone;
+            AccountService.updateUser(userInfo);
+            console.log(AccountService.getUserInfo());
+            alert('保存成功');
           } else {
             console.log('error submit!!');
             return false;

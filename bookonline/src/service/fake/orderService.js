@@ -1,5 +1,5 @@
 export const FakeOrderService = {
-  order: () => {
+  order: (account) => {
     return Promise.resolve({
       code: 0,
       message: "成功",
@@ -286,5 +286,26 @@ export const FakeOrderService = {
         }
       ]
     })
+  },
+  deleteOrder: (orderNo) => {
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: "dsfsfss"
+    })
+  },
+  confirmOrder: (orderNo) => {
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: "dsfsfss"
+    })
+  },
+  deliver: (orderNo) => {
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: "dsfsfss"
+    })
   }
-}
+};

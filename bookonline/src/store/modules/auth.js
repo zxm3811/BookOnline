@@ -56,9 +56,10 @@ const mutations = {
     state.userInfo.name = userInfo.name
     state.userInfo.email = userInfo.email
     state.userInfo.phone = userInfo.phone
-    state.userInfo.receiveAddress.receiverName = userInfo.receiverName
-    state.userInfo.receiveAddress.receiverPhone = userInfo.receiverPhone
-    state.userInfo.receiveAddress.address = userInfo.address
+    state.userInfo.receiveAddress.receiverName = userInfo.receiveAddress.receiverName
+    state.userInfo.receiveAddress.receiverPhone = userInfo.receiveAddress.receiverPhone
+    state.userInfo.receiveAddress.address = userInfo.receiveAddress.address
+    state.userInfo.password = userInfo.password
   },
   SAVE_USER_STATE: (state, userInfo) => {
     state.userInfo.id = userInfo.id

@@ -97,27 +97,20 @@ export const AccountService = {
     return JSON.parse(JSON.stringify(store.getters["auth/userInfo"]));
   },
 
-  updateUser: async (name, email, phone, receiverName, receiverPhone, address) => {
-    let response = await updateUserInformation();
+  updateUser: async (userInfo) => {
+    let response = await updateUserInformation(userInfo);
     if (!response || response.code !== 0) {
       return;
     }
-    let params = {
-      name,
-      email,
-      phone,
-      receiverName,
-      receiverPhone,
-      address
-    };
-    store.commit('auth/UPDATE_USER_INFORMATION', params);
+    store.commit('auth/UPDATE_USER_INFORMATION', userInfo);
     return response;
   },
 
   setUserPassword: (newPassword) => {
     store.commit('auth/SAVE_PASSWORD', newPassword);
+
   },
-  
+
   putOnMyBook: async (form) => {
     let response = await putOnBook(form);
     if (!response || response.code != 0) {
@@ -182,6 +175,9 @@ const getUserInfomation = (account) => {
   }
 };
 
+/**
+ * 更改用户信息
+ */
 const updateUserInformation = (userInfo) => {
   if (API.updateUserInformation.useFake) {
     return FakeAccountService.updateUserInformation(userInfo);

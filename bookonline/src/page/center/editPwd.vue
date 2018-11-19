@@ -85,15 +85,20 @@
       },
       methods: {
         submitForm(formName) {
+          let that = this;
           this.$refs[formName].validate((valid) => {
             if (valid) {
-              alert('submit!');
+              let userInfo = AccountService.getUserInfo();
+              userInfo.password = that.pwdForm.pass;
+              if(AccountService.updateUser(userInfo)) {
+                alert("保存成功");
+                console.log(AccountService.getUserInfo());
+              }
             } else {
               console.log('error submit!!');
               return false;
             }
           });
-          AccountService.setUserPassword(this.pwdForm.pass);
         },
         resetForm(formName) {
           this.$refs[formName].resetFields();
