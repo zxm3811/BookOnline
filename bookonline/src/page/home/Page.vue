@@ -8,7 +8,7 @@
 </template>
 
 <script type="text/javascript">
-import vHead from "./Head";
+import vHead from "./head";
 
 export default {
   data() {
