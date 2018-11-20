@@ -6,7 +6,7 @@ import { FakeGoodsService } from "./fake/goodsService.js";
 
 const API = {
   purchase: {
-    url: "/goods/purchase",
+    url: "/book/purchase",
     useFake: true
   }
 }
@@ -14,9 +14,6 @@ const API = {
 export const GoodsService = {
   confirmPurchase: async (purchaseGoods) => {
     let response = await purchase(purchaseGoods);
-    if (!response || response.code != 0) {
-      return;
-    }
     return response;
   },
 
@@ -39,10 +36,10 @@ export const GoodsService = {
 
 const purchase = (purchaseGoods) => {
   if (API.purchase.useFake) {
-    return FakeGoodsService.purchase();
+    return FakeGoodsService.purchase(purchaseGoods);
   } else {
     return request(API.purchase.url, {
-      purchaseGoods: purchaseGoods
+      purchaseGoods
     }, 'POST')
   }
 }

@@ -2,7 +2,7 @@
     <div>
         <el-row>
             <div class="typeTab">
-                <el-table :data="items.filter(data => !search || data.orderNo.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
+                <el-table :data="items.filter(data => !search || data.orderId.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
                           fit style="width: 100%">
                     <el-table-column type="expand">
                         <template slot-scope="props">
@@ -39,7 +39,7 @@
                             </el-form>
                         </template>
                     </el-table-column>
-                    <el-table-column prop="orderNo" label="订单号"></el-table-column>
+                    <el-table-column prop="orderId" label="订单号"></el-table-column>
                     <el-table-column prop="receiver" label="收件人"></el-table-column>
                     <el-table-column prop="status" label="订单状态" :filters="filter"
                             :filter-method="filterTag"
@@ -64,7 +64,6 @@
 </template>
 
 <script>
-  import { AccountService } from "../../service/account";
   import { OrderService } from "../../service/order";
   import domUtil from "src/assets/js/domUtils.js";
   import { BookService } from "src/service/book.js";
@@ -93,10 +92,10 @@ export default {
       return row[property] === value;
     },
     async confirm (row) {
-      await OrderService.confirmSeletedOrder(row.orderNo);
+
     },
     async initData() {
-      this.items = await OrderService.getSellerOrder(AccountService.getUserInfo().account);
+      this.items = await OrderService.getOrderList();
     },
     gotoBookDetail(item) {
       event.stopPropagation();

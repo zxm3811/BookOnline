@@ -48,16 +48,16 @@ export const AccountService = {
   },
 
   userlogin: async (params) => {
-    let loginResponse = await login(params.account, params.password);
-    if (!loginResponse || loginResponse.code != 0 || !loginResponse.data) {
+    let response = await login(params.account, params.password);
+    if (!response || response.code != 0 || !response.data) {
       return;
     }
 
     store.dispatch("clearAll");
 
-    store.dispatch('auth/saveToken', loginResponse.data);
+    store.dispatch('auth/saveToken', response.data);
 
-    return AccountService.saveUserInfo(params.account);
+    return AccountService.saveUserInfo(params.account, params.password);
   },
 
   userRegister: async (params) => {
@@ -73,7 +73,7 @@ export const AccountService = {
 
     store.dispatch('auth/saveToken', response.data);
 
-    return AccountService.saveUserInfo(params.account);
+    return AccountService.saveUserInfo(params.account, params.password);
   },
 
   getSellerBooks: async (account) => {
@@ -84,8 +84,8 @@ export const AccountService = {
     return response.data;
   },
 
-  saveUserInfo: async (account) => {
-    let response = await getUserInfomation(account)
+  saveUserInfo: async (account, password) => {
+    let response = await getUserInfomation(account, password)
     if (!response || response.code != 0 || !response.data) {
       return;
     }
@@ -108,7 +108,7 @@ export const AccountService = {
 
   setUserPassword: (newPassword) => {
     store.commit('auth/SAVE_PASSWORD', newPassword);
-
+    return true;
   },
 
   putOnMyBook: async (form) => {
@@ -165,12 +165,13 @@ const createUser = (account, password) => {
 /**
  * 获取用户信息
  */
-const getUserInfomation = (account) => {
+const getUserInfomation = (account, password) => {
   if (API.getUserInfomation.useFake) {
-    return FakeAccountService.getUserInfomation(account);
+    return FakeAccountService.getUserInfomation(account, password);
   } else {
     return request(API.getUserInfomation.url, {
-      account
+      account,
+      password
     }, 'GET')
   }
 };

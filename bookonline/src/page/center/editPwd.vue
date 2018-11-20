@@ -85,17 +85,15 @@
       },
       methods: {
         submitForm(formName) {
-          let that = this;
-          this.$refs[formName].validate((valid) => {
+          this.$refs[formName].validate(async (valid) => {
             if (valid) {
-              let userInfo = AccountService.getUserInfo();
-              userInfo.password = that.pwdForm.pass;
-              if(AccountService.updateUser(userInfo)) {
-                alert("保存成功");
-                console.log(AccountService.getUserInfo());
+              let response = await AccountService.setUserPassword(this.pwdForm.pass);
+              if(response) {
+                this.$toast.text("修改成功");
+              } else {
+                this.$toast.text("修改失败");
               }
             } else {
-              console.log('error submit!!');
               return false;
             }
           });

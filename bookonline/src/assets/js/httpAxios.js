@@ -31,6 +31,7 @@ export const request = (url = '', data = {}, method = 'POST') => {
   if (method === 'POST') {
     return axios(config);
   } else {
+    url = "http://114.115.139.78:8080" + url;
     return axios.get(url, {
       params: data
     });

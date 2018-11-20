@@ -27,7 +27,7 @@
                     </el-row>
                 </el-form-item>
                 <el-form-item label="收货地址" prop="addr" required>
-                    <select-addr @cityData="cityData" :inputAddr="this.formData.addr" v-if="show"></select-addr>
+                    <select-addr @cityData="cityData" :inputAddr="this.formData.addr"></select-addr>
                 </el-form-item>
                 <el-form-item label="收件人姓名" prop="receiverName">
                     <el-row>
@@ -103,6 +103,7 @@
         else callback();
       };
       return {
+        userInfo: null,
         formData: {
           account: '',
           name: '',
@@ -116,7 +117,7 @@
             mark: ''
           },
           receiverName: '',
-          receiverPhone: '',
+          receiverPhone: ''
         },
         rules: {
           name: [
@@ -137,8 +138,7 @@
           receiverPhone: [
             {required: true, validator: checkReceiverPhone, trigger: 'blur'}
           ],
-        },
-        show: false
+        }
 
       };
     },
@@ -146,9 +146,6 @@
       SelectAddr
     },
     created () {
-      setTimeout(() => {
-        this.show = true;
-      }, 0);
       this.initData();
     },
     methods: {
@@ -164,16 +161,13 @@
           if (valid) {
             let address = data.addr.province + ' ' + data.addr.city + ' '
               + data.addr.district +' ' + data.addr.street + ' ' + data.addr.mark;
-            let userInfo = AccountService.getUserInfo();
-            userInfo.name = data.name;
-            userInfo.email = data.email;
-            userInfo.phone = data.phone;
-            userInfo.receiveAddress.address = address;
-            userInfo.receiveAddress.receiverName = data.receiverName;
-            userInfo.receiveAddress.receiverPhone = data.receiverPhone;
-            AccountService.updateUser(userInfo);
-            console.log(AccountService.getUserInfo());
-            alert('保存成功');
+            this.userInfo.name = data.name;
+            this.userInfo.email = data.email;
+            this.userInfo.phone = data.phone;
+            this.userInfo.receiveAddress.receiverName = data.receiverName;
+            this.userInfo.receiveAddress.receiverPhone = data.receiverPhone;
+            this.userInfo.receiveAddress.address = address;
+            AccountService.updateUser(this.userInfo);
           } else {
             console.log('error submit!!');
             return false;
@@ -181,19 +175,19 @@
         });
       },
       initData() {
-        let items = AccountService.getUserInfo();
-        this.formData.account = items.account;
-        this.formData.name = items.name;
-        this.formData.email = items.email;
-        this.formData.phone = items.phone;
-        let address = items.receiveAddress.address.split(' ');
+        this.userInfo = AccountService.getUserInfo();
+        this.formData.account = this.userInfo.account;
+        this.formData.name = this.userInfo.name;
+        this.formData.email = this.userInfo.email;
+        this.formData.phone = this.userInfo.phone;
+        let address = this.userInfo.receiveAddress.address.split(' ');
         this.formData.addr.province = address[0];
         this.formData.addr.city = address[1];
         this.formData.addr.district = address[2];
         this.formData.addr.street = address[3];
         this.formData.addr.mark = address[4];
-        this.formData.receiverName = items.receiveAddress.receiverName;
-        this.formData.receiverPhone = items.receiveAddress.receiverPhone;
+        this.formData.receiverName = this.userInfo.receiveAddress.receiverName;
+        this.formData.receiverPhone = this.userInfo.receiveAddress.receiverPhone;
       }
     }
   }

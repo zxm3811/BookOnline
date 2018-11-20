@@ -2,7 +2,7 @@
     <div>
         <el-row>
             <div class="typeTab">
-                <el-table :data="items.filter(data => !search || data.orderNo.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
+                <el-table :data="items.filter(data => !search || data.orderId.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
                           fit style="width: 100%">
                     <el-table-column type="expand">
                         <template slot-scope="props">
@@ -39,7 +39,7 @@
                             </el-form>
                         </template>
                     </el-table-column>
-                    <el-table-column prop="orderNo" label="订单号"></el-table-column>
+                    <el-table-column prop="orderId" label="订单号"></el-table-column>
                     <el-table-column prop="receiver" label="收件人"></el-table-column>
                     <el-table-column prop="status" label="订单状态" :filters="filter"
                                      :filter-method="filterTag"
@@ -53,7 +53,7 @@
                             <el-input v-model="search" size="mini" placeholder="订单号/商品名"/>
                         </template>
                         <template slot-scope="scope">
-                            <el-button @click="deliver(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '2'">通知发货</el-button>
+                            <el-button @click="deliver(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '3'">通知发货</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -64,7 +64,6 @@
 </template>
 
 <script>
-  import { AccountService } from "../../service/account";
   import { OrderService } from "../../service/order";
   import domUtil from "src/assets/js/domUtils.js";
   import { BookService } from "src/service/book.js";
@@ -96,11 +95,14 @@
         const property = column['property'];
         return row[property] === value;
       },
-      async deliver (row) {
-        await OrderService.deliver(row.orderNo);
+      deliver (row) {
+        console.log(row.orderId);
+      },
+      handleClick (row) {
+        console.log(row.orderId);
       },
       async initData() {
-        this.items = await OrderService.getSellerOrder(AccountService.getUserInfo().account);
+        this.items = await OrderService.getOrderList();
       },
       gotoBookDetail(item) {
         event.stopPropagation();

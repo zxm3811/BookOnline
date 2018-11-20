@@ -151,9 +151,11 @@
       this.qu = this.inputAddr.district;
       this.jiedao = this.inputAddr.street;
       this.mark = this.inputAddr.mark;
+
+      this.getCityData();
     },
     mounted () {
-      this.getCityData();
+
     },
     props: {
       inputAddr: Object
