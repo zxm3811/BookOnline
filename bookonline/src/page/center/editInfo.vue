@@ -72,12 +72,10 @@
       var checkReceiverPhone = (rule, value, callback) => {
         if (!value) {
           callback(new Error('电话号码不可为空'));
-        }
-        else if (!Number.isInteger(value)){
-          callback(new Error('请输入数字值'));
-        }
-        else if (value.length !== 11) {
+        } else if (value.length !== 11) {
           callback(new Error('电话号码不是11位'));
+        } else if (!this.isPoneAvailable(value)) {
+          callback(new Error('电话号码不正确'));
         }
         else callback();
       };
@@ -86,18 +84,15 @@
             value.district === '' || value.street === '' ||
             value.mark === '') {
           callback(new Error('请完善地址信息'));
-        }
-        else callback();
+        } else callback();
       };
       var checkPhone = (rule, value, callback) => {
         if (!value) {
           callback(new Error('电话号码不可为空'));
-        }
-        else if (!Number.isInteger(value)){
-          callback(new Error('请输入数字值'));
-        }
-        else if (value.length !== 11) {
+        } else if (value.length !== 11) {
           callback(new Error('电话号码不是11位'));
+        } else if (!this.isPoneAvailable(value)) {
+          callback(new Error('电话号码不正确'));
         }
         else callback();
       };
@@ -198,6 +193,15 @@
         this.formData.addr.mark = address[4];
         this.formData.receiverName = this.userInfo.receiveAddress.receiverName;
         this.formData.receiverPhone = this.userInfo.receiveAddress.receiverPhone;
+      },
+
+      isPoneAvailable(str) {
+        var myreg=/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/;
+        if (!myreg.test(str)) {
+          return false;
+        } else {
+          return true;
+        }
       }
     }
   }
