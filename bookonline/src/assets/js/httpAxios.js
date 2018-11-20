@@ -13,7 +13,7 @@ import {
   vueInstance
 } from 'src/main'
 import {
-  HRESULT,
+  CODE,
   APP_TYPE,
   CLIENT_TYPE,
   NET_TYPE
@@ -24,13 +24,14 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 
 export const request = (url = '', data = {}, method = 'POST') => {
   let config = {
-    url: "http://localhost:8082" + url,
+    url: "http://114.115.139.78:8080" + url,
     data: data,
     method: method
   };
   if (method === 'POST') {
     return axios(config);
   } else {
+    url = "http://114.115.139.78:8080" + url;
     return axios.get(url, {
       params: data
     });
@@ -62,7 +63,7 @@ axios.interceptors.response.use(
     if (!match(response, _noToastFilter)) {
       if (!response.data) {
         vueInstance.$toast.text('服务器无响应');
-      } else if (response.data.hr !== 0) {
+      } else if (response.data.code !== 0) {
         vueInstance.$toast.text(response.data.message);
       }
     }
@@ -138,24 +139,24 @@ const match = (value, filter) => {
  * 作用:决定是否在拦截响应时toast提示信息
  * filterItems:指定过滤项
  *      url: String 不需要toast的请求地址
- *      hr: Array 不需要toast的响应hr，若不指定则全部都不需要toast
+ *      code: Array 不需要toast的响应hr，若不指定则全部都不需要toast
  */
 const _noToastFilter = {
   filterItems: [{
     url: 'getUserSchoolList',
-    hr: [HRESULT.NO_DATA]
+    code: [CODE.NO_DATA]
   },
   {
     url: '/account/bindIdentifyInfo',
-    hr: [HRESULT.OK, HRESULT.BIND_FAILURE, HRESULT.BIND_MERGE]
+    code: [CODE.OK, CODE.BIND_FAILURE, CODE.BIND_MERGE]
   },
   {
     url: '/behavior',
-    hr: []
+    code: []
   },
   {
     url: '/catalog/recommend',
-    hr: []
+    code: []
   }
   ],
   match(response, filterItem) {
@@ -166,11 +167,11 @@ const _noToastFilter = {
       return false;
     }
 
-    if (!filterItem.hr || 0 == filterItem.hr.length) {
+    if (!filterItem.code || 0 == filterItem.code.length) {
       return true;
     } else {
-      for (let i = 0; i < filterItem.hr.length; ++i) {
-        if (filterItem.hr[i] == response.data.hr) {
+      for (let i = 0; i < filterItem.code.length; ++i) {
+        if (filterItem.code[i] == response.data.code) {
           return true;
         }
       }

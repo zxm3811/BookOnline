@@ -2,13 +2,13 @@ export const FakeAccountService = {
   login: (account, password) => {
     if(account === "admin" && password === "admin") {
       return Promise.resolve({
-        hr: 0,
+        code: 0,
         message: "",
         data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
       });
     } else {
       return Promise.resolve({
-        hr: -1,
+        code: -1,
         message: "帐号或密码错误",
         data: null
       });
@@ -17,13 +17,13 @@ export const FakeAccountService = {
   createUser: (account, password) => {
     if(account === "admin" && password === "admin") {
       return Promise.resolve({
-        hr: 0,
+        code: 0,
         message: "",
         data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
       });
     } else {
       return Promise.resolve({
-        hr: -1,
+        code: -1,
         message: "帐号已注册",
         data: null
       });
@@ -32,7 +32,7 @@ export const FakeAccountService = {
   getUserInfomation: (account) => {
     if(account === "admin") {
       return Promise.resolve({
-        hr: 0,
+        code: 0,
         message: "成功",
         data: {
           id: 1001,
@@ -45,7 +45,7 @@ export const FakeAccountService = {
       });
     } else {
       return Promise.resolve({
-        hr: -1,
+        code: -1,
         message: "帐号不存在",
         data: null
       });

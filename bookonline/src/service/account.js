@@ -17,75 +17,104 @@ const API = {
     url: "/account/getUserInfomation",
     useFake: true
   },
+  updateUserInformation: {
+    url: "/account/update",
+    useFake: true
+  },
+  putOnBook: {
+    url: "/account/putOnBook",
+    useFake: true
+  },
+  pullOffBook: {
+    url: "/account/pullOffBook",
+    useFake: true
+  }
 }
 
 export const AccountService = {
   hasLogin: () => {
     let currentUser = store.getters["auth/userInfo"];
-    return currentUser && currentUser.userId;
+    if(currentUser.account) {
+      return true;
+    }
+    return false;
   },
   logout: () => {
     store.dispatch("clearAll");
   },
 
   userlogin: async (params) => {
-    let loginResponse = await login(params.account, params.password);
-    if (!loginResponse || loginResponse.hr != 0 || !loginResponse.data) {
+    let response = await login(params.account, params.password);
+    if (!response || response.code != 0 || !response.data) {
       return;
     }
 
     store.dispatch("clearAll");
 
-    store.dispatch('auth/saveToken', loginResponse.data);
+    store.dispatch('auth/saveToken', response.data);
 
-    let userInfoResponse = await getUserInfomation(params.account);
-    if (!userInfoResponse || userInfoResponse.hr != 0 || !userInfoResponse.data) {
-      return;
-    }
-
-    store.dispatch('auth/saveUserState', userInfoResponse.data);
-    return userInfoResponse;
+    return AccountService.saveUserInfo(params.account, params.password);
   },
 
   userRegister: async (params) => {
     let response = await createUser(params.account, params.password);
-    if (!response || response.hr != 0) {
+    if (!response || response.code != 0) {
       return;
     }
     if (response.data == null) {
       return;
     }
+
+    store.dispatch("clearAll");
+
     store.dispatch('auth/saveToken', response.data);
-    return response;
+
+    return AccountService.saveUserInfo(params.account, params.password);
   },
 
-  saveUserInfo: async (params) => {
-    let response = await getUserInfomation(params.account)
-    if (!response || response.hr != 0) {
-      return response;
+  getSellerBooks: async (id) => {
+    return JSON.parse(JSON.stringify(store.getters['myBook/getAllMyBooks']));
+  },
+
+  saveUserInfo: async (account, password) => {
+    let response = await getUserInfomation(account, password)
+    if (!response || response.code != 0) {
+      return;
     }
-    if (response.data == null) {
-      return response;
-    }
-    store.dispatch('auth/saveUserState', response.data);
     return response;
   },
 
   getUserInfo: () => {
-    return store.getters["auth/userInfo"];
+    return JSON.parse(JSON.stringify(store.getters["auth/userInfo"]));
   },
 
-  updateUser: async (displayName, gender, age) => {
-    let params = {
-      displayName,
-      gender,
-      age
-    };
-    let response = await request("/account/update", params, 'POST');
-    if (!response || response.hr != 0) {
+  updateUser: async (userInfo) => {
+    let response = await updateUserInformation(userInfo);
+    if (!response || response.code !== 0) {
       return;
     }
-    store.dispatch('auth/updateUserInfo', params);
+    store.commit('auth/UPDATE_USER_INFORMATION', userInfo);
+    return response;
+  },
+
+  setUserPassword: (newPassword) => {
+    store.commit('auth/SAVE_PASSWORD', newPassword);
+    return true;
+  },
+
+  putOnMyBook: async (form) => {
+    let response = await putOnBook(form);
+    if (!response || response.code != 0) {
+      return;
+    }
+    return response;
+  },
+
+  pullOffMyBook: async (bookId) => {
+    let response = await pullOffBook(bookId);
+    if (!response || response.code != 0) {
+      return;
+    }
     return response;
   },
 
@@ -94,7 +123,7 @@ export const AccountService = {
     password,
     oldPassword
   }, 'POST'),
-}
+};
 
 /**
  * 登录
@@ -108,7 +137,7 @@ const login = (account, password) => {
       password
     }, 'POST');
   }
-}
+};
 
 /**
  * 注册用户
@@ -122,17 +151,49 @@ const createUser = (account, password) => {
       password
     }, 'POST');
   }
-}
+};
 
 /**
  * 获取用户信息
  */
-const getUserInfomation = (account) => {
+const getUserInfomation = (account, password) => {
   if (API.getUserInfomation.useFake) {
-    return FakeAccountService.getUserInfomation(account);
+    return FakeAccountService.getUserInfomation(account, password);
   } else {
     return request(API.getUserInfomation.url, {
-      account
+      account,
+      password
+    }, 'GET')
+  }
+};
+
+/**
+ * 更改用户信息
+ */
+const updateUserInformation = (userInfo) => {
+  if (API.updateUserInformation.useFake) {
+    return FakeAccountService.updateUserInformation(userInfo);
+  }else {
+    return request(API.updateUserInformation.url, {
+      userInfo
+    }, 'POST')
+  }
+};
+
+const putOnBook = (form) => {
+  if (API.putOnBook.useFake) {
+    return FakeAccountService.putOnBook(form);
+  } else {
+    return request(API.putOnBook.url, form, 'POST')
+  }
+};
+
+const pullOffBook = (id) => {
+  if (API.pullOffBook.useFake) {
+    return FakeAccountService.pullOffBook(id);
+  } else {
+    return request(API.pullOffBook.url, {
+      id: id
     }, 'POST')
   }
 };

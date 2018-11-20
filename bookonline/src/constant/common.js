@@ -1,5 +1,5 @@
 
-export const HRESULT = {
+export const CODE = {
   OK: 0,
   BIND_FAILURE: -2147467242,
   BIND_MERGE: -2147467248,

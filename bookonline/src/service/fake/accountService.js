@@ -1,54 +1,58 @@
+import { BookService } from "src/service/book.js";
+import { AccountService } from "src/service/account";
+import store from "src/store"
+
 export const FakeAccountService = {
   login: (account, password) => {
-    if(account === "admin" && password === "admin") {
-      return Promise.resolve({
-        hr: 0,
-        message: "",
-        data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
-      });
-    } else {
-      return Promise.resolve({
-        hr: -1,
-        message: "帐号或密码错误",
-        data: null
-      });
-    }
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
+    });
   },
+
   createUser: (account, password) => {
-    if(account === "admin" && password === "admin") {
-      return Promise.resolve({
-        hr: 0,
-        message: "",
-        data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
-      });
-    } else {
-      return Promise.resolve({
-        hr: -1,
-        message: "帐号已注册",
-        data: null
-      });
-    }
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
+    });
   },
-  getUserInfomation: (account) => {
-    if(account === "admin") {
-      return Promise.resolve({
-        hr: 0,
-        message: "成功",
-        data: {
-          id: 1001,
-          account: "admin",
-          displayName: "管理员帐号",
-          gender: "男",
-          age: 20,
-          userType: "系统管理员"
-        }
-      });
-    } else {
-      return Promise.resolve({
-        hr: -1,
-        message: "帐号不存在",
-        data: null
-      });
-    }
+
+  getUserInfomation: async (account, password) => {
+    let userInfo = await AccountService.getUserInfo();
+    userInfo.account = account;
+    userInfo.password = password;
+    store.dispatch('auth/saveUserState', userInfo);
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: ""
+    });
+  },
+  updateUserInformation: (userInfo) => {
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: ""
+    })
+  },
+
+  putOnBook: (book) => {
+    store.dispatch('myBook/saveMyBook', book);
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: ""
+    });
+  },
+
+  pullOffBook: (id) => {
+    store.dispatch('myBook/deleteMyBookById', id);
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: ""
+    });
   }
-}
+};

@@ -1,68 +1,23 @@
-import {
-  SAVE_USER_STATE
-} from '../mutation-types'
-
 const state = {
   userInfo: {
-    ssnInfos: [],
-    userId: null,
     token: '',
-    address: '',
-    displayName: '',
-    email: '',
-    gender: '',
-    identityCard: '',
+    id: 100001,
+    account: '',
     password: '',
+    name: '',
+    email: '',
     phone: '',
-    phoneValid: false,
-    avatar: '',
-    userName: '',
-    userType: null,
-    userSchools: []
+    receiveAddress: {
+      receiverName: '',
+      receiverPhone: '',
+      address: ''
+    },
+    balance: 10000,
   }
 }
 const getters = {
   userInfo: state => {
     return state.userInfo
-  },
-  ssnInfos: state => {
-    return state.userInfo.ssnInfos
-  },
-  userId: state => {
-    return state.userInfo.userId
-  },
-  displayName: state => {
-    return state.userInfo.displayName
-  },
-  avatar: state => {
-    return state.userInfo.avatar
-  },
-  userName: state => {
-    return state.userInfo.userName
-  },
-  userType: state => {
-    return state.userInfo.userType
-  },
-  gender: state => {
-    return state.userInfo.gender
-  },
-  email: state => {
-    return state.userInfo.email
-  },
-  phone: state => {
-    return state.userInfo.phone
-  },
-  token: state => {
-    return state.userInfo.token
-  },
-  password: state => {
-    return state.userInfo.password
-  },
-  phoneValid: state => {
-    return state.userInfo.phoneValid
-  },
-  userSchools: state => {
-    return state.userInfo.userSchools
   }
 }
 
@@ -75,23 +30,7 @@ const actions = {
   saveUserState({
     commit
   }, userInfo) {
-    commit('SAVE_USER_STATE', userInfo);
-  },
-
-  updateUserInfo({
-    commit
-  }, params) {
-    if (!params) {
-      return;
-    }
-    params.displayName = params.displayName.trim()
-    commit("UPDATE_DISPLAY_NAME", params.displayName);
-  },
-
-  updateUserPhone({
-    commit
-  }, params) {
-    commit("UPDATE_USER_PHONE", params);
+    commit("SAVE_USER_STATE", userInfo);
   },
 
   clearAllUserState({
@@ -105,44 +44,36 @@ const mutations = {
   SAVE_TOKEN: (state, token) => {
     state.userInfo.token = token
   },
-  [SAVE_USER_STATE](state, userInfo) {
-    state.userInfo.userId = userInfo.id
-    state.userInfo.address = userInfo.address
-    state.userInfo.displayName = userInfo.displayName
+  SAVE_PASSWORD: (state, password) => {
+    state.userInfo.password = password
+  },
+  UPDATE_USER_INFORMATION: (state, userInfo) => {
+    state.userInfo = userInfo;
+  },
+  SAVE_USER_STATE: (state, userInfo) => {
+    state.userInfo.id = userInfo.id
+    state.userInfo.account = userInfo.account
+    state.userInfo.password = userInfo.password
+    state.userInfo.name = userInfo.name
     state.userInfo.email = userInfo.email
-    state.userInfo.gender = userInfo.gender
-    state.userInfo.identityCard = userInfo.identityCard
     state.userInfo.phone = userInfo.phone
-    state.userInfo.phoneValid = userInfo.phoneValid
-    state.userInfo.avatar = userInfo.photoUrl
-    state.userInfo.userName = userInfo.name
-    state.userInfo.userType = userInfo.userType
-    state.userInfo.ssnInfos = userInfo.ssnInfos
-    state.userInfo.userSchools = userInfo.userSchools
-  },
-  UPDATE_DISPLAY_NAME: (state, newName) => {
-    state.userInfo.displayName = newName
-  },
-  UPDATE_USER_PHONE: (state, phoneInfo) => {
-    state.userInfo.phoneValid = phoneInfo.phoneValid;
-    state.userInfo.phone = phoneInfo.phone;
+    state.userInfo.receiveAddress.receiverName = userInfo.receiveAddress.receiverName
+    state.userInfo.receiveAddress.receiverPhone = userInfo.receiveAddress.receiverPhone
+    state.userInfo.receiveAddress.address = userInfo.receiveAddress.address
+    state.userInfo.balance = userInfo.balance
   },
   CLEAR_ALL_USER_STATE: (state) => {
-    state.userInfo.token = ''
-    state.userInfo.userId = null
-    state.userInfo.address = ''
-    state.userInfo.displayName = ''
-    state.userInfo.email = ''
-    state.userInfo.gender = ''
-    state.userInfo.identityCard = ''
-    state.userInfo.password = ''
-    state.userInfo.phone = ''
-    state.userInfo.phoneValid = false
-    state.userInfo.avatar = ''
-    state.userInfo.userName = ''
-    state.userInfo.userType = null
-    state.userInfo.userSchools = []
-    state.userInfo.ssnInfos = []
+    // state.userInfo.token = ''
+    // state.userInfo.id = null
+    state.userInfo.account = ''
+    // state.userInfo.password = ''
+    // state.userInfo.name = ''
+    // state.userInfo.email = ''
+    // state.userInfo.phone = ''
+    // state.userInfo.receiveAddress.receiverName = ''
+    // state.userInfo.receiveAddress.receiverPhone = ''
+    // state.userInfo.receiveAddress.address = ''
+    // state.userInfo.balance = null
   }
 
 }
