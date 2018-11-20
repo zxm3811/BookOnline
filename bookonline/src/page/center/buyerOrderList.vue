@@ -45,7 +45,7 @@
                             :filter-method="filterTag"
                             filter-placement="bottom-end">
                         <template slot-scope="scope">
-                            <el-tag disable-transitions>{{filter[scope.row.status].text}}</el-tag>
+                            <el-tag disable-transitions>{{filter[parseInt(scope.row.status)].text}}</el-tag>
                         </template>
                     </el-table-column>
                     <el-table-column align="right">
@@ -53,7 +53,7 @@
                             <el-input v-model="search" size="mini" placeholder="订单号/商品名"/>
                         </template>
                         <template slot-scope="scope">
-                            <el-button @click="confirm(scope.row)" type="primary" size="small" plain v-if="scope.row.status !== '0'">确认送达</el-button>
+                            <el-button @click="confirm(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '1'">确认送达</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -75,8 +75,7 @@ export default {
       filter:[
         { text: '已完成订单', value: '0' },
         { text: '交易中订单', value: '1' },
-        { text: '待确认订单', value: '2' },
-        { text: '待发货订单', value: '3' }
+        { text: '待发货订单', value: '2' }
       ]
     };
   },
@@ -92,7 +91,9 @@ export default {
       return row[property] === value;
     },
     async confirm (row) {
-        
+      row.status = '0';
+      OrderService.updateUserOrder(row);
+      this.initData();
     },
     async initData() {
       this.items = await OrderService.getOrderList();
