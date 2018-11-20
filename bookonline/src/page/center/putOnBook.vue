@@ -229,7 +229,7 @@ export default {
           let userInfo = AccountService.getUserInfo();
           this.form.id = parseInt((Math.random()*100000000));
           this.form.uid = userInfo.id;
-          this.form.cover = "/static/img/default_cover.7d7beb2.png"
+          this.form.cover = "https://s1.ax1x.com/2018/11/20/F9AasP.png"
           this.form.address = userInfo.receiveAddress.address;
           this.form.putOnDate = new Date().format("yyyy-MM-dd");
           let response = await AccountService.putOnMyBook(this.form);

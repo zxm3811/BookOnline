@@ -54,20 +54,5 @@ export const FakeAccountService = {
       message: "成功",
       data: ""
     });
-  },
-
-  getUserBooks: async (id) => {
-    let books = await BookService.getBooks();
-    let result = [];
-    books.forEach(book => {
-      if(book.uid == id) {
-        result.push(book);
-      }
-    });
-    return Promise.resolve({
-      code: 0,
-      message: "成功",
-      data: result
-    });
   }
 };
