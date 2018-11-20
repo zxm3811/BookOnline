@@ -103,7 +103,7 @@
         console.log(row.orderId);
       },
       async initData() {
-        this.items = await OrderService.getOrderList();
+        this.items = await OrderService.getSellerOrderList();
       },
       gotoBookDetail(item) {
         event.stopPropagation();

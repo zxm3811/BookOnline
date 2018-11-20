@@ -9,6 +9,10 @@ const API = {
     url: '/order/getOrder',
     useFake: true
   },
+  getSellerOrder: {
+    url: '/order/getSellerOrder',
+    useFake: true
+  },
   saveOrder: {
     url: '/order/saveOrder',
     useFake: true
@@ -26,6 +30,14 @@ const API = {
 export const OrderService = {
   getOrderList: async () => {
     let response = await getOrder();
+    if (!response || response.code !== 0 || !response.data) {
+      return;
+    }
+    return response.data;
+  },
+
+  getSellerOrderList: async () => {
+    let response = await getSellerOrder();
     if (!response || response.code !== 0 || !response.data) {
       return;
     }
@@ -65,6 +77,14 @@ const getOrder = () => {
     return FakeOrderService.getOrder();
   } else {
     return request(API.getOrder.url, {}, 'POST');
+  }
+};
+
+const getSellerOrder = () => {
+  if (API.getSellerOrder.useFake) {
+    return FakeOrderService.getSellerOrder();
+  } else {
+    return request(API.getSellerOrder.url, {}, 'POST');
   }
 };
 

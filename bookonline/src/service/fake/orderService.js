@@ -35,5 +35,13 @@ export const FakeOrderService = {
       message: "成功",
       data: ""
     })
-  }
+  },
+
+  getSellerOrder: () => {
+    return Promise.resolve({
+      code: 0,
+      message: "成功",
+      data: null
+    })
+  },
 }
