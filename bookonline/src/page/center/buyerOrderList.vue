@@ -45,7 +45,7 @@
                             :filter-method="filterTag"
                             filter-placement="bottom-end">
                         <template slot-scope="scope">
-                            <el-tag disable-transitions>{{filter[scope.row.status].text}}</el-tag>
+                            <el-tag disable-transitions>{{filter[parseInt(scope.row.status)].text}}</el-tag>
                         </template>
                     </el-table-column>
                     <el-table-column align="right">
@@ -100,7 +100,6 @@ export default {
     },
     gotoBookDetail(item) {
       event.stopPropagation();
-      console.log(item.id);
       BookService.saveBook(item);
       this.$router.push({
         name: "bookDetail",

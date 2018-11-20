@@ -38,16 +38,6 @@
             </el-date-picker>
           </el-form-item>
         </el-form-item>
-        <el-form-item label="书籍封面" prop="cover">
-          <el-upload
-            action="https://jsonplaceholder.typicode.com/posts/"
-            :on-success="handleSuccess"
-            :before-remove="beforeRemove"
-            :limit="1">
-            <el-button size="small" type="primary">点击上传</el-button>
-            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-          </el-upload>
-        </el-form-item>
         <el-form-item label="装帧" prop="binding">
           <el-select v-model="form.binding" placeholder="装帧">
             <el-option
@@ -175,13 +165,6 @@ export default {
         }
       }, 100);
     };
-    var checkCover = (rule, value, callback) => {
-      if (!this.form.cover) {
-        return callback(new Error('请上传书籍封面'));
-      } else {
-        callback();
-      }
-    };
     return {
       form: {},
       typeOptions: [
@@ -216,9 +199,6 @@ export default {
         publishDate: [
           { type: 'string', required: true, message: '请选择日期', trigger: 'change' }
         ],
-        cover: [
-          { validator: checkCover, trigger: 'blur' }
-        ],
         binding: [
           { required: true, message: '请选择装帧', trigger: 'change' }
         ],
@@ -245,9 +225,11 @@ export default {
     async onSubmit(form) {
       this.$refs[form].validate(async (valid) => {
         if (valid) {
-          this.form.sale = (this.form.sellingPrice / this.form.fixedPrice * 10).toFixed(1);
+          this.form.sale = Number((this.form.sellingPrice / this.form.fixedPrice * 10).toFixed(1));
           let userInfo = AccountService.getUserInfo();
+          this.form.id = parseInt((Math.random()*100000000));
           this.form.uid = userInfo.id;
+          this.form.cover = "/static/img/default_cover.7d7beb2.png"
           this.form.address = userInfo.receiveAddress.address;
           this.form.putOnDate = new Date().format("yyyy-MM-dd");
           let response = await AccountService.putOnMyBook(this.form);
@@ -279,17 +261,6 @@ export default {
       }).catch(() => {
         return;
       });
-    },
-
-    handleSuccess(response, file) {
-      if(response) {
-        this.form.cover = file;
-      }
-    },
-
-    beforeRemove(file) {
-      this.form.cover = null;
-      return true;
     }
   }
 };

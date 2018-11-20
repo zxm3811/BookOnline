@@ -1,7 +1,7 @@
 const state = {
   userInfo: {
     token: '',
-    id: null,
+    id: 100001,
     account: '',
     password: '',
     name: '',
@@ -12,7 +12,7 @@ const state = {
       receiverPhone: '',
       address: ''
     },
-    balance: null,
+    balance: 10000,
   }
 }
 const getters = {
@@ -63,17 +63,17 @@ const mutations = {
     state.userInfo.balance = userInfo.balance
   },
   CLEAR_ALL_USER_STATE: (state) => {
-    state.userInfo.token = ''
-    state.userInfo.id = null
+    // state.userInfo.token = ''
+    // state.userInfo.id = null
     state.userInfo.account = ''
-    state.userInfo.password = ''
-    state.userInfo.name = ''
-    state.userInfo.email = ''
-    state.userInfo.phone = ''
-    state.userInfo.receiveAddress.receiverName = ''
-    state.userInfo.receiveAddress.receiverPhone = ''
-    state.userInfo.receiveAddress.address = ''
-    state.userInfo.balance = null
+    // state.userInfo.password = ''
+    // state.userInfo.name = ''
+    // state.userInfo.email = ''
+    // state.userInfo.phone = ''
+    // state.userInfo.receiveAddress.receiverName = ''
+    // state.userInfo.receiveAddress.receiverPhone = ''
+    // state.userInfo.receiveAddress.address = ''
+    // state.userInfo.balance = null
   }
 
 }

@@ -38,7 +38,7 @@ const API = {
 export const AccountService = {
   hasLogin: () => {
     let currentUser = store.getters["auth/userInfo"];
-    if(currentUser && currentUser.account) {
+    if(currentUser.account) {
       return true;
     }
     return false;
@@ -57,7 +57,18 @@ export const AccountService = {
 
     store.dispatch('auth/saveToken', response.data);
 
-    return AccountService.saveUserInfo(params.account, params.password);
+    response = await AccountService.saveUserInfo(params.account, params.password);
+
+    let id = await AccountService.getUserInfo().id;
+
+    let bookResponse = await getUserBooks(id);
+    if (!bookResponse || bookResponse.code != 0 || !bookResponse.data) {
+      return;
+    }
+    bookResponse.data.forEach(book => {
+      store.dispatch('myBook/saveMyBook', book);
+    });
+    return response;
   },
 
   userRegister: async (params) => {
@@ -76,20 +87,15 @@ export const AccountService = {
     return AccountService.saveUserInfo(params.account, params.password);
   },
 
-  getSellerBooks: async (account) => {
-    let response = await getUserBooks(account);
-    if (!response || response.code != 0 || !response.data) {
-      return;
-    }
-    return response.data;
+  getSellerBooks: async (id) => {
+    return JSON.parse(JSON.stringify(store.getters['myBook/getAllMyBooks']));
   },
 
   saveUserInfo: async (account, password) => {
     let response = await getUserInfomation(account, password)
-    if (!response || response.code != 0 || !response.data) {
+    if (!response || response.code != 0) {
       return;
     }
-    store.dispatch('auth/saveUserState', response.data);
     return response;
   },
 
@@ -188,12 +194,12 @@ const updateUserInformation = (userInfo) => {
     }, 'POST')
   }
 };
-const getUserBooks = (account) => {
+const getUserBooks = (id) => {
   if (API.getUserBooks.useFake) {
-    return FakeAccountService.getUserBooks(account);
+    return FakeAccountService.getUserBooks(id);
   } else {
     return request(API.getUserBooks.url, {
-      account
+      id
     }, 'GET')
   }
 };

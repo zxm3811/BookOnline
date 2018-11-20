@@ -1,3 +1,7 @@
+import { BookService } from "src/service/book.js";
+import { AccountService } from "src/service/account";
+import store from "src/store"
+
 export const FakeAccountService = {
   login: (account, password) => {
     return Promise.resolve({
@@ -15,438 +19,55 @@ export const FakeAccountService = {
     });
   },
 
-  getUserInfomation: (account, password) => {
-    let id = parseInt((Math.random()*100000000));
-
+  getUserInfomation: async (account, password) => {
+    let userInfo = await AccountService.getUserInfo();
+    userInfo.account = account;
+    userInfo.password = password;
+    store.dispatch('auth/saveUserState', userInfo);
     return Promise.resolve({
       code: 0,
       message: "成功",
-      data: {
-        id: id,
-        account: account,
-        password: password,
-        name: "",
-        email: "",
-        phone: "",
-        receiveAddress: {
-          receiverName: "",
-          receiverPhone: "",
-          address: ""
-        },
-        balance: "10000.00",
-      }
+      data: ""
     });
   },
   updateUserInformation: (userInfo) => {
     return Promise.resolve({
       code: 0,
       message: "成功",
-      data: null
+      data: ""
     })
   },
 
-  putOnBook: (form) => {
+  putOnBook: (book) => {
+    store.dispatch('myBook/saveMyBook', book);
     return Promise.resolve({
       code: 0,
       message: "成功",
-      data: null
+      data: ""
     });
   },
 
   pullOffBook: (id) => {
+    store.dispatch('myBook/deleteMyBookById', id);
     return Promise.resolve({
       code: 0,
       message: "成功",
-      data: null
+      data: ""
     });
   },
 
-  getUserBooks: (account) => {
+  getUserBooks: async (id) => {
+    let books = await BookService.getBooks();
+    let result = [];
+    books.forEach(book => {
+      if(book.uid == id) {
+        result.push(book);
+      }
+    });
     return Promise.resolve({
       code: 0,
       message: "成功",
-      data: 
-      [
-        {
-          id: 1001,
-          type: 1,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1002,
-          type: 1,
-          name: "古典风格：海顿、莫扎特、贝多芬（修订版）",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/f61e/f61e759a60e7359245e347124f9404b7_0_0_0_0.jpg",
-          author: "查尔斯·罗森 著; 杨燕迪 译",
-          publishDate: "2016-01",
-          binding: "精装",
-          publishHouse: "华东师范大学出版社",
-          format: 16,
-          isbn: "9787567543546",
-          sellingPrice: 103.50,
-          sale: 7.5,
-          fixedPrice: 138.00,
-          appearance: "全新",
-          address: "北京市丰台区",
-          putOnDate: "2018-11-07",
-          stock: 33
-        },
-        {
-          id: 1003,
-          type: 1,
-          name: "乐迷闲话",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1004,
-          type: 1,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1005,
-          type: 1,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1006,
-          type: 1,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1007,
-          type: 1,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 1,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 1,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        },
-        {
-          id: 1001,
-          type: 2,
-          name: "乐迷闲话-雅众·辛丰年音乐文集",
-          cover: "http://booklibimg.kfzimg.com/data/book_lib_img_v2/user/0/cbfc/cbfca3aa59fec16fd3499f2f029436d0_0_0_0_0.jpg",
-          author: "辛丰年",
-          publishDate: "2018-08",
-          binding: "精装",
-          publishHouse: "上海音乐出版社",
-          format: 32,
-          isbn: "9787552315707",
-          sellingPrice: 39.00,
-          sale: 8.0,
-          fixedPrice: 49.00,
-          appearance: "全新",
-          uid: null,
-          address: "北京市朝阳区",
-          putOnDate: "2018-11-03",
-          stock: 20
-        }
-      ]
+      data: result
     });
   }
 };
