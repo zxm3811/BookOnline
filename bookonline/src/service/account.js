@@ -21,10 +21,6 @@ const API = {
     url: "/account/update",
     useFake: true
   },
-  getUserBooks: {
-    url: "/account/getUserBooks",
-    useFake: true
-  },
   putOnBook: {
     url: "/account/putOnBook",
     useFake: true
@@ -57,18 +53,7 @@ export const AccountService = {
 
     store.dispatch('auth/saveToken', response.data);
 
-    response = await AccountService.saveUserInfo(params.account, params.password);
-
-    let id = await AccountService.getUserInfo().id;
-
-    let bookResponse = await getUserBooks(id);
-    if (!bookResponse || bookResponse.code != 0 || !bookResponse.data) {
-      return;
-    }
-    bookResponse.data.forEach(book => {
-      store.dispatch('myBook/saveMyBook', book);
-    });
-    return response;
+    return AccountService.saveUserInfo(params.account, params.password);
   },
 
   userRegister: async (params) => {
@@ -192,15 +177,6 @@ const updateUserInformation = (userInfo) => {
     return request(API.updateUserInformation.url, {
       userInfo
     }, 'POST')
-  }
-};
-const getUserBooks = (id) => {
-  if (API.getUserBooks.useFake) {
-    return FakeAccountService.getUserBooks(id);
-  } else {
-    return request(API.getUserBooks.url, {
-      id
-    }, 'GET')
   }
 };
 

@@ -69,6 +69,9 @@ export default {
 
   methods: {
     async initData() {
+      this.currentBookList = [];
+      this.currentPage = 0;
+      this.total = 0;
       this.userInfo = await AccountService.getUserInfo();
       this.bookList = await AccountService.getSellerBooks(this.userInfo.id);
       if(this.bookList && this.bookList.length != 0) {
@@ -102,13 +105,17 @@ export default {
     },
 
     async pullOffMyBook(item) {
-      let response = await AccountService.pullOffMyBook(item.id);
-      if(response) {
-        this.$toast.text("下架成功");
-        this.initData();
-      } else {
-        this.$toast.text(response.message);
-      }
+      this.$confirm('确定下架该书籍？').then(async () => {
+        let response = await AccountService.pullOffMyBook(item.id);
+        if(response) {
+          this.$toast.text("下架成功");
+          this.initData();
+        } else {
+          this.$toast.text("下架失败");
+        }
+      }).catch(() => {
+        return;
+      });
     }
   }
 };
