@@ -54,7 +54,6 @@
                         </template>
                         <template slot-scope="scope">
                             <el-button @click="confirm(scope.row)" type="primary" size="small" plain v-if="scope.row.status !== '0'">确认送达</el-button>
-                            <el-button @click="handleClick(scope.row)" type="danger" size="small" plain>删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -92,15 +91,8 @@ export default {
       const property = column['property'];
       return row[property] === value;
     },
-    pay (row) {
-      console.log(row.accountNo);
-      console.log(row.totalPrice);
-    },
-    confirm (row) {
-      console.log(row.orderId);
-    },
-    handleClick (row) {
-      console.log(row.orderId);
+    async confirm (row) {
+
     },
     async initData() {
       this.items = await OrderService.getOrderList();

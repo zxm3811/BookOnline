@@ -110,7 +110,7 @@ export const AccountService = {
     store.commit('auth/SAVE_PASSWORD', newPassword);
     return true;
   },
-  
+
   putOnMyBook: async (form) => {
     let response = await putOnBook(form);
     if (!response || response.code != 0) {
@@ -176,6 +176,9 @@ const getUserInfomation = (account, password) => {
   }
 };
 
+/**
+ * 更改用户信息
+ */
 const updateUserInformation = (userInfo) => {
   if (API.updateUserInformation.useFake) {
     return FakeAccountService.updateUserInformation(userInfo);
