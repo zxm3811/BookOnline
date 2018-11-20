@@ -174,6 +174,7 @@
             if(response) {
               this.$toast.text("信息修改成功");
             }
+            this.initData();
           } else {
             return false;
           }
