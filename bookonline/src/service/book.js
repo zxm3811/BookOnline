@@ -25,6 +25,14 @@ export const BookService = {
     return BookService.searchBooksByKeyword(response.data, keyword);
   },
 
+  getBooks: async () => {
+    let response = await getAllBooks();
+    if (!response || response.code != 0 || !response.data) {
+      return;
+    }
+    return response.data;
+  },
+
   getAllTypeBooks: async () => {
     let response = await getAllBooks();
     if (!response || response.code != 0 || !response.data) {

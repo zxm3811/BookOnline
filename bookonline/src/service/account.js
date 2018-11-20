@@ -76,8 +76,8 @@ export const AccountService = {
     return AccountService.saveUserInfo(params.account, params.password);
   },
 
-  getSellerBooks: async (account) => {
-    let response = await getUserBooks(account);
+  getSellerBooks: async (id) => {
+    let response = await getUserBooks(id);
     if (!response || response.code != 0 || !response.data) {
       return;
     }
@@ -185,12 +185,12 @@ const updateUserInformation = (userInfo) => {
     }, 'POST')
   }
 };
-const getUserBooks = (account) => {
+const getUserBooks = (id) => {
   if (API.getUserBooks.useFake) {
-    return FakeAccountService.getUserBooks(account);
+    return FakeAccountService.getUserBooks(id);
   } else {
     return request(API.getUserBooks.url, {
-      account
+      id
     }, 'GET')
   }
 };

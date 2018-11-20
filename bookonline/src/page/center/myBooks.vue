@@ -54,7 +54,7 @@ import { GoodsService } from "src/service/goods.js";
 export default {
   data() {
     return {
-      pageSize: 10,
+      pageSize: 5,
       total: 0,
       currentPage: 0,
       userInfo: null,
@@ -70,7 +70,7 @@ export default {
   methods: {
     async initData() {
       this.userInfo = await AccountService.getUserInfo();
-      this.bookList = await AccountService.getSellerBooks(this.userInfo.account);
+      this.bookList = await AccountService.getSellerBooks(this.userInfo.id);
       if(this.bookList && this.bookList.length != 0) {
         this.total = this.bookList.length;
         this.currentPage = 1;

@@ -247,6 +247,7 @@ export default {
         if (valid) {
           this.form.sale = (this.form.sellingPrice / this.form.fixedPrice * 10).toFixed(1);
           let userInfo = AccountService.getUserInfo();
+          this.form.id = parseInt((Math.random()*100000000));
           this.form.uid = userInfo.id;
           this.form.address = userInfo.receiveAddress.address;
           this.form.putOnDate = new Date().format("yyyy-MM-dd");
