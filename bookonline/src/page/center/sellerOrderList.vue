@@ -53,7 +53,7 @@
                             <el-input v-model="search" size="mini" placeholder="订单号/商品名"/>
                         </template>
                         <template slot-scope="scope">
-                            <el-button @click="deliver(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '3'">通知发货</el-button>
+                            <el-button @click="deliver(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '2'">通知发货</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -75,8 +75,7 @@
         filter:[
           { text: '已完成订单', value: '0' },
           { text: '交易中订单', value: '1' },
-          { text: '待确认订单', value: '2' },
-          { text: '待发货订单', value: '3' }
+          { text: '待发货订单', value: '2' }
         ]
       };
     },
@@ -96,7 +95,9 @@
         return row[property] === value;
       },
       deliver (row) {
-        console.log(row.orderId);
+        row.status = '1';
+        OrderService.updateUserOrder(row);
+        this.initData();
       },
       handleClick (row) {
         console.log(row.orderId);
