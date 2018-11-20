@@ -87,8 +87,20 @@ export default {
     },
 
     async confirmPurchase() {
-      let response = await GoodsService.confirmPurchase(this.purchaseGoods);
-      if(response) {
+      if(this.userInfo.receiveAddress.address == "" || this.userInfo.receiveAddress.receiverName == "" || this.userInfo.receiveAddress.receiverPhone == "") {
+        this.$toast.text("请先设置收货地址");
+        return;
+      }
+      let purchaseParams = {};
+      purchaseParams.orderId = parseInt((Math.random()*100000000)).toString();
+      purchaseParams.book = this.purchaseGoods;
+      purchaseParams.bookNum = this.totalAmount;
+      purchaseParams.totalPrice = this.totalPrice;
+      purchaseParams.receiver = this.userInfo.name || this.userInfo.account;
+      purchaseParams.addrString = this.userInfo.receiveAddress.address;
+      purchaseParams.status = "3";
+      let response = await GoodsService.confirmPurchase(purchaseParams);
+      if(response && response.code == 0) {
         let that = this;
         var time = 3;
         var interval = setInterval(function() {

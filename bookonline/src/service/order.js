@@ -6,9 +6,21 @@ import { FakeOrderService } from "./fake/orderService";
 
 const API = {
   getOrder: {
-    url: '',
+    url: '/order/getOrder',
     useFake: true
-  }
+  },
+  saveOrder: {
+    url: '/order/saveOrder',
+    useFake: true
+  },
+  updateOrder: {
+    url: '/order/updateOrder',
+    useFake: true
+  },
+  deleteOrderById: {
+    url: '/order/deleteOrderById',
+    useFake: true
+  },
 }
 
 export const OrderService = {
@@ -17,9 +29,32 @@ export const OrderService = {
     if (!response || response.code !== 0 || !response.data) {
       return;
     }
-
     return response.data;
-  }
+  },
+
+  saveUserOrder: async (order) => {
+    let response = await saveOrder(order);
+    if (!response || response.code !== 0) {
+      return;
+    }
+    return response;
+  },
+
+  updateUserOrder: async (order) => {
+    let response = await updateOrder(order);
+    if (!response || response.code !== 0) {
+      return;
+    }
+    return response;
+  },
+
+  deleteUserOrderById: async (id) => {
+    let response = await deleteOrderById(id);
+    if (!response || response.code !== 0) {
+      return;
+    }
+    return response;
+  },
 }
 
 /**
@@ -27,8 +62,38 @@ export const OrderService = {
  */
 const getOrder = () => {
   if (API.getOrder.useFake) {
-    return FakeOrderService.order();
+    return FakeOrderService.getOrder();
   } else {
-    return request(API.getOrder.url, {}, 'GET');
+    return request(API.getOrder.url, {}, 'POST');
+  }
+};
+
+const saveOrder = (order) => {
+  if (API.saveOrder.useFake) {
+    return FakeOrderService.saveOrder(order);
+  } else {
+    return request(API.saveOrder.url, {
+      order
+    }, 'GET');
+  }
+};
+
+const updateOrder = (order) => {
+  if (API.updateOrder.useFake) {
+    return FakeOrderService.updateOrder(order);
+  } else {
+    return request(API.updateOrder.url, {
+      order
+    }, 'GET');
+  }
+};
+
+const deleteOrderById = (id) => {
+  if (API.deleteOrderById.useFake) {
+    return FakeOrderService.deleteOrderById(id);
+  } else {
+    return request(API.deleteOrderById.url, {
+      id
+    }, 'GET');
   }
 };

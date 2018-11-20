@@ -12,12 +12,12 @@
             </div>
           </div>
           <div class="detail">
-            <div class="author">作者: {{ item.author }}</div>
+            <div class="author">作者: <span v-html="item.author"></span></div>
             <div class="publish_date">出版时间: {{ item.publishDate }}</div>
             <div class="binding">装帧: {{ item.binding }}</div>
             <div class="publish_house">出版社: {{ item.publishHouse }}</div>
             <div class="format">开本: {{ item.format }}</div>
-            <div class="isbn">ISBN: {{ item.isbn }}</div>
+            <div class="isbn">ISBN: <span v-html="item.isbn"></span></div>
           </div>
           <div class="put_on_date">{{ item.putOnDate }} 上书</div>
           <div class="foot">
@@ -74,7 +74,7 @@ export default {
         this.total = this.showBookList.length;
         this.currentPage = 1;
         this.currentBookList = this.showBookList.slice(0, this.pageSize);
-        this.highlightName();
+        this.highlight();
       }
     }
   },
@@ -89,13 +89,23 @@ export default {
       domUtil.setScrollTop(0);
     },
 
-    highlightName() {
+    highlight() {
       if(this.keyword) {
         this.showBookList.forEach(book => {
           if(book.name.search(this.keyword) != -1) {
             book.name = book.name.replace(
               new RegExp(this.keyword, "gi"),
-              "<span style='color: #8c222c;'>" + this.keyword + "</span>");
+              "<span style='color: #cc222c;'>" + this.keyword + "</span>");
+          }
+          if(book.author.search(this.keyword) != -1) {
+            book.author = book.author.replace(
+              new RegExp(this.keyword, "gi"),
+              "<span style='color: #cc222c;'>" + this.keyword + "</span>");
+          }
+          if(book.isbn.search(this.keyword) != -1) {
+            book.isbn = book.isbn.replace(
+              new RegExp(this.keyword, "gi"),
+              "<span style='color: #cc222c;'>" + this.keyword + "</span>");
           }
         });
       }

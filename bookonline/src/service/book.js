@@ -22,7 +22,7 @@ export const BookService = {
     if (!response || response.code != 0 || !response.data) {
       return;
     }
-    return response.data;
+    return BookService.searchBooksByKeyword(response.data, keyword);
   },
 
   getAllTypeBooks: async () => {
@@ -138,6 +138,19 @@ export const BookService = {
       total: 0
     },
     ];
+  },
+
+  searchBooksByKeyword(bookList, keyword) {
+    if(!bookList || !bookList.length) {
+      return;
+    }
+    let result = [];
+    bookList.forEach(book => {
+      if(book.name.search(keyword) != -1 || book.author.search(keyword) != -1 || book.isbn.search(keyword) != -1) {
+        result.push(book);
+      }
+    });
+    return result;
   },
 
   saveBook: (book) => {
