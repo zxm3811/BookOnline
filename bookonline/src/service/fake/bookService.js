@@ -20,7 +20,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 49.00,
           appearance: "全新",
-          uid: null,
+          uid: 100001,
           address: "北京市朝阳区",
           putOnDate: "2018-11-03",
           stock: 20
@@ -40,6 +40,7 @@ export const FakeBookService = {
           sale: 7.5,
           fixedPrice: 138.00,
           appearance: "全新",
+          uid: 100001,
           address: "北京市丰台区",
           putOnDate: "2018-11-07",
           stock: 33
@@ -59,7 +60,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 900.00,
           appearance: "七五品",
-          uid: null,
+          uid: 100001,
           address: "辽宁省沈阳市",
           putOnDate: "2018-11-20",
           stock: 2
@@ -79,7 +80,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 400.00,
           appearance: "八品",
-          uid: null,
+          uid: 100001,
           address: "辽宁省沈阳市",
           putOnDate: "2018-11-20",
           stock: 3
@@ -99,7 +100,7 @@ export const FakeBookService = {
           sale: 8.0,
           fixedPrice: 1000.00,
           appearance: "九五品",
-          uid: null,
+          uid: 100001,
           address: "四川省遂宁市",
           putOnDate: "2018-11-20",
           stock: 3

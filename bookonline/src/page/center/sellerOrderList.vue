@@ -106,7 +106,6 @@
       },
       gotoBookDetail(item) {
         event.stopPropagation();
-        console.log(item.id);
         BookService.saveBook(item);
         this.$router.push({
           name: "bookDetail",

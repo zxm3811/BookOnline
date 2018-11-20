@@ -21,10 +21,10 @@ export default new Vuex.Store({
 	actions: {
 		clearAll() {
 			this.dispatch('auth/clearAllUserState');
-			this.dispatch('bookInfo/clearAllBooks');
-			this.dispatch('goods/clearAllGoods');
-			this.dispatch('order/clearAllOrders');
-			this.dispatch('myBook/clearAllMyBooks');
+			// this.dispatch('bookInfo/clearAllBooks');
+			// this.dispatch('goods/clearAllGoods');
+			// this.dispatch('order/clearAllOrders');
+			// this.dispatch('myBook/clearAllMyBooks');
 		}
 	},
 	strict: debug,

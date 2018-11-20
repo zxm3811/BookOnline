@@ -157,7 +157,7 @@
         this.formData.addr.mark = data.mark;
       },
       submitForm(formName, data) {
-        this.$refs[formName].validate((valid) => {
+        this.$refs[formName].validate(async (valid) => {
           if (valid) {
             let address = data.addr.province + ' ' + data.addr.city + ' '
               + data.addr.district +' ' + data.addr.street + ' ' + data.addr.mark;
@@ -167,9 +167,11 @@
             this.userInfo.receiveAddress.receiverName = data.receiverName;
             this.userInfo.receiveAddress.receiverPhone = data.receiverPhone;
             this.userInfo.receiveAddress.address = address;
-            AccountService.updateUser(this.userInfo);
+            let response = await AccountService.updateUser(this.userInfo);
+            if(response) {
+              this.$toast.text("信息修改成功");
+            }
           } else {
-            console.log('error submit!!');
             return false;
           }
         });

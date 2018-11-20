@@ -92,14 +92,13 @@ export default {
       return row[property] === value;
     },
     async confirm (row) {
-
+        
     },
     async initData() {
       this.items = await OrderService.getOrderList();
     },
     gotoBookDetail(item) {
       event.stopPropagation();
-      console.log(item.id);
       BookService.saveBook(item);
       this.$router.push({
         name: "bookDetail",

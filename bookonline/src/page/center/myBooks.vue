@@ -94,6 +94,10 @@ export default {
     },
 
     putOnMyNewBook() {
+      if(this.userInfo.receiveAddress.address == "") {
+        this.$toast.text("请先补全个人信息");
+        return;
+      }
       this.$router.push("/page/userCenter/putOnBook");
     },
 
