@@ -85,15 +85,18 @@
       },
       methods: {
         submitForm(formName) {
-          this.$refs[formName].validate((valid) => {
+          this.$refs[formName].validate(async (valid) => {
             if (valid) {
-              alert('submit!');
+              let response = await AccountService.setUserPassword(this.pwdForm.pass);
+              if(response) {
+                this.$toast.text("修改成功");
+              } else {
+                this.$toast.text("修改失败");
+              }
             } else {
-              console.log('error submit!!');
               return false;
             }
           });
-          AccountService.setUserPassword(this.pwdForm.pass);
         },
         resetForm(formName) {
           this.$refs[formName].resetFields();

@@ -12,12 +12,7 @@ const state = {
       receiverPhone: '',
       address: ''
     },
-    bankNo: '',
-    balance: '',
-    gender: '',
-    age: null,
-    avatar: '',
-    userType: null
+    balance: null,
   }
 }
 const getters = {
@@ -53,12 +48,7 @@ const mutations = {
     state.userInfo.password = password
   },
   UPDATE_USER_INFORMATION: (state, userInfo) => {
-    state.userInfo.name = userInfo.name
-    state.userInfo.email = userInfo.email
-    state.userInfo.phone = userInfo.phone
-    state.userInfo.receiveAddress.receiverName = userInfo.receiverName
-    state.userInfo.receiveAddress.receiverPhone = userInfo.receiverPhone
-    state.userInfo.receiveAddress.address = userInfo.address
+    state.userInfo = userInfo;
   },
   SAVE_USER_STATE: (state, userInfo) => {
     state.userInfo.id = userInfo.id
@@ -70,12 +60,7 @@ const mutations = {
     state.userInfo.receiveAddress.receiverName = userInfo.receiveAddress.receiverName
     state.userInfo.receiveAddress.receiverPhone = userInfo.receiveAddress.receiverPhone
     state.userInfo.receiveAddress.address = userInfo.receiveAddress.address
-    state.userInfo.bankNo = userInfo.bankNo
     state.userInfo.balance = userInfo.balance
-    state.userInfo.gender = userInfo.gender
-    state.userInfo.age = userInfo.age
-    state.userInfo.avatar = userInfo.photoUrl
-    state.userInfo.userType = userInfo.userType
   },
   CLEAR_ALL_USER_STATE: (state) => {
     state.userInfo.token = ''
@@ -88,12 +73,7 @@ const mutations = {
     state.userInfo.receiveAddress.receiverName = ''
     state.userInfo.receiveAddress.receiverPhone = ''
     state.userInfo.receiveAddress.address = ''
-    state.userInfo.bankNo = ''
-    state.userInfo.balance = ''
-    state.userInfo.gender = ''
-    state.userInfo.age = null
-    state.userInfo.avatar = ''
-    state.userInfo.userType = null
+    state.userInfo.balance = null
   }
 
 }

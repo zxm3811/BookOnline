@@ -2,7 +2,7 @@
     <div>
         <el-row>
             <div class="typeTab">
-                <el-table :data="items.filter(data => !search || data.orderNo.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
+                <el-table :data="items.filter(data => !search || data.orderId.includes(search) || data.book.toLowerCase().includes(search.toLowerCase()))"
                           fit style="width: 100%">
                     <el-table-column type="expand">
                         <template slot-scope="props">
@@ -39,7 +39,7 @@
                             </el-form>
                         </template>
                     </el-table-column>
-                    <el-table-column prop="orderNo" label="订单号"></el-table-column>
+                    <el-table-column prop="orderId" label="订单号"></el-table-column>
                     <el-table-column prop="receiver" label="收件人"></el-table-column>
                     <el-table-column prop="status" label="订单状态" :filters="filter"
                                      :filter-method="filterTag"
@@ -97,10 +97,10 @@
         return row[property] === value;
       },
       deliver (row) {
-        console.log(row.orderNo);
+        console.log(row.orderId);
       },
       handleClick (row) {
-        console.log(row.orderNo);
+        console.log(row.orderId);
       },
       async initData() {
         this.items = await OrderService.getOrderList();
