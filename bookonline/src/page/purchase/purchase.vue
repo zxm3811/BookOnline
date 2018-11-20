@@ -41,9 +41,9 @@
         </div>
       </div>
       <div class="total">
-        共计 
+        共计
         <div class="total_amount">&nbsp;{{ totalAmount }}&nbsp;</div>
-        件商品，应付总金额 
+        件商品，应付总金额
         <div class="rmb">&nbsp;¥</div>
         <div class="total_price">{{ totalPrice && totalPrice.toFixed(2) }}</div>
       </div>
@@ -98,7 +98,7 @@ export default {
       purchaseParams.totalPrice = this.totalPrice;
       purchaseParams.receiver = this.userInfo.name || this.userInfo.account;
       purchaseParams.addrString = this.userInfo.receiveAddress.address;
-      purchaseParams.status = "3";
+      purchaseParams.status = "2";
       let response = await GoodsService.confirmPurchase(purchaseParams);
       if(response && response.code == 0) {
         let that = this;
@@ -199,7 +199,7 @@ export default {
         color: #aaaaaa;
       }
     }
-    
+
     .goods_list_container {
       border-bottom: 2px solid #8c222c;
       display: flex;
