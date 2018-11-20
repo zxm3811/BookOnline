@@ -71,8 +71,6 @@
         mark: ''
       }
     },
-    mounted () {
-    },
     methods:{
       // 加载china地点数据，三级
       getCityData:function(){
@@ -153,7 +151,11 @@
       this.qu = this.inputAddr.district;
       this.jiedao = this.inputAddr.street;
       this.mark = this.inputAddr.mark;
+
       this.getCityData();
+    },
+    mounted () {
+
     },
     props: {
       inputAddr: Object

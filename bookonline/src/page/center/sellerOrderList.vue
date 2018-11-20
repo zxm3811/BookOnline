@@ -53,8 +53,7 @@
                             <el-input v-model="search" size="mini" placeholder="订单号/商品名"/>
                         </template>
                         <template slot-scope="scope">
-                            <el-button @click="deliver(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '2'">通知发货</el-button>
-                            <el-button @click="handleClick(scope.row)" type="danger" size="small" plain>删除</el-button>
+                            <el-button @click="deliver(scope.row)" type="primary" size="small" plain v-if="scope.row.status === '3'">通知发货</el-button>
                         </template>
                     </el-table-column>
                 </el-table>

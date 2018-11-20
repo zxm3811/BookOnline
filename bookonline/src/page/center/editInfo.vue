@@ -27,7 +27,7 @@
                     </el-row>
                 </el-form-item>
                 <el-form-item label="收货地址" prop="addr" required>
-                    <select-addr @cityData="cityData" :inputAddr="formData.addr"></select-addr>
+                    <select-addr @cityData="cityData" :inputAddr="this.formData.addr"></select-addr>
                 </el-form-item>
                 <el-form-item label="收件人姓名" prop="receiverName">
                     <el-row>
@@ -174,14 +174,13 @@
           }
         });
       },
-      async initData() {
-        this.userInfo = await AccountService.getUserInfo();
+      initData() {
+        this.userInfo = AccountService.getUserInfo();
         this.formData.account = this.userInfo.account;
         this.formData.name = this.userInfo.name;
         this.formData.email = this.userInfo.email;
         this.formData.phone = this.userInfo.phone;
         let address = this.userInfo.receiveAddress.address.split(' ');
-        console.log(address)
         this.formData.addr.province = address[0];
         this.formData.addr.city = address[1];
         this.formData.addr.district = address[2];
