@@ -72,7 +72,11 @@
       var checkReceiverPhone = (rule, value, callback) => {
         if (!value) {
           callback(new Error('电话号码不可为空'));
-        } else if (value.length !== 11) {
+        }
+        else if (!Number.isInteger(value)){
+          callback(new Error('请输入数字值'));
+        }
+        else if (value.length !== 11) {
           callback(new Error('电话号码不是11位'));
         }
         else callback();
@@ -88,7 +92,11 @@
       var checkPhone = (rule, value, callback) => {
         if (!value) {
           callback(new Error('电话号码不可为空'));
-        } else if (value.length !== 11) {
+        }
+        else if (!Number.isInteger(value)){
+          callback(new Error('请输入数字值'));
+        }
+        else if (value.length !== 11) {
           callback(new Error('电话号码不是11位'));
         }
         else callback();
