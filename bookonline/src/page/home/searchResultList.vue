@@ -21,10 +21,10 @@
           </div>
           <div class="put_on_date">{{ item.putOnDate }} 上书</div>
           <div class="foot">
-            <div class="buy_now" @click="buyNow(item)">
+            <div class="buy_now" @click="buyNow(index)">
               <div>立即购买</div>
             </div>
-            <div class="add_into_shopping_cart" @click="addIntoShoppingCart(item)">
+            <div class="add_into_shopping_cart" @click="addIntoShoppingCart(index)">
               <div>加入购物车</div>
             </div>
           </div>
@@ -116,22 +116,23 @@ export default {
     },
 
     gotoBookDetail(index) {
-      BookService.saveBook(this.bookList[index]);
+      let item = this.bookList[(this.currentPage-1) * this.pageSize + index];
+      BookService.saveBook(item);
       this.$router.push({
         name: "bookDetail",
         params: {
-          bookId: this.bookList[index].id
+          bookId: item.id
         }
       });
     },
 
-    buyNow(item) {
+    buyNow(index) {
       if(!this.hasLogin) {
         this.$toast.text("您还未登录，请先登录");
         return;
       }
       let purchaseGoods = [];
-      let goods = JSON.parse(JSON.stringify(item));
+      let goods = JSON.parse(JSON.stringify(this.bookList[(this.currentPage-1) * this.pageSize + index]));
       goods.amount = 1;
       purchaseGoods.push(goods);
       this.$router.push({
@@ -142,12 +143,12 @@ export default {
       })
     },
 
-    addIntoShoppingCart(item) {
+    addIntoShoppingCart(index) {
       if(!this.hasLogin) {
         this.$toast.text("您还未登录，请先登录");
         return;
       }
-      let goods = JSON.parse(JSON.stringify(item));
+      let goods = JSON.parse(JSON.stringify(this.bookList[(this.currentPage-1) * this.pageSize + index]));
       goods.amount = 1;
       goods.buyer = this.userInfo.account;
       GoodsService.saveGoods(goods);
