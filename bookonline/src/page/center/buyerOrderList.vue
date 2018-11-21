@@ -64,39 +64,43 @@
 </template>
 
 <script>
-  import { OrderService } from "../../service/order";
-  import domUtil from "src/assets/js/domUtils.js";
-  import { BookService } from "src/service/book.js";
+import { OrderService } from "../../service/order";
+import { BookService } from "src/service/book.js";
+import { AccountService } from "../../service/account";
+import store from "src/store";
+
 export default {
-  data () {
+  data() {
     return {
-      search: '',
+      userInfo: null,
+      search: "",
       items: [],
-      filter:[
-        { text: '已完成订单', value: '0' },
-        { text: '交易中订单', value: '1' },
-        { text: '待发货订单', value: '2' }
+      filter: [
+        { text: "已完成订单", value: "0" },
+        { text: "交易中订单", value: "1" },
+        { text: "待发货订单", value: "2" }
       ]
     };
   },
-  mounted () {
+  mounted() {
     this.initData();
   },
   methods: {
-    filterTag (value, row) {
+    filterTag(value, row) {
       return row.status === value;
     },
-    filterHandler (value, row, column) {
-      const property = column['property'];
+    filterHandler(value, row, column) {
+      const property = column["property"];
       return row[property] === value;
     },
-    async confirm (row) {
-      row.status = '0';
+    async confirm(row) {
+      row.status = "0";
       OrderService.updateUserOrder(row);
       this.initData();
     },
     async initData() {
-      this.items = await OrderService.getOrderList();
+      this.userInfo = await AccountService.getCurrentUserInfo();
+      this.items = await OrderService.getOrderList(this.userInfo.account);
     },
     gotoBookDetail(item) {
       event.stopPropagation();
@@ -109,28 +113,28 @@ export default {
       });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-    .typeTab {
-        font-size: 0.12rem;
-        .expandMsg {
-            margin-left: 0.14rem;
-        }
-    }
+.typeTab {
+  font-size: 0.12rem;
+  .expandMsg {
+    margin-left: 0.14rem;
+  }
+}
 </style>
 
 <style>
-    .demo-table-expand {
-        font-size: 0;
-    }
-    .demo-table-expand label {
-        width: 90px;
-        color: #99a9bf;
-    }
-    .demo-table-expand .el-form-item {
-        margin-right: 0;
-        margin-bottom: 0;
-    }
+.demo-table-expand {
+  font-size: 0;
+}
+.demo-table-expand label {
+  width: 90px;
+  color: #99a9bf;
+}
+.demo-table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+}
 </style>

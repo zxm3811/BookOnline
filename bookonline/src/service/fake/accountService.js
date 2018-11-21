@@ -1,35 +1,79 @@
-import { BookService } from "src/service/book.js";
 import { AccountService } from "src/service/account";
 import store from "src/store"
 
 export const FakeAccountService = {
   login: (account, password) => {
-    return Promise.resolve({
-      code: 0,
-      message: "成功",
-      data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
-    });
+    let allUser = AccountService.getAllUserInfo();
+    if (!allUser || !allUser.length) {
+      return Promise.resolve({
+        code: -1,
+        message: "当前账号未注册，请先注册",
+        data: ""
+      });
+    }
+    let i = 0;
+    for (; i < allUser.length; i++) {
+      if (allUser[i].account == account) {
+        if (allUser[i].password == password) {
+          allUser[i].login = true;
+          store.commit('auth/UPDATE_USER_INFORMATION', allUser[i]);
+          return Promise.resolve({
+            code: 0,
+            message: "成功",
+            data: ""
+          });
+        } else {
+          return Promise.resolve({
+            code: -1,
+            message: "密码错误",
+            data: ""
+          });
+        }
+      }
+    }
+    if (i == allUser.length) {
+      return Promise.resolve({
+        code: -1,
+        message: "当前账号未注册，请先注册",
+        data: ""
+      });
+    }
   },
 
   createUser: (account, password) => {
-    return Promise.resolve({
-      code: 0,
-      message: "成功",
-      data: "eyJraWQiOiIwIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuaWNrIjoi5Y-25a2QMStwcGUiLCJhcHBUeXBlIjoyLCJuYW1lIjoicHhfeWV6aSIsImV4cCI6MTUzMzQzMjQwMCwianRpIjoiMTIwMTcxNSJ9.N-C7Gz_RCNyXEgdQZ1r6uDzPHSJwLI0qpjxBqVr4rug"
-    });
-  },
-
-  getUserInfomation: async (account, password) => {
-    let userInfo = await AccountService.getUserInfo();
-    userInfo.account = account;
-    userInfo.password = password;
-    store.dispatch('auth/saveUserState', userInfo);
+    let allUser = AccountService.getAllUserInfo();
+    let i = 0;
+    for (; i < allUser.length; i++) {
+      if (allUser[i].account == account) {
+        return Promise.resolve({
+          code: -1,
+          message: "当前账号已注册",
+          data: ""
+        });
+      }
+    }
+    let userInfo = {
+      account: account,
+      password: password,
+      name: '',
+      email: '',
+      phone: '',
+      receiveAddress: {
+        receiverName: '',
+        receiverPhone: '',
+        address: ''
+      },
+      balance: 10000,
+      login: true
+    };
+    store.dispatch('auth/addUser', userInfo);
     return Promise.resolve({
       code: 0,
       message: "成功",
       data: ""
     });
   },
+
   updateUserInformation: (userInfo) => {
     return Promise.resolve({
       code: 0,
@@ -47,8 +91,11 @@ export const FakeAccountService = {
     });
   },
 
-  pullOffBook: (id) => {
-    store.dispatch('myBook/deleteMyBookById', id);
+  pullOffBook: (id, account) => {
+    store.dispatch('myBook/deleteMyBookById', {
+      id,
+      account
+    });
     return Promise.resolve({
       code: 0,
       message: "成功",

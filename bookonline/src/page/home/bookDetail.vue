@@ -77,7 +77,8 @@ export default {
     return {
       amount: 1,
       book: {},
-      hasLogin: false
+      hasLogin: false,
+      userInfo: null
     };
   },
 
@@ -90,8 +91,11 @@ export default {
 
   methods: {
     async initData() {
-      this.book = await BookService.getBookInfo();
       this.hasLogin = await AccountService.hasLogin();
+      if(this.hasLogin) {
+        this.userInfo = await AccountService.getCurrentUserInfo();
+      }
+      this.book = await BookService.getBookInfo();
     },
 
     buyNow() {
@@ -118,6 +122,7 @@ export default {
       }
       let goods = JSON.parse(JSON.stringify(this.book));
       goods.amount = this.amount;
+      goods.buyer = this.userInfo.account;
       GoodsService.saveGoods(goods);
       this.$toast.text("已加入购物车");
     }

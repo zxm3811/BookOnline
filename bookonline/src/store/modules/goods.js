@@ -3,8 +3,17 @@ const state = {
 }
 
 const getters = {
-  getAllGoods: state => {
-    return state.goods;
+  getGoodsByAccount: state => (account) => {
+    let result = [];
+    if (!state.goods) {
+      return result;
+    }
+    for (let i = 0; i < state.goods.length; i++) {
+      if (state.goods[i].buyer == account) {
+        result.push(state.goods[i])
+      }
+    }
+    return result;
   },
 }
 
@@ -23,8 +32,8 @@ const actions = {
 
   deleteGoodsById({
     commit
-  }, id) {
-    commit("DELETE_GOODS_BY_ID", id);
+  }, goods) {
+    commit("DELETE_GOODS_BY_ID", goods);
   },
 
   clearAllGoods({ commit }) {
@@ -36,7 +45,10 @@ const mutations = {
   SAVE_GOODS: (state, goods) => {
     let i = 0;
     for (; i < state.goods.length; i++) {
-      if (state.goods[i].id == goods.id) {
+      if(state.goods[i].id == goods.id && state.goods[i].buyer != goods.buyer) {
+        state.goods.push(goods);
+        break;
+      } else if (state.goods[i].id == goods.id && state.goods[i].buyer == goods.buyer) {
         state.goods[i].amount += goods.amount;
         break;
       }
@@ -49,17 +61,17 @@ const mutations = {
   UPDATE_GOODS: (state, goods) => {
     let i = 0;
     for (; i < state.goods.length; i++) {
-      if (state.goods[i].id == goods.id) {
+      if (state.goods[i].id == goods.id && state.goods[i].buyer == goods.buyer) {
         state.goods[i].amount = goods.amount;
         break;
       }
     }
   },
 
-  DELETE_GOODS_BY_ID: (state, id) => {
+  DELETE_GOODS_BY_ID: (state, goods) => {
     let i = 0;
     for (; i < state.goods.length; i++) {
-      if (state.goods[i].id == id) {
+      if (state.goods[i].id == goods.id && state.goods[i].buyer == goods.buyer) {
         state.goods.splice(i, 1);
         break;
       }

@@ -6,6 +6,19 @@ const getters = {
   getAllOrders: state => {
     return state.orders;
   },
+
+  getOrdersByAccount: state => (account) => {
+    let result = [];
+    if (!state.orders) {
+      return result;
+    }
+    for (let i = 0; i < state.orders.length; i++) {
+      if (state.orders[i].account == account) {
+        result.push(state.orders[i])
+      }
+    }
+    return result;
+  },
 }
 
 const actions = {

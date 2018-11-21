@@ -52,163 +52,160 @@
 </template>
 
 <script>
-  import SelectAddr from './selectAddr'
-  import {AccountService} from "../../service/account";
+import SelectAddr from "./selectAddr";
+import { AccountService } from "../../service/account";
 
-  export default {
-    data () {
-      var checkUserName = (rule, value, callback) => {
-        if (!this.formData.username && !value) {
-          callback(new Error('请输入用户名'));
-        }
-        else callback();
-      };
-      var checkReceiverName = (rule, value, callback) => {
-        if (!this.formData.receiverName && !value) {
-          callback(new Error('请输入收件人'));
-        }
-        else callback();
-      };
-      var checkReceiverPhone = (rule, value, callback) => {
-        if (!value) {
-          callback(new Error('电话号码不可为空'));
-        } else if (value.length !== 11) {
-          callback(new Error('电话号码不是11位'));
-        } else if (!this.isPoneAvailable(value)) {
-          callback(new Error('电话号码不正确'));
-        }
-        else callback();
-      };
-      var checkAddr = (rule, value, callback) => {
-        if (value.province === '' || value.city === '' ||
-            value.district === '' || value.street === '' ||
-            value.mark === '') {
-          callback(new Error('请完善地址信息'));
-        } else callback();
-      };
-      var checkPhone = (rule, value, callback) => {
-        if (!value) {
-          callback(new Error('电话号码不可为空'));
-        } else if (value.length !== 11) {
-          callback(new Error('电话号码不是11位'));
-        } else if (!this.isPoneAvailable(value)) {
-          callback(new Error('电话号码不正确'));
-        }
-        else callback();
-      };
-      var checkEmail = (rule, value, callback) => {
-        if (!value) {
-          callback(new Error('请输入邮箱'));
-        }
-        else if (!(value.includes('.com') && value.includes('@'))) {
-          callback(new Error('邮箱格式错误'));
-        }
-        else callback();
-      };
-      return {
-        userInfo: null,
-        formData: {
-          account: '',
-          name: '',
-          email: '',
-          phone: '',
-          addr: {
-            province: '',
-            city: '',
-            district: '',
-            street: '',
-            mark: ''
-          },
-          receiverName: '',
-          receiverPhone: ''
+export default {
+  data() {
+    var checkUserName = (rule, value, callback) => {
+      if (!this.formData.username && !value) {
+        callback(new Error("请输入用户名"));
+      } else callback();
+    };
+    var checkReceiverName = (rule, value, callback) => {
+      if (!this.formData.receiverName && !value) {
+        callback(new Error("请输入收件人"));
+      } else callback();
+    };
+    var checkReceiverPhone = (rule, value, callback) => {
+      if (!value) {
+        callback(new Error("电话号码不可为空"));
+      } else if (value.length !== 11) {
+        callback(new Error("电话号码不是11位"));
+      } else if (!this.isPoneAvailable(value)) {
+        callback(new Error("电话号码不正确"));
+      } else callback();
+    };
+    var checkAddr = (rule, value, callback) => {
+      if (
+        value.province === "" ||
+        value.city === "" ||
+        value.district === "" ||
+        value.street === "" ||
+        value.mark === ""
+      ) {
+        callback(new Error("请完善地址信息"));
+      } else callback();
+    };
+    var checkPhone = (rule, value, callback) => {
+      if (!value) {
+        callback(new Error("电话号码不可为空"));
+      } else if (value.length !== 11) {
+        callback(new Error("电话号码不是11位"));
+      } else if (!this.isPoneAvailable(value)) {
+        callback(new Error("电话号码不正确"));
+      } else callback();
+    };
+    var checkEmail = (rule, value, callback) => {
+      if (!value) {
+        callback(new Error("请输入邮箱"));
+      } else if (!(value.includes(".com") && value.includes("@"))) {
+        callback(new Error("邮箱格式错误"));
+      } else callback();
+    };
+    return {
+      userInfo: null,
+      formData: {
+        account: "",
+        name: "",
+        email: "",
+        phone: "",
+        addr: {
+          province: "",
+          city: "",
+          district: "",
+          street: "",
+          mark: ""
         },
-        rules: {
-          name: [
-            {required: true, validator: checkUserName, trigger: 'blur'}
-          ],
-          email: [
-            {type: 'email', validator: checkEmail, trigger: ['blur', 'change']}
-          ],
-          phone: [
-            {required: true, validator: checkPhone, trigger: 'blur'}
-          ],
-          addr: [
-            {validator: checkAddr, trigger: 'blur'}
-          ],
-          receiverName: [
-            {required: true, validator: checkReceiverName, trigger: 'blur'}
-          ],
-          receiverPhone: [
-            {required: true, validator: checkReceiverPhone, trigger: 'blur'}
-          ],
-        }
-
-      };
-    },
-    components: {
-      SelectAddr
-    },
-    created () {
-      this.initData();
-    },
-    methods: {
-      cityData (data) {
-        this.formData.addr.province = data.sheng;
-        this.formData.addr.city = data.shi;
-        this.formData.addr.district = data.qu;
-        this.formData.addr.street = data.jiedao;
-        this.formData.addr.mark = data.mark;
+        receiverName: "",
+        receiverPhone: ""
       },
-      submitForm(formName, data) {
-        this.$refs[formName].validate(async (valid) => {
-          if (valid) {
-            let address = data.addr.province + ' ' + data.addr.city + ' '
-              + data.addr.district +' ' + data.addr.street + ' ' + data.addr.mark;
-            this.userInfo.name = data.name;
-            this.userInfo.email = data.email;
-            this.userInfo.phone = data.phone;
-            this.userInfo.receiveAddress.receiverName = data.receiverName;
-            this.userInfo.receiveAddress.receiverPhone = data.receiverPhone;
-            this.userInfo.receiveAddress.address = address;
-            let response = await AccountService.updateUser(this.userInfo);
-            if(response) {
-              this.$toast.text("信息修改成功");
-            }
-            this.initData();
-          } else {
-            return false;
+      rules: {
+        name: [{ required: true, validator: checkUserName, trigger: "blur" }],
+        email: [
+          { type: "email", validator: checkEmail, trigger: ["blur", "change"] }
+        ],
+        phone: [{ required: true, validator: checkPhone, trigger: "blur" }],
+        addr: [{ validator: checkAddr, trigger: "blur" }],
+        receiverName: [
+          { required: true, validator: checkReceiverName, trigger: "blur" }
+        ],
+        receiverPhone: [
+          { required: true, validator: checkReceiverPhone, trigger: "blur" }
+        ]
+      }
+    };
+  },
+  components: {
+    SelectAddr
+  },
+  created() {
+    this.initData();
+  },
+  methods: {
+    cityData(data) {
+      this.formData.addr.province = data.sheng;
+      this.formData.addr.city = data.shi;
+      this.formData.addr.district = data.qu;
+      this.formData.addr.street = data.jiedao;
+      this.formData.addr.mark = data.mark;
+    },
+    submitForm(formName, data) {
+      this.$refs[formName].validate(async valid => {
+        if (valid) {
+          let address =
+            data.addr.province +
+            " " +
+            data.addr.city +
+            " " +
+            data.addr.district +
+            " " +
+            data.addr.street +
+            " " +
+            data.addr.mark;
+          this.userInfo.name = data.name;
+          this.userInfo.email = data.email;
+          this.userInfo.phone = data.phone;
+          this.userInfo.receiveAddress.receiverName = data.receiverName;
+          this.userInfo.receiveAddress.receiverPhone = data.receiverPhone;
+          this.userInfo.receiveAddress.address = address;
+          let response = await AccountService.updateUser(this.userInfo);
+          if (response) {
+            this.$toast.text("信息修改成功");
           }
-        });
-      },
-      initData() {
-        this.userInfo = AccountService.getUserInfo();
-        this.formData.account = this.userInfo.account;
-        this.formData.name = this.userInfo.name;
-        this.formData.email = this.userInfo.email;
-        this.formData.phone = this.userInfo.phone;
-        let address = this.userInfo.receiveAddress.address.split(' ');
-        this.formData.addr.province = address[0];
-        this.formData.addr.city = address[1];
-        this.formData.addr.district = address[2];
-        this.formData.addr.street = address[3];
-        this.formData.addr.mark = address[4];
-        this.formData.receiverName = this.userInfo.receiveAddress.receiverName;
-        this.formData.receiverPhone = this.userInfo.receiveAddress.receiverPhone;
-      },
-
-      isPoneAvailable(str) {
-        var myreg=/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/;
-        if (!myreg.test(str)) {
-          return false;
+          this.initData();
         } else {
-          return true;
+          return false;
         }
+      });
+    },
+    initData() {
+      this.userInfo = AccountService.getCurrentUserInfo();
+      this.formData.account = this.userInfo.account;
+      this.formData.name = this.userInfo.name;
+      this.formData.email = this.userInfo.email;
+      this.formData.phone = this.userInfo.phone;
+      let address = this.userInfo.receiveAddress.address.split(" ");
+      this.formData.addr.province = address[0];
+      this.formData.addr.city = address[1];
+      this.formData.addr.district = address[2];
+      this.formData.addr.street = address[3];
+      this.formData.addr.mark = address[4];
+      this.formData.receiverName = this.userInfo.receiveAddress.receiverName;
+      this.formData.receiverPhone = this.userInfo.receiveAddress.receiverPhone;
+    },
+
+    isPoneAvailable(str) {
+      var myreg = /^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/;
+      if (!myreg.test(str)) {
+        return false;
+      } else {
+        return true;
       }
     }
   }
-
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

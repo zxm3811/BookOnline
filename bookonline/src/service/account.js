@@ -13,10 +13,6 @@ const API = {
     url: "/account/createUser",
     useFake: true
   },
-  getUserInfomation: {
-    url: "/account/getUserInfomation",
-    useFake: true
-  },
   updateUserInformation: {
     url: "/account/update",
     useFake: true
@@ -32,60 +28,38 @@ const API = {
 }
 
 export const AccountService = {
-  hasLogin: () => {
-    let currentUser = store.getters["auth/userInfo"];
-    if(currentUser.account) {
-      return true;
+  hasLogin: async () => {
+    let allUser = AccountService.getAllUserInfo();
+    for (let i = 0; i < allUser.length; i++) {
+      if (allUser[i].login) {
+        return true;
+      }
     }
     return false;
   },
-  logout: () => {
-    store.dispatch("clearAll");
+
+  logout: async () => {
+    let userInfo = await AccountService.getCurrentUserInfo();
+    userInfo.login = false;
+    await AccountService.updateUser(userInfo);
   },
 
   userlogin: async (params) => {
     let response = await login(params.account, params.password);
-    if (!response || response.code != 0 || !response.data) {
-      return;
-    }
-
-    store.dispatch("clearAll");
-
-    store.dispatch('auth/saveToken', response.data);
-
-    return AccountService.saveUserInfo(params.account, params.password);
+    return response;
   },
 
   userRegister: async (params) => {
     let response = await createUser(params.account, params.password);
-    if (!response || response.code != 0) {
-      return;
-    }
-    if (response.data == null) {
-      return;
-    }
-
-    store.dispatch("clearAll");
-
-    store.dispatch('auth/saveToken', response.data);
-
-    return AccountService.saveUserInfo(params.account, params.password);
-  },
-
-  getSellerBooks: async (id) => {
-    return JSON.parse(JSON.stringify(store.getters['myBook/getAllMyBooks']));
-  },
-
-  saveUserInfo: async (account, password) => {
-    let response = await getUserInfomation(account, password)
-    if (!response || response.code != 0) {
-      return;
-    }
     return response;
   },
 
-  getUserInfo: () => {
-    return JSON.parse(JSON.stringify(store.getters["auth/userInfo"]));
+  getCurrentUserInfo: () => {
+    return JSON.parse(JSON.stringify(store.getters["auth/getCurrentUserInfo"]));
+  },
+
+  getAllUserInfo: () => {
+    return JSON.parse(JSON.stringify(store.getters["auth/getAllUserInfo"]));
   },
 
   updateUser: async (userInfo) => {
@@ -97,9 +71,8 @@ export const AccountService = {
     return response;
   },
 
-  setUserPassword: (newPassword) => {
-    store.commit('auth/SAVE_PASSWORD', newPassword);
-    return true;
+  getSellerBooksByAccount: (account) => {
+    return JSON.parse(JSON.stringify(store.getters['myBook/getMyBooksByAccount'](account)));
   },
 
   putOnMyBook: async (form) => {
@@ -110,19 +83,13 @@ export const AccountService = {
     return response;
   },
 
-  pullOffMyBook: async (bookId) => {
-    let response = await pullOffBook(bookId);
+  pullOffMyBook: async (bookId, account) => {
+    let response = await pullOffBook(bookId, account);
     if (!response || response.code != 0) {
       return;
     }
     return response;
-  },
-
-  resetPassword: (account, password, oldPassword) => request('/account/resetPassword', {
-    account,
-    password,
-    oldPassword
-  }, 'POST'),
+  }
 };
 
 /**
@@ -154,20 +121,6 @@ const createUser = (account, password) => {
 };
 
 /**
- * 获取用户信息
- */
-const getUserInfomation = (account, password) => {
-  if (API.getUserInfomation.useFake) {
-    return FakeAccountService.getUserInfomation(account, password);
-  } else {
-    return request(API.getUserInfomation.url, {
-      account,
-      password
-    }, 'GET')
-  }
-};
-
-/**
  * 更改用户信息
  */
 const updateUserInformation = (userInfo) => {
@@ -188,12 +141,13 @@ const putOnBook = (form) => {
   }
 };
 
-const pullOffBook = (id) => {
+const pullOffBook = (id, account) => {
   if (API.pullOffBook.useFake) {
-    return FakeAccountService.pullOffBook(id);
+    return FakeAccountService.pullOffBook(id, account);
   } else {
     return request(API.pullOffBook.url, {
-      id: id
+      id,
+      account
     }, 'POST')
   }
 };

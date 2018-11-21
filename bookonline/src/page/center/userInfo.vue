@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     initData() {
-      let items = AccountService.getUserInfo();
+      let items = AccountService.getCurrentUserInfo();
       this.name = items.name;
       this.email = items.email;
       this.phone = items.phone;

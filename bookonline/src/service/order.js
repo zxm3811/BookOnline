@@ -28,8 +28,8 @@ const API = {
 }
 
 export const OrderService = {
-  getOrderList: async () => {
-    let response = await getOrder();
+  getOrderList: async (account) => {
+    let response = await getOrder(account);
     if (!response || response.code !== 0 || !response.data) {
       return;
     }
@@ -72,11 +72,13 @@ export const OrderService = {
 /**
  * 获取买家订单信息
  */
-const getOrder = () => {
+const getOrder = (account) => {
   if (API.getOrder.useFake) {
-    return FakeOrderService.getOrder();
+    return FakeOrderService.getOrder(account);
   } else {
-    return request(API.getOrder.url, {}, 'POST');
+    return request(API.getOrder.url, {
+      account
+    }, 'POST');
   }
 };
 

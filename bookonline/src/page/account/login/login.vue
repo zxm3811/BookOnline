@@ -75,14 +75,14 @@ export default {
         this.showPswNullError = true;
         return;
       }
-      let userInfo = await AccountService.userlogin({
+      let response = await AccountService.userlogin({
         account: this.userAccount,
         password: this.password
       });
-      if(userInfo) {
-        this.$router.push("/page/home");
+      if(!response || response.code != 0) {
+        this.$toast.text(response.message);
       } else {
-        this.$toast.text("帐号或密码错误");
+        this.$router.push("/page/home");
       }
     }
   }

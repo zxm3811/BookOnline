@@ -49,12 +49,14 @@
 </template>
 
 <script>
+import { AccountService } from "src/service/account";
 import { BookService } from "src/service/book.js";
 import { GoodsService } from "src/service/goods.js";
 
 export default {
   data() {
     return {
+      userInfo: null,
       amount: [],
       checkAll: false,
       checkedGoods: [],
@@ -73,7 +75,8 @@ export default {
 
   methods: {
     async initData() {
-      this.goodsList = await GoodsService.getAllGoods();
+      this.userInfo = await AccountService.getCurrentUserInfo();
+      this.goodsList = await GoodsService.getGoodsByAccount(this.userInfo.account);
       if (!this.goodsList || !this.goodsList.length) {
         this.showGoods = false;
         return;
@@ -102,7 +105,7 @@ export default {
     },
 
     deleteGoods(item) {
-      GoodsService.deleteGoodsById(item.id);
+      GoodsService.deleteGoodsById(item);
       this.initData();
     },
 

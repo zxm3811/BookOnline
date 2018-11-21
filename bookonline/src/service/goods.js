@@ -25,12 +25,12 @@ export const GoodsService = {
     store.dispatch('goods/updateGoods', goods);
   },
 
-  deleteGoodsById: (id) => {
-    store.dispatch('goods/deleteGoodsById', id);
+  deleteGoodsById: (goods) => {
+    store.dispatch('goods/deleteGoodsById', goods);
   },
 
-  getAllGoods: () => {
-    return JSON.parse(JSON.stringify(store.getters['goods/getAllGoods']));
+  getGoodsByAccount: (account) => {
+    return JSON.parse(JSON.stringify(store.getters['goods/getGoodsByAccount'](account)));
   },
 }
 

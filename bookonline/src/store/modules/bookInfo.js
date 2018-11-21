@@ -1,7 +1,7 @@
 const state = {
   bookInfo: {
     id: null,
-    uid: null,
+    account: '',
     type: null,
     name: '',
     cover: '',
@@ -43,7 +43,7 @@ const actions = {
 const mutations = {
   SAVE_BOOK: (state, bookInfo) => {
     state.bookInfo.id = bookInfo.id
-    state.bookInfo.uid = bookInfo.uid
+    state.bookInfo.account = bookInfo.account
     state.bookInfo.type = bookInfo.type
     state.bookInfo.name = bookInfo.name
     state.bookInfo.cover = bookInfo.cover
@@ -63,7 +63,7 @@ const mutations = {
   },
   CLEAR_ALL_BOOKS: (state) => {
     state.bookInfo.id = null
-    state.bookInfo.uid = null
+    state.bookInfo.account = ''
     state.bookInfo.type = null
     state.bookInfo.name = ''
     state.bookInfo.cover = ''

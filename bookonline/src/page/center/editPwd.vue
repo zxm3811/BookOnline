@@ -31,80 +31,84 @@
 </template>
 
 <script>
-    import {AccountService} from "../../service/account";
+import { AccountService } from "../../service/account";
 
-    export default {
-      data () {
-        var validatePass0 = (rule, value, callback) => {
-          let item = AccountService.getUserInfo();
-          if (value === '') {
-            callback(new Error('请输入原密码'));
-          }
-          else if (value !== item.password) {
-            callback(new Error('原密码错误'));
-          }
-          else callback();
-        };
-        var validatePass = (rule, value, callback) => {
-          if (value === '') {
-            callback(new Error('请输入新密码'));
-          } else {
-            if (this.pwdForm.checkPass !== '') {
-              this.$refs.pwdForm.validateField('checkPass');
-            }
-            callback();
-          }
-        };
-        var validatePass2 = (rule, value, callback) => {
-          if (value === '') {
-            callback(new Error('请再次输入密码'));
-          } else if (value !== this.pwdForm.pass) {
-            callback(new Error('两次输入密码不一致!'));
-          } else {
-            callback();
-          }
-        };
-        return {
-          pwdForm: {
-            oldPass: '',
-            pass: '',
-            checkPass: ''
-          },
-          rules: {
-            oldPass: [
-              {required:true, validator: validatePass0, trigger: 'blur'}
-            ],
-            pass: [
-              {required:true, validator: validatePass, trigger: 'blur'}
-            ],
-            checkPass: [
-              {required:true, validator: validatePass2, trigger: 'blur'}
-            ]
-          }
-        };
-      },
-      methods: {
-        submitForm(formName) {
-          this.$refs[formName].validate(async (valid) => {
-            if (valid) {
-              let response = await AccountService.setUserPassword(this.pwdForm.pass);
-              if(response) {
-                this.$toast.text("修改成功");
-              } else {
-                this.$toast.text("修改失败");
-              }
-            } else {
-              return false;
-            }
-          });
-        },
-        resetForm(formName) {
-          this.$refs[formName].resetFields();
+export default {
+  data() {
+    var validatePass0 = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请输入原密码"));
+      } else if (value !== this.userInfo.password) {
+        callback(new Error("原密码错误"));
+      } else callback();
+    };
+    var validatePass = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请输入新密码"));
+      } else {
+        if (this.pwdForm.checkPass !== "") {
+          this.$refs.pwdForm.validateField("checkPass");
         }
+        callback();
       }
+    };
+    var validatePass2 = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请再次输入密码"));
+      } else if (value !== this.pwdForm.pass) {
+        callback(new Error("两次输入密码不一致!"));
+      } else {
+        callback();
+      }
+    };
+    return {
+      userInfo: null,
+      pwdForm: {
+        oldPass: "",
+        pass: "",
+        checkPass: ""
+      },
+      rules: {
+        oldPass: [
+          { required: true, validator: validatePass0, trigger: "blur" }
+        ],
+        pass: [{ required: true, validator: validatePass, trigger: "blur" }],
+        checkPass: [
+          { required: true, validator: validatePass2, trigger: "blur" }
+        ]
+      }
+    };
+  },
+
+  mounted() {
+    this.initData();
+  },
+
+  methods: {
+    async initData() {
+      this.userInfo = await AccountService.getCurrentUserInfo();
+    },
+    submitForm(formName) {
+      this.$refs[formName].validate(async valid => {
+        if (valid) {
+          this.userInfo.password = this.pwdForm.pass;
+          let response = await AccountService.updateUser(this.userInfo);
+          if (response) {
+            this.$toast.text("修改成功");
+          } else {
+            this.$toast.text("修改失败");
+          }
+        } else {
+          return false;
+        }
+      });
+    },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
     }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

@@ -51,7 +51,7 @@ export default {
 	async mounted() {
 		this.hasLogin = await AccountService.hasLogin();
 		if(this.hasLogin) {
-			this.userInfo = await AccountService.getUserInfo();
+			this.userInfo = await AccountService.getCurrentUserInfo();
 		}
 	},
 
