@@ -48,10 +48,10 @@ export const BookService = {
       return bookTabs;
     }
     let allBooks = JSON.parse(JSON.stringify(books));
+    bookTabs[0].total = allBooks.length;
+    bookTabs[0].items = allBooks;
     for (let i = 1; i < bookTabs.length; i++) {
       for(let j = 0; j < allBooks.length; j++) {
-        bookTabs[0].total++;
-        bookTabs[0].items.push(allBooks[j]);
         if(bookTabs[i].type === allBooks[j].type) {
           bookTabs[i].total++;
           bookTabs[i].items.push(allBooks[j]);
