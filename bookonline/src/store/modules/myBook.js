@@ -3,8 +3,17 @@ const state = {
 }
 
 const getters = {
-  getAllMyBooks: state => {
-    return state.myBooks;
+  getMyBooksByAccount: state => (account) => {
+    let result = [];
+    if (!state.myBooks) {
+      return result;
+    }
+    for (let i = 0; i < state.myBooks.length; i++) {
+      if (state.myBooks[i].account == account) {
+        result.push(state.myBooks[i])
+      }
+    }
+    return result;
   },
 }
 
@@ -17,8 +26,8 @@ const actions = {
 
   deleteMyBookById({
     commit
-  }, id) {
-    commit("DELETE_MY_BOOK_BY_ID", id);
+  }, params) {
+    commit("DELETE_MY_BOOK_BY_ID", params);
   },
 
   clearAllMyBooks({ commit }) {
@@ -30,7 +39,7 @@ const mutations = {
   SAVE_MY_BOOK: (state, book) => {
     let i = 0;
     for (; i < state.myBooks.length; i++) {
-      if (state.myBooks[i].id == book.id) {
+      if (state.myBooks[i].id == book.id && state.myBooks[i].account == book.account) {
         state.myBooks.splice(i, 1, book);
         return;
       }
@@ -40,10 +49,10 @@ const mutations = {
     }
   },
 
-  DELETE_MY_BOOK_BY_ID: (state, id) => {
+  DELETE_MY_BOOK_BY_ID: (state, params) => {
     let i = 0;
     for (; i < state.myBooks.length; i++) {
-      if (state.myBooks[i].id == id) {
+      if (state.myBooks[i].id == params.id && state.myBooks[i].account == params.account) {
         state.myBooks.splice(i, 1);
         return;
       }

@@ -1,36 +1,39 @@
 const state = {
-  userInfo: {
-    token: '',
-    id: 100001,
-    account: '',
-    password: '',
-    name: '',
-    email: '',
-    phone: '',
-    receiveAddress: {
-      receiverName: '',
-      receiverPhone: '',
-      address: ''
-    },
-    balance: 10000,
-  }
+  userInfo: []
+  // userInfo: {
+  //   account: '',
+  //   password: '',
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   receiveAddress: {
+  //     receiverName: '',
+  //     receiverPhone: '',
+  //     address: ''
+  //   },
+  //   balance: 10000,
+  //   login: false
+  // }
 }
 const getters = {
-  userInfo: state => {
+  getCurrentUserInfo: state => {
+    for (let i = 0; i < state.userInfo.length; i++) {
+      if (state.userInfo[i].login) {
+        return state.userInfo[i];
+      }
+    }
+    return null;
+  },
+  getAllUserInfo: state => {
     return state.userInfo
   }
 }
 
 const actions = {
-  saveToken({
-    commit
-  }, token) {
-    commit('SAVE_TOKEN', token)
-  },
-  saveUserState({
+  addUser({
     commit
   }, userInfo) {
-    commit("SAVE_USER_STATE", userInfo);
+    commit("ADD_USER", userInfo);
   },
 
   clearAllUserState({
@@ -41,39 +44,29 @@ const actions = {
 }
 
 const mutations = {
-  SAVE_TOKEN: (state, token) => {
-    state.userInfo.token = token
+  ADD_USER: (state, userInfo) => {
+    state.userInfo.push(userInfo);
   },
-  SAVE_PASSWORD: (state, password) => {
-    state.userInfo.password = password
-  },
+
   UPDATE_USER_INFORMATION: (state, userInfo) => {
-    state.userInfo = userInfo;
+    for (let i = 0; i < state.userInfo.length; i++) {
+      if (state.userInfo[i].account == userInfo.account) {
+        state.userInfo.splice(i, 1, userInfo);
+      }
+    }
   },
-  SAVE_USER_STATE: (state, userInfo) => {
-    state.userInfo.id = userInfo.id
-    state.userInfo.account = userInfo.account
-    state.userInfo.password = userInfo.password
-    state.userInfo.name = userInfo.name
-    state.userInfo.email = userInfo.email
-    state.userInfo.phone = userInfo.phone
-    state.userInfo.receiveAddress.receiverName = userInfo.receiveAddress.receiverName
-    state.userInfo.receiveAddress.receiverPhone = userInfo.receiveAddress.receiverPhone
-    state.userInfo.receiveAddress.address = userInfo.receiveAddress.address
-    state.userInfo.balance = userInfo.balance
-  },
+
   CLEAR_ALL_USER_STATE: (state) => {
-    // state.userInfo.token = ''
-    // state.userInfo.id = null
     state.userInfo.account = ''
-    // state.userInfo.password = ''
-    // state.userInfo.name = ''
-    // state.userInfo.email = ''
-    // state.userInfo.phone = ''
-    // state.userInfo.receiveAddress.receiverName = ''
-    // state.userInfo.receiveAddress.receiverPhone = ''
-    // state.userInfo.receiveAddress.address = ''
-    // state.userInfo.balance = null
+    state.userInfo.password = ''
+    state.userInfo.name = ''
+    state.userInfo.email = ''
+    state.userInfo.phone = ''
+    state.userInfo.receiveAddress.receiverName = ''
+    state.userInfo.receiveAddress.receiverPhone = ''
+    state.userInfo.receiveAddress.address = ''
+    state.userInfo.balance = null
+    state.userInfo.login = flase
   }
 
 }

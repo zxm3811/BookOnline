@@ -72,8 +72,8 @@ export default {
       this.currentBookList = [];
       this.currentPage = 0;
       this.total = 0;
-      this.userInfo = await AccountService.getUserInfo();
-      this.bookList = await AccountService.getSellerBooks(this.userInfo.id);
+      this.userInfo = await AccountService.getCurrentUserInfo();
+      this.bookList = await AccountService.getSellerBooksByAccount(this.userInfo.account);
       if(this.bookList && this.bookList.length != 0) {
         this.total = this.bookList.length;
         this.currentPage = 1;
@@ -106,7 +106,7 @@ export default {
 
     async pullOffMyBook(item) {
       this.$confirm('确定下架该书籍？').then(async () => {
-        let response = await AccountService.pullOffMyBook(item.id);
+        let response = await AccountService.pullOffMyBook(item.id, this.userInfo.account);
         if(response) {
           this.$toast.text("下架成功");
           this.initData();

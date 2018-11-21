@@ -79,7 +79,7 @@ export default {
 
   methods: {
     async initData() {
-      this.userInfo = await AccountService.getUserInfo();
+      this.userInfo = await AccountService.getCurrentUserInfo();
       this.purchaseGoods.forEach(goods => {
         this.totalAmount += goods.amount;
         this.totalPrice += goods.sellingPrice * goods.amount;
@@ -96,6 +96,7 @@ export default {
       purchaseParams.book = this.purchaseGoods;
       purchaseParams.bookNum = this.totalAmount;
       purchaseParams.totalPrice = this.totalPrice;
+      purchaseParams.account = this.userInfo.account;
       purchaseParams.receiver = this.userInfo.name || this.userInfo.account;
       purchaseParams.addrString = this.userInfo.receiveAddress.address;
       purchaseParams.status = "2";
@@ -115,7 +116,7 @@ export default {
         }, 1010);
 
         this.purchaseGoods.forEach(goods => {
-          GoodsService.deleteGoodsById(goods.id);
+          GoodsService.deleteGoodsById(goods);
         });
       } else {
         this.$toast.text(response.message);

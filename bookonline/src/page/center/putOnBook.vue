@@ -226,9 +226,9 @@ export default {
       this.$refs[form].validate(async (valid) => {
         if (valid) {
           this.form.sale = Number((this.form.sellingPrice / this.form.fixedPrice * 10).toFixed(1));
-          let userInfo = AccountService.getUserInfo();
+          let userInfo = AccountService.getCurrentUserInfo();
           this.form.id = parseInt((Math.random()*100000000));
-          this.form.uid = userInfo.id;
+          this.form.account = userInfo.account;
           this.form.cover = "https://s1.ax1x.com/2018/11/20/F9AasP.png"
           this.form.address = userInfo.receiveAddress.address;
           this.form.putOnDate = new Date().format("yyyy-MM-dd");
