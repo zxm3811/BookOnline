@@ -56,7 +56,8 @@ export default {
       total: 0,
       currentPage: 0,
       showBookList: [],
-      currentBookList: []
+      currentBookList: [],
+      userInfo: null
     };
   },
   
@@ -81,6 +82,9 @@ export default {
 
   async mounted() {
     this.hasLogin = await AccountService.hasLogin();
+    if(this.hasLogin) {
+      this.userInfo = await AccountService.getCurrentUserInfo();
+    }
   },
 
   methods: {
@@ -145,6 +149,7 @@ export default {
       }
       let goods = JSON.parse(JSON.stringify(item));
       goods.amount = 1;
+      goods.buyer = this.userInfo.account;
       GoodsService.saveGoods(goods);
       this.$toast.text("已加入购物车");
     }

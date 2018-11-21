@@ -93,14 +93,14 @@ export default {
         this.showConfirmPwsError = true;
         return;
       }
-      let userInfo = await AccountService.userRegister({
+      let response = await AccountService.userRegister({
         account: this.userAccount,
         password: this.password
       });
-      if(userInfo) {
-        this.$router.push("/page/home");
+      if(!response || response.code != 0) {
+        this.$toast.text(response.message);
       } else {
-        this.$toast.text("该帐号已注册");
+        this.$router.push("/page/home");
       }
     }
   }

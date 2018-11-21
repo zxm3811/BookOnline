@@ -3,7 +3,7 @@ import { OrderService } from "src/service/order.js";
 
 export const FakeGoodsService = {
   purchase: async (purchaseGoods) => {
-    let userInfo = await AccountService.getUserInfo();
+    let userInfo = await AccountService.getCurrentUserInfo();
     if(userInfo.balance < purchaseGoods.totalPrice) {
       return Promise.resolve({
         code: -1,
